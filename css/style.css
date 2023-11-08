@@ -1,0 +1,40 @@
+
+.khung{
+    box-shadow: 0 0 5px gray;
+
+    height: 900px;
+}
+.box a{
+
+    height: 40px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: rgb(255, 166, 0);
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+   
+}
+.box{
+    border-radius: 5px ;
+    margin-bottom: 10px;
+    border: 2px solid orange;
+}
+.box:hover{
+    background-color: orange;
+    color: white;
+    transition: all 0.5s;
+}
+.box:hover a{
+    color: white;
+    transition: all 0.5s;
+}
+header{
+    height: 97px;
+    color: white;
+    background-color: orange;
+    
+}
+header h4{
+    line-height: 80px;
+}

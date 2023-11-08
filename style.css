@@ -1,0 +1,51 @@
+
+.container>main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 50px;
+    margin-top: 70px;
+}
+
+.container>main>aside {
+    margin-top: 30px;
+}
+
+.container>main>aside>div {
+    margin: 20px 0;
+}
+
+.container>main>aside>div>a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 2px;
+}
+
+.container>main>aside>div>a:hover {
+    color: #e95221;
+    text-decoration: underline;
+}
+
+.container>main>article>h5 {
+    color: #e95221;
+    margin: 10px;
+}
+
+.box-sp {
+    height: 350px;
+}
+
+.container>.next-page>a {
+    background-color: #ededed;
+    padding: 7px 13px;
+    margin: 5px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.container>.next-page>a:hover {
+    background-color: #d1d1d1;
+}

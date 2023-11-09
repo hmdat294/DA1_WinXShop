@@ -1,0 +1,200 @@
+
+.container>main>article>section{
+    display: flex;
+}
+.container>main .table-donhang {
+    display: none;
+}
+
+
+/*User*/
+
+.container>main>article>section .tt-tichluy {
+    box-shadow: 0 0 5px rgb(165, 165, 165);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container>main>article>section .sua-tt {
+    box-shadow: 0 0 5px rgb(165, 165, 165);
+    border-radius: 5px;
+}
+.container>main>article>section .sua-tt>form>section>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container>main>article>section .sua-tt>form>section>div:nth-child(1)>b{
+    padding: 6px;
+}
+.container>main>article>section .sua-tt>form>section>div:nth-child(2)>:is(div,input){
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.container>main>article>section .sua-tt>form>div>input{
+    margin: 25px 0 10px;
+    padding: 7px 18.5px;
+    border: 1px solid #e95221;
+    color: #e95221;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+
+.container>main>article>section .tt-tichluy>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.container>main>article>section .tt-tichluy>div>div>span {
+    font-size: 1.3em;
+}
+
+.container>main>aside{
+    margin: 47px 0;
+
+}
+.container>main>aside>div {
+    box-shadow: 0 0 5px rgb(165, 165, 165);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 16px 0;
+}
+
+.container>main>aside>div>a:nth-child(1){
+    color: #e95221;
+}
+.container>main>aside>div>a {
+    display: block;
+    padding: 10px;
+    color: #444444;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.container>main>aside>div>a:hover {
+    color: #e95221;
+}
+
+.container>main>aside>div>a>i {
+    margin-right: 10px;
+}
+
+
+
+/*đơn hàng*/
+
+
+.container>main .table-user .lienket>th {
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+.container>main .table-user button {
+    width: 100px;
+    border: 1px solid #e95221;
+    border-radius: 5px;
+    background-color: white;
+    color: #e95221;
+    transition: 0.3s;
+}
+
+.container>main .table-user button:hover,
+.container>main>article>section .sua-tt>form>div>input:hover{
+    background-color: #e95221;
+    color: white;
+}
+
+.container>main .table-user img {
+    width: 80px;
+}
+.container>main table .tbbody>:is(th, td) {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 1.2em !important;
+}
+
+.container>main table .tbbody>td:nth-child(4) {
+    color: #e95221;
+}
+
+.container>main table .tbbody>:is(td:nth-child(5), td:nth-child(6), td:nth-child(7)) {
+    color: #444444;
+    font-size: 1.1em !important;
+}
+
+.container>main table .tbbody>td>a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.container>main table .tbbody>td>a:hover {
+    color: #e95221;
+    text-decoration: underline;
+}
+
+
+/*chi tiết đơn hàng*/
+
+.container>main .donhangcuaban {
+    padding: 10px;
+    width: 100%;
+}
+
+.container>main .donhangcuaban tr * {
+    text-align: start;
+    padding: 15px 20px;
+}
+
+.container>main .donhangcuaban tr th {
+    width: 200px;
+    color: #e95221;
+    border-radius: 5px 0 0 5px;
+}
+
+.container>main .donhangcuaban tr td {
+    font-size: 1.1em;
+    border-radius: 0 5px 5px 0;
+}
+
+
+.container>main .sp-ctdh {
+    width: 100%;
+    /* margin: auto; */
+}
+
+.container>main .sp-ctdh .tbbody>:is(th, td) {
+    padding: 10px;
+}
+
+.container>main .sp-ctdh .sanpham-ctdh {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container>main .sp-ctdh .sanpham-ctdh>div {
+    text-align: left;
+}
+
+.container>main .sp-ctdh .sanpham-ctdh>div>p:nth-child(1) {
+    font-weight: bold;
+}
+
+.container>main .sp-ctdh .sanpham-ctdh>div>p {
+    font-weight: normal;
+    font-size: 0.85em;
+}

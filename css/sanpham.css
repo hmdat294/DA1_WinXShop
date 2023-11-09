@@ -1,17 +1,20 @@
-
 .container>main {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    gap: 50px;
+    gap: 10px;
     margin-top: 70px;
 }
 
 .container>main>aside {
-    margin-top: 30px;
+    margin-top: 53px;
+    box-shadow: 0 0 10px #D5D4D4;
+    border-radius: 5px;
+    padding: 20px;
+    height: 580px;
 }
 
 .container>main>aside>div {
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .container>main>aside>div>a {
@@ -34,6 +37,22 @@
 
 .box-sp {
     height: 350px;
+}
+
+.box-sp>a p {
+    transition: 0.3s;
+    font-size: 1em;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.box-sp:hover>a p {
+    color: red;
+    transform: translateY(15px);
+}
+
+.box-sp .gia {
+    font-size: 1.1em;
 }
 
 .container>.next-page>a {

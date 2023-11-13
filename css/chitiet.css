@@ -1,0 +1,275 @@
+.container>main {
+    margin-top: 70px;
+}
+
+.container>main>.thongtin-chitiet {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 20px;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>img {
+    margin-top: 100px;
+    border: none !important;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #D5D4D4;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>.img-child {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div {
+    margin: 10px 0;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>:is(div:nth-child(2), div:nth-child(3))>span {
+    color: #e95221;
+    font-size: 1.2em;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div:nth-child(4) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 20px;
+
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div:nth-child(4)>h3 {
+    color: rgb(220, 0, 0);
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div:nth-child(4)>span {
+    color: gray;
+    font-size: 1.2em;
+}
+
+
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.uudai {
+    position: relative;
+    padding: 30px 20px 0 20px;
+    margin: 30px 0;
+    border: 1px solid #e95221;
+    border-radius: 5px;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.uudai>.icon-uudai {
+    position: absolute;
+    top: -22px;
+    border: 1px solid #e95221;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 160px;
+    height: 44px;
+    font-size: 1.5em;
+    color: #e95221;
+    background-color: white;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.uudai>b {
+    display: block;
+    margin: 20px 0;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.uudai>p {
+    font-size: 0.95em;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>div {
+    margin: 20px 0;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua>a {
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #e95221;
+    height: 35px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua>.soluong>button {
+    background-color: #e95221;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua>.soluong>input {
+    width: 100px;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham {
+    margin: 30px 0;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateY(12px);
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>div>h5 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>.section1 {
+    display: block;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>.section2 {
+    display: none;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>.section1>p {
+    text-align: justify;
+}
+
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.uudai>:is(b, p)>span,
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>div>h5:nth-child(1),
+.container>main>.thongtin-chitiet>.box-left>.mota-sanpham>.section1>p:nth-child(2)>span {
+    color: #e95221;
+}
+
+
+.container>main>.thongtin-chitiet>.box-right>.dangcohangtai {
+    position: relative;
+    border: 1px dashed #e95221;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 10px 10px 10px;
+    gap: 5px;
+}
+
+.container>main>.thongtin-chitiet>.box-right>.dangcohangtai>div:nth-child(1) {
+    position: absolute;
+    top: -19px;
+    padding: 5px 10px;
+    background-color: white;
+    color: #e95221;
+    width: 180px;
+    text-align: center;
+    border: 1px solid #e95221;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container>main>.thongtin-chitiet>.box-right>.dangcohangtai>button {
+    text-align: start;
+    padding: 5px 10px;
+    background-color: white;
+    color: #e95221;
+    border: 1px solid #e95221;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container>main>.thongtin-chitiet>.box-right>.danhmucsanpham {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid gray;
+    gap: 10px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.container>main>.thongtin-chitiet>.box-right>.danhmucsanpham>div:nth-child(1) {
+    padding: 5px 10px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+.container>main>.thongtin-chitiet>.box-right>.danhmucsanpham>a {
+    text-decoration: none;
+    color: black;
+    padding: 0px 20px;
+}
+
+@media only screen and (max-width: 1400px) {}
+
+@media only screen and (max-width: 1200px) {
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container>main>.thongtin-chitiet {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>img {
+        margin-top: 0px;
+    }
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham {
+        grid-template-columns: 1fr;
+    }
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div:nth-child(4) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+    .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.chon-size-mua>.mua {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container>main>.thongtin-chitiet>.box-left>.mota-sanpham>div>h5 {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,156 @@
+.container>main>.sanpham-sale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.box-sp {
+    height: 350px;
+}
+
+.box-sp>a p {
+    font-size: 1em;
+}
+
+.box-sp:hover>.chucnang-sp {
+    transform: translateY(-40px);
+}
+
+@media only screen and (max-width: 1400px) {
+    .box-sp {
+        height: 290px;
+    }
+
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+
+    .box-sp>a p {
+        font-size: 0.85em;
+    }
+
+    .box-sp .gia {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container>main>.sanpham-sale {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .box-sp {
+        padding: 10px;
+        height: 265px;
+    }
+    .box-sp>a p {
+        font-size: 0.75em;
+    }
+
+    .box-sp .gia {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container>main>.sanpham-sale {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .container>main>.sanpham-sale {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .box-sp {
+        padding: 10px 20px;
+        height: 330px;
+    }
+    .box-sp>a p {
+        font-size: 0.9em;
+    }
+
+    .box-sp .gia {
+        font-size: 1em;
+    }
+
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-25px);
+        opacity: 1;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-35px);
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .box-sp {
+        height: 290px;
+    }
+
+    .box-sp>a p {
+        font-size: 0.8em;
+    }
+
+    .box-sp .gia {
+        font-size: 0.9em;
+    }
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .box-sp {
+        height: 265px;
+    }
+
+    .box-sp>a p {
+        font-size: 0.7em;
+    }
+
+    .box-sp .gia {
+        font-size: 0.8em;
+    }
+
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+ 
+    .box-sp {
+        height: 230px;
+    }
+
+    .box-sp>a p {
+        font-size: 0.65em;
+    }
+
+    .box-sp .gia {
+        font-size: 0.7em;
+    }
+
+    .box-sp:hover>.chucnang-sp {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

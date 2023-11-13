@@ -29,26 +29,34 @@
     border-bottom: 1px solid gray;
 }
 
-.container>main table .tbbody>td:nth-child(3){
+.container>main table .tbbody>td:nth-child(3) {
     font-weight: bold;
     font-size: 1.2em;
     color: #444444;
 }
 
-.container>main table .tbbody>td:nth-child(4){
+.container>main table .tbbody>td:nth-child(4) {
     font-weight: bold;
     color: #e95221;
     font-size: 1.5em;
+    text-align: end;
 }
 
-.container>main table .tbbody>td:nth-child(5)>a{
+.container>main table .tbbody>td:nth-child(4)>div {
+    display: none;
+    color: #444444;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+}
+
+.container>main table .tbbody>td:nth-child(5)>a {
     font-size: 1.1em;
     color: #444444;
     text-decoration: none;
     font-weight: bold;
 }
 
-.container>main table .tbbody>td:nth-child(5)>a:hover{
+.container>main table .tbbody>td:nth-child(5)>a:hover {
     color: #e95221;
     text-decoration: underline;
 }
@@ -75,21 +83,90 @@
 }
 
 
-.container>main>.thanhtoan{
+.container>main>.thanhtoan {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 20px 0;
     font-size: 1.2em;
     font-weight: bold;
 }
-.container>main>.thanhtoan>div>span{
+
+.container>main>.thanhtoan>div>span {
     color: #e95221;
 }
-.container>main>.thanhtoan>a{
+
+.container>main>.thanhtoan>a {
     text-decoration: none;
     color: white;
     background-color: #e95221;
     padding: 10px 20px;
     border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .container>main table .sanpham-gh {
+        flex-direction: column;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .container>main table .soluong>button {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8em;
+    }
+    
+    .container>main table .soluong>input {
+        width: 60px;
+        height: 25px;
+        font-size: 0.8em;
+    }
+
+    .container>main table .sanpham-gh>img {
+        width: 100px;
+    }
+
+    .container>main table tr>:is(th:nth-child(3),td:nth-child(3)) {
+        display: none;
+    }
+
+    .container>main table .tbbody>td:nth-child(4) {
+        font-size: 1.2em;
+    }
+
+    .container>main table .tbbody>td:nth-child(4)>div {
+        display: block;
+    }
+
+    .container>main>.thanhtoan{
+        font-size: 0.85em;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    
+    .container>main table .tbhead {
+        font-size: 0.7em;
+    }
+
+    .container>main table .sanpham-gh>div>b {
+        font-size: 0.9em;
+    }
+    .container>main table .soluong>button {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8em;
+    }
+    
+    .container>main table .soluong>input {
+        width: 60px;
+        height: 20px;
+        font-size: 0.8em;
+    }
+
 }

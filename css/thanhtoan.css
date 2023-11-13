@@ -1,3 +1,11 @@
+.container>main>div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+
+
 .container>main .sanpham-tt>table {
     margin: 20px 0;
     width: 100%;
@@ -29,10 +37,11 @@
     font-size: 1.1em;
 }
 
-.container>main .thongtin-tt>form{
+.container>main .thongtin-tt>form {
     position: relative;
 }
-.container>main .thongtin-tt>form>div{
+
+.container>main .thongtin-tt>form>div {
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -43,30 +52,30 @@
     margin: 20px 0;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(1) input{
+.container>main .thongtin-tt>form>div:nth-child(1) input {
     padding: 10px 20px;
     border: none;
     box-shadow: 0 0 5px gray;
     border-radius: 10px;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(2)>label{
+.container>main .thongtin-tt>form>div:nth-child(2)>label {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(2)>label>input{
+.container>main .thongtin-tt>form>div:nth-child(2)>label>input {
     width: 20px;
     height: 20px;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(2)>label>input:checked{
+.container>main .thongtin-tt>form>div:nth-child(2)>label>input:checked {
     accent-color: #e95221;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(3)>div{
+.container>main .thongtin-tt>form>div:nth-child(3)>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,11 +83,11 @@
     font-weight: bold;
 }
 
-.container>main .thongtin-tt>form>div:nth-child(3)>div>span:nth-child(2){
+.container>main .thongtin-tt>form>div:nth-child(3)>div>span:nth-child(2) {
     color: red;
 }
 
-.container>main .thongtin-tt>form>.but-dathang{
+.container>main .thongtin-tt>form>.but-dathang {
     position: absolute;
     right: 0;
     padding: 10px 25px;
@@ -90,4 +99,56 @@
     font-size: 1.2em;
     box-shadow: 0 0 5px #e95221;
     text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .container>main .sanpham-tt>table {
+        font-size: 0.9em;
+    }
+
+    .container>main .thongtin-tt>form>div {
+        font-size: 0.9em;
+
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .container>main>div {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .container>main .sanpham-tt>table {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .container>main .sanpham-tt>.sp-ctdh .sanpham-ctdh{
+        flex-direction: column;
+    }
+    .container>main .sanpham-tt>.sp-ctdh .sanpham-ctdh>div>p {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container>main .sanpham-tt>table {
+        font-size: 0.65em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .container>main .sanpham-tt>table {
+        font-size: 0.55em;
+    }
+
 }

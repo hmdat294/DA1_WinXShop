@@ -1,0 +1,101 @@
+* {
+    max-width: 100%;
+    margin: 0;
+    font-family: roboto;
+}
+
+.khung {
+    width: 17%;
+    box-shadow: 0 0 5px gray;
+    height: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.sitebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bg-cus {
+    color: rgb(253, 134, 67);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bg-cus div {
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid rgb(253, 134, 67);
+}
+
+.bg-cus div:hover {
+    background-color: rgb(253, 134, 67);
+    color: white;
+    transition: all 0.5s;
+}
+
+header {
+    width: 83%;
+    left: 17%;
+    height: 60px;
+    color: white;
+    background-color: rgb(253, 134, 67);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    position: fixed;
+    z-index: 1;
+}
+
+header h4{
+    margin: 10px;
+}
+
+.head-parent{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+
+.fa-bell {
+    font-size: 25px;
+}
+
+.dangxuatadmin {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+/* Trang danh Mục */
+.iconusser {
+    font-size: 20px;
+}
+
+.test {
+    line-height: 50px;
+}
+
+.form-parent{
+    width: 600px;
+    margin: auto;
+    
+}
+form { 
+    box-shadow: 0 0 5px gray;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form input{
+    margin-bottom: 15px;
+}
+
+
+main{
+    margin-top: 100px;
+    padding: 0 50px;
+}

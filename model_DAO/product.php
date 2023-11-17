@@ -10,7 +10,7 @@ function get_sanpham_search($keyword)
 
 function get_sanpham1($id, $limit)
 {
-    $sql = "SELECT * FROM sanpham WHERE iddm=$id ORDER BY id ASC limit $limit";
+    $sql = "SELECT * FROM sanpham WHERE iddm=$id ORDER BY id DESC limit $limit";
     return pdo_query($sql);
 }
 

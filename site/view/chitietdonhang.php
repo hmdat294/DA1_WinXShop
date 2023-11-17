@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../content/layout/css/giohang.css">
+<link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/userp.css">
 
 <?php extract(get_donhang_user_one($id))?>

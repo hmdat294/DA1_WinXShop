@@ -2,7 +2,7 @@
 extract(get_sanpham_chitiet($id));
 ?>
 
-<link rel="stylesheet" href="../content/layout/css/chitietph.css">
+<link rel="stylesheet" href="../content/layout/css/chitietpp.css">
 
 <main>
 
@@ -19,11 +19,13 @@ extract(get_sanpham_chitiet($id));
                         <?php foreach (get_hinhanh2($id) as $item) : extract($item); ?>
 
                             <img id="anhnho<?= $id ?>" src="../content/layout/images/images_product/<?= $hinhanh ?>" alt="">
-                            
+
                             <script>
                                 var anhto = document.getElementById("anhto");
                                 var anhnho<?= $id ?> = document.getElementById("anhnho<?= $id ?>");
-                                anhnho<?= $id ?>.onclick = () => { anhto.src = anhnho<?= $id ?>.src; }
+                                anhnho<?= $id ?>.onclick = () => {
+                                    anhto.src = anhnho<?= $id ?>.src;
+                                }
                             </script>
 
                         <?php endforeach; ?>
@@ -61,29 +63,34 @@ extract(get_sanpham_chitiet($id));
 
                     </div>
 
-                    <div class="chon-size-mua">
-                        <h6>Chọn size:</h6>
-                        <div class="chon-size">
-                            <button class="btn btn-outline-secondary">38</button>
-                            <button class="btn btn-outline-secondary">39</button>
-                            <button class="btn btn-outline-secondary">40</button>
-                            <button class="btn btn-outline-secondary">41</button>
-                            <button class="btn btn-outline-secondary">42</button>
-                            <button class="btn btn-outline-secondary">43</button>
-                        </div>
+                    <div class="mua">
+                                
+                        <form action="?mod=cart&act=giohang" method="post" enctype="multipart/form-data" class="soluong">
+                            <div id="giamspct">-</div>
+                            <input type="hidden" name="idsanpham" value="<?= $issanpham ?>">
+                            <input class="valuenum" disabled type="text" name="numsp" value="1" class="text-center">
+                            <div id="tangspct">+</div>
 
-                        <div class="mua">
+                            <input class="addgh" name="addgh" type="submit" value="THÊM VÀO GIỎ HÀNG">
+                        </form>
 
-                            <div class="soluong">
-                                <button>-</button>
-                                <input type="text" value="1" class="text-center">
-                                <button>+</button>
-                            </div>
+                        <script>
 
-                            <a href="?mod=cart&act=giohang&idsanpham=<?= $issanpham ?>">THÊM VÀO GIỎ HÀNG</a>
-                        </div>
+                                var num = 1;
+
+                                var giam =document.getElementById("giamspct");
+                                var tang =document.getElementById("tangspct");
+                                var valuenum =document.querySelector(".valuenum");
+
+                                tang.onclick = () => {valuenum.value = ++num}
+                                giam.onclick = () => {
+                                    if(num>1) valuenum.value = --num;
+                                }
+
+                        </script>
 
                     </div>
+
                 </div>
 
             </div>

@@ -62,7 +62,7 @@
         </div>
 
         <div class="sp-noibat">
-            <?php foreach (get_sanpham1(1, 9) as $item) : extract($item); ?>
+            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item); ?>
 
                 <div class="box-sp" id="slidesp">
                     <a href="?mod=page&act=chitiet&iddm=<?= $iddm ?>&id=<?= $id ?>" class="img-sp">
@@ -111,12 +111,12 @@
     <div class="sp-yeuthich">
         <img src="../content/layout/images/quangcao1.png" alt="">
         <div class="sanpham2">
-            <?= showSP(get_sanpham1(1, 2)) ?>
+            <?= showSP(get_sanpham1(4, 2)) ?>
         </div>
     </div>
 
     <div class="sanpham0">
-        <?= showSP(get_sanpham1(1, 4)) ?>
+        <?= showSP(get_sanpham1(5, 4)) ?>
     </div>
 
     <div class="sp-title p-5">

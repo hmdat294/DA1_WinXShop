@@ -20,6 +20,8 @@ if (isset($act)) {
         case 'giohang':
 
             if (isset($idsanpham) && ($idsanpham > 0)) {
+                
+                if((!$numsp) && ($numsp<1)) $numsp = 1;
 
                 $checkid = get_idgiohang($idsanpham);
 
@@ -27,11 +29,10 @@ if (isset($act)) {
                     $slnew = $checkid['soluong'];
                     $slnew++;
                     update_slsp($idsanpham, $slnew);
-                } else add_cart($idsanpham, 1);
+                } else add_cart($idsanpham, $numsp);
 
                 header('location: ?mod=cart&act=giohang');
             }
-
 
             include_once "view/giohang.php";
             break;
@@ -74,13 +75,6 @@ if (isset($act)) {
         case 'thanhtoan':
 
             if (isset($dathang) && ($dathang)) {
-
-
-                // $idkhachhang = $_POST['idkhachhang'];
-                // $tongtien = $_POST['tongtien'];
-                // $ghichu = $_POST['ghichu'];
-                // $diachi = $_POST['diachi'];
-                // $phuongthuc = $_POST['phuongthuc'];
 
                 if ($ghichu == '') $ghichu = "Trống";
                 if ($diachi == '') $diachi = "Trống";

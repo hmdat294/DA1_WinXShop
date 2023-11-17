@@ -90,7 +90,10 @@ function showSP($sanpham)
 
         $linkchitiet = '?mod=page&act=chitiet&iddm=' . $iddm . '&id=' . $id;
         $linkdathang = '?mod=cart&act=giohang&idsanpham=' . $id;
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         $showsp .= '
         <div class="box-sp">
             <a href="' . $linkchitiet . '" class="img-sp">

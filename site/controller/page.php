@@ -19,6 +19,19 @@ if (isset($act)) {
 
         case 'sanpham':
 
+<<<<<<< HEAD
+=======
+            if (isset($iddm) && ($iddm > 0)) {
+
+                if (!isset($min_price)) $min_price = 0;
+                if (!isset($max_price)) $max_price = 500000000;
+                if (!isset($filter_order)) $filter_order = "giasale ASC";
+
+                $sp_fill = fill_product($iddm, $min_price, $max_price, $filter_order);
+
+            }
+
+>>>>>>> main
             include_once "view/sanpham.php";
             break;
 

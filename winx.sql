@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
+<<<<<<< HEAD
 -- Thời gian đã tạo: Th10 17, 2023 lúc 07:40 AM
+=======
+-- Thời gian đã tạo: Th10 17, 2023 lúc 10:33 PM
+>>>>>>> main
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -159,6 +163,19 @@ CREATE TABLE `giohang` (
   `soluong` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+<<<<<<< HEAD
+=======
+--
+-- Đang đổ dữ liệu cho bảng `giohang`
+--
+
+INSERT INTO `giohang` (`id`, `idsp`, `soluong`) VALUES
+(50, 121, 1),
+(51, 200, 1),
+(52, 141, 1),
+(53, 167, 1);
+
+>>>>>>> main
 -- --------------------------------------------------------
 
 --
@@ -297,7 +314,10 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (142, 108, 'BaloCauLong3_1.png '),
 (143, 108, 'BaloCauLong3_2.png '),
 (144, 108, 'BaloCauLong3_3.png '),
+<<<<<<< HEAD
 (145, 108, 'BaloCauLong3_4.png '),
+=======
+>>>>>>> main
 (146, 109, 'BaloCauLong4_1.png '),
 (147, 109, 'BaloCauLong4_2.png '),
 (148, 109, 'BaloCauLong4_3.png '),
@@ -308,6 +328,7 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (153, 110, 'BaloCauLong5_4.png '),
 (154, 111, 'BaloCauLong6_1.png '),
 (155, 111, 'BaloCauLong6_2.png '),
+<<<<<<< HEAD
 (156, 111, 'BaloCauLong6_3.png '),
 (157, 111, 'BaloCauLong6_4.png '),
 (158, 112, 'BaloCauLong7_1.png '),
@@ -326,6 +347,18 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (171, 115, 'BaloCauLong10_2.png'),
 (172, 115, 'BaloCauLong10_3.png'),
 (173, 115, 'BaloCauLong10_4.png'),
+=======
+(158, 112, 'BaloCauLong7_1.png '),
+(159, 112, 'BaloCauLong7_2.png '),
+(162, 113, 'BaloCauLong8_1.png '),
+(163, 113, 'BaloCauLong8_2.png '),
+(164, 113, 'BaloCauLong8_3.png '),
+(166, 114, 'BaloCauLong9_1.png '),
+(167, 114, 'BaloCauLong9_2.png '),
+(168, 114, 'BaloCauLong9_3.png '),
+(170, 115, 'BaloCauLong10_1.png'),
+(171, 115, 'BaloCauLong10_2.png'),
+>>>>>>> main
 (174, 116, 'aobongban_ao1.png'),
 (175, 117, 'aobongban_ao2_1.png'),
 (176, 117, 'aobongban_ao2_2.png'),
@@ -365,6 +398,7 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (210, 128, 'quanbongban_quan3_1.png'),
 (211, 128, 'quanbongban_quan3_2.png'),
 (212, 128, 'quanbongban_quan3_3.png'),
+<<<<<<< HEAD
 (213, 129, 'banbongban_ban1_1.png'),
 (214, 129, 'banbongban_ban1_2.png'),
 (215, 129, 'banbongban_ban1_3.png'),
@@ -405,6 +439,45 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (250, 179, 'giaybongban_giay1_1.png'),
 (251, 179, 'giaybongban_giay1_.png'),
 (252, 179, 'giaybongban_giay1_3.png'),
+=======
+(213, 129, 'bongban_ban1_1.png'),
+(214, 129, 'bongban_ban1_2.png'),
+(215, 129, 'bongban_ban1_3.png'),
+(216, 131, 'bongban_ban2_1.png'),
+(217, 131, 'bongban_ban2_2.png'),
+(218, 131, 'bongban_ban2_3.png'),
+(219, 132, 'bongban_ban3_1.png'),
+(220, 132, 'bongban_ban3_2.png'),
+(221, 132, 'bongban_ban3_3.png'),
+(222, 132, 'bongban_ban3_4.png'),
+(223, 133, 'bongban_ban4_1.png'),
+(224, 133, 'bongban_ban4_2.png'),
+(225, 133, 'bongban_ban4_3.png'),
+(226, 134, 'bongban_ban5_1.png'),
+(227, 134, 'bongban_ban5_2.png'),
+(228, 134, 'bongban_ban5_3.png'),
+(229, 135, 'bongban_ban6_1.png'),
+(230, 135, 'bongban_ban6_2.png'),
+(231, 135, 'bongban_ban6_3.png'),
+(232, 136, 'bongban_ban7_1.png'),
+(233, 136, 'bongban_ban7_2.png'),
+(234, 136, 'bongban_ban7_3.png'),
+(235, 137, 'bongban_ban8_1.png'),
+(236, 137, 'bongban_ban8_2.png'),
+(237, 137, 'bongban_ban8_3.png'),
+(238, 138, 'bongban_ban9_1.png'),
+(239, 138, 'bongban_ban9_2.png'),
+(240, 138, 'bongban_ban9_3.png'),
+(241, 139, 'bongban_ban10_1.png'),
+(242, 139, 'bongban_ban10_2.png'),
+(243, 139, 'bongban_ban10_3.png'),
+(244, 140, 'bongban_ban11_1.png'),
+(245, 140, 'bongban_ban12_2.png'),
+(246, 140, 'bongban_ban12_3.png'),
+(247, 141, 'bongban_ban13_1.png'),
+(248, 141, 'bongban_ban13_2.png'),
+(249, 141, 'bongban_ban13_3.png'),
+>>>>>>> main
 (253, 142, 'giaybongban_giay2_1.png'),
 (254, 142, 'giaybongban_giay2_2.png'),
 (255, 142, 'giaybongban_giay2_3.png'),
@@ -452,7 +525,10 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (297, 156, 'matvotbongban_matvot3_4.png'),
 (298, 157, 'matvotbongban_matvot4_1.png'),
 (299, 157, 'matvotbongban_matvot4_2.png'),
+<<<<<<< HEAD
 (300, 157, 'matvotbongban_matvot4_3.png'),
+=======
+>>>>>>> main
 (301, 157, 'matvotbongban_matvot4_4.png'),
 (302, 158, 'matvotbongban_matvot5_1.png'),
 (303, 158, 'matvotbongban_matvot5_2.png'),
@@ -466,8 +542,11 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (311, 162, 'matvotbongban_matvot8_1.png'),
 (312, 162, 'matvotbongban_matvot8_2.png'),
 (313, 162, 'matvotbongban_matvot8_3.png'),
+<<<<<<< HEAD
 (314, 165, 'matvotbongban_matvot9_1.png'),
 (315, 165, 'matvotbongban_matvot9_2.png'),
+=======
+>>>>>>> main
 (316, 165, 'matvotbongban_matvot9_3.png'),
 (317, 166, 'matvotbongban_matvot11_1.png'),
 (318, 166, 'matvotbongban_matvot11_2.png'),
@@ -500,9 +579,12 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (345, 176, 'votbongban_vot8_1.png'),
 (346, 176, 'votbongban_vot8_2.png'),
 (347, 176, 'votbongban_vot8_3.png'),
+<<<<<<< HEAD
 (348, 176, 'votbongban_vot8_4.png'),
 (349, 177, 'votbongban_vot9_1.png'),
 (350, 177, 'votbongban_vot9_2.png'),
+=======
+>>>>>>> main
 (351, 177, 'votbongban_vot9_3.png'),
 (352, 178, 'votbongban_vot10_1.png'),
 (353, 178, 'votbongban_vot10_2.png'),
@@ -560,6 +642,7 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (406, 203, 'quanbongro12.png'),
 (407, 203, 'quanbongro12_1.png'),
 (408, 204, 'giaybongro1.png'),
+<<<<<<< HEAD
 (409, 204, 'giaybongro1.1.png'),
 (410, 204, 'giaybongro1.2.png'),
 (411, 204, 'giaybongro1.3.png'),
@@ -607,6 +690,55 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (453, 215, 'giaybongro12.1.png'),
 (454, 215, 'giaybongro12.2.png'),
 (455, 215, 'giaybongro12.3.png'),
+=======
+(409, 204, 'giaybongro1_1.png'),
+(410, 204, 'giaybongro1_2.png'),
+(411, 204, 'giaybongro1_3.png'),
+(412, 205, 'giaybongro2.png'),
+(413, 205, 'giaybongro2_1.png'),
+(414, 205, 'giaybongro2_2.png'),
+(415, 205, 'giaybongro2_3.png'),
+(416, 206, 'giaybongro3.png'),
+(417, 206, 'giaybongro3_1.png'),
+(418, 206, 'giaybongro3_2.png'),
+(419, 206, 'giaybongro3_3.png'),
+(420, 207, 'giaybongro4.png'),
+(421, 207, 'giaybongro4_1.png'),
+(422, 207, 'giaybongro4_2.png'),
+(423, 207, 'giaybongro4_3.png'),
+(424, 208, 'giaybongro5.png'),
+(425, 208, 'giaybongro5_1.png'),
+(426, 208, 'giaybongro5_2.png'),
+(427, 208, 'giaybongro5_3.png'),
+(428, 209, 'giaybongro6.png'),
+(429, 209, 'giaybongro6_1.png'),
+(430, 209, 'giaybongro6_2.png'),
+(431, 209, 'giaybongro6_3.png'),
+(432, 210, 'giaybongro7.png'),
+(433, 210, 'giaybongro7_1.png'),
+(434, 210, 'giaybongro7_2.png'),
+(435, 210, 'giaybongro7_3.png'),
+(436, 211, 'giaybongro8.png'),
+(437, 211, 'giaybongro8_1.png'),
+(438, 211, 'giaybongro8_2.png'),
+(439, 211, 'giaybongro8_3.png'),
+(440, 212, 'giaybongro9.png'),
+(441, 212, 'giaybongro9_1.png'),
+(442, 212, 'giaybongro9_2.png'),
+(443, 212, 'giaybongro9_3.png'),
+(444, 213, 'giaybongro10.png'),
+(445, 213, 'giaybongro10_1.png'),
+(446, 213, 'giaybongro10_2.png'),
+(447, 213, 'giaybongro10_3.png'),
+(448, 214, 'giaybongro11.png'),
+(449, 214, 'giaybongro11_1.png'),
+(450, 214, 'giaybongro11_2.png'),
+(451, 214, 'giaybongro11_3.png'),
+(452, 215, 'giaybongro12.png'),
+(453, 215, 'giaybongro12_1.png'),
+(454, 215, 'giaybongro12_2.png'),
+(455, 215, 'giaybongro12_3.png'),
+>>>>>>> main
 (456, 216, 'bongro1.png'),
 (457, 217, 'bongro2.png'),
 (458, 218, 'bongro3.png'),
@@ -620,6 +752,7 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (466, 226, 'bongro11.png'),
 (467, 227, 'bongro12.png'),
 (468, 228, 'balo1.png'),
+<<<<<<< HEAD
 (469, 228, 'balo1.1png'),
 (470, 228, 'balo1.2png'),
 (471, 228, 'balo1.3png'),
@@ -667,6 +800,55 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (513, 239, 'balo12.1.png'),
 (514, 239, 'balo12.2.png'),
 (515, 239, 'balo12.3.png'),
+=======
+(469, 228, 'balo1_1.png'),
+(470, 228, 'balo1_2.png'),
+(471, 228, 'balo1_3.png'),
+(472, 229, 'balo2.png'),
+(473, 229, 'balo2_1.png'),
+(474, 229, 'balo2_2.png'),
+(475, 229, 'balo2_3.png'),
+(476, 230, 'balo3.png'),
+(477, 230, 'balo3_1.png'),
+(478, 230, 'balo3_2.png'),
+(479, 230, 'balo3_3.png'),
+(480, 231, 'balo4.png'),
+(481, 231, 'balo4_1.png'),
+(482, 231, 'balo4_2.png'),
+(483, 231, 'balo4_3.png'),
+(484, 232, 'balo5.png'),
+(485, 232, 'balo5_1.png'),
+(486, 232, 'balo5_2.png'),
+(487, 232, 'balo5_3.png'),
+(488, 233, 'balo6.png'),
+(489, 233, 'balo6_1.png'),
+(490, 233, 'balo6_2.png'),
+(491, 233, 'balo6_3.png'),
+(492, 234, 'balo7.png'),
+(493, 234, 'balo7_1.png'),
+(494, 234, 'balo7_2.png'),
+(495, 234, 'balo7_3.png'),
+(496, 235, 'balo8.png'),
+(497, 235, 'balo8_1.png'),
+(498, 235, 'balo8_2.png'),
+(499, 235, 'balo8_3.png'),
+(500, 236, 'balo9.png'),
+(501, 236, 'balo9_1.png'),
+(502, 236, 'balo9_2.png'),
+(503, 236, 'balo9_3.png'),
+(504, 237, 'balo10.png'),
+(505, 237, 'balo10_1.png'),
+(506, 237, 'balo10_2.png'),
+(507, 237, 'balo10_3.png'),
+(508, 238, 'balo11.png'),
+(509, 238, 'balo11_1.png'),
+(510, 238, 'balo11_2.png'),
+(511, 238, 'balo11_3.png'),
+(512, 239, 'balo12.png'),
+(513, 239, 'balo12_1.png'),
+(514, 239, 'balo12_2.png'),
+(515, 239, 'balo12_3.png'),
+>>>>>>> main
 (516, 6, 'qdabong_quan13_3.png'),
 (517, 6, 'qdabong_quan13_2.png'),
 (518, 6, 'qdabong_quan13_1.png'),
@@ -899,7 +1081,13 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (745, 248, 'BaloCauLong11_3.png '),
 (746, 249, 'BaloCauLong12_1.png '),
 (747, 249, 'BaloCauLong12_2.png '),
+<<<<<<< HEAD
 (748, 249, 'BaloCauLong12_3.png ');
+=======
+(748, 249, 'BaloCauLong12_3.png '),
+(751, 177, 'votbongban_vot9_1.png'),
+(752, 177, 'votbongban_vot9_2.png');
+>>>>>>> main
 
 -- --------------------------------------------------------
 
@@ -947,6 +1135,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (27, 6, 'Áo đội tuyển Argentina sân nhà hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 1, '2023-11-11 03:02:26'),
 (28, 6, 'Áo đội tuyển Pháp sân nhà hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 1, '2023-11-11 03:02:26'),
 (29, 6, 'Áo đội tuyển Mexico sân khách hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 1, '2023-11-11 03:02:26'),
+<<<<<<< HEAD
 (30, 8, 'MIZUNO MONARCIDA NEO SALA PRO AS TF - BRIGHT YELLOW/WHITE', 2290000, 2190000, 'Về công nghệ của phiên bản Mizuno Monarcida Neo Sala Pro AS TF - Bright Yellow/White:\r\n\r\n Được làm từ da tổng hợp thế hệ mới, giúp các cầu thủ khống chế bóng êm ái và kiểm soát bóng tốt hơn. Bề mặt thân giày được phủ bóng một lớp đặc biệt, giúp dễ dàng vệ sinh giày và mang tới sự ấn tượng trong tổng thể thiết kế.\r\n\r\n Mũi giày thiết kế với miếng da lộn bền bỉ, giúp nâng cao độ bền chung của giày.\r\n\r\n Là mẫu giày thuộc phân khúc cao cấp, Monarcida Neo Sala Pro TF được trang bị lớp đệm giảm chấn U4ic, tạo sự êm ái thoải mái cho các cầu thủ trong suốt trận đấu.\r\n\r\n Lót giày êm, chống trượt hiệu quả.', 1, '2023-11-11 03:17:30'),
 (31, 8, 'NIKE LUNARGATO II IC SMALL SIDED - GREEN GLOW/BLACK/GUM LIGHT BROWN', 3219000, 2250000, 'Về công nghệ của phiên bản LUNAR GATO II:\r\n\r\n Chất liệu da được cấu tạo bằng da thật mềm cao cấp mang lại cảm giác cực êm và bám trong những pha chạm bóng.\r\n\r\n Công nghệ mặt lưới kép DYNAMIT MESH tạo cảm giác thông thoáng cho lòng bàn chân. \r\n\r\n Đế đệm Lunar giúp êm ái khi di chuyển và dễ chịu ngay từ lần đầu tiên xỏ vào.\r\n\r\n Phần mũi giày được đắp 1 lớp da lộn tăng cảm giác bóng cho người chơi.', 1, '2023-11-11 03:29:23'),
 (32, 8, 'NIKE TIEMPO LEGEND 10 ACADEMY TF READY - WHITE/BLACK/BRIGHT CRIMSON', 2349000, 1990000, 'Về công nghệ của phiên bản Nike Tiempo Legend 10 Academy TF Ready - White/Black/Bright Crimson:\r\n\r\nĐể chuyển từ chất liệu da K truyền thống sang một chất liệu khác, Nike sẽ phải cân nhắc và sử dụng những công nghệ thay thế hợp lý hơn nhưng vẫn đảm bảo mang lại hiệu quả tốt nhất cho người chơi.\r\n\r\n- Đặc biệt, các đường gấp khúc ở đầu mũi giày và một phần đục lỗ ở trên logo Swoosh của Tiempo 9 sẽ bị loại bỏ, Tiempo 10 chỉ giữ lại thiết kế logo Swoosh và cấu trúc của lưỡi giày. Chứng tỏ rằng, giao diện của Tiempo 10 sẽ không có sự thay đổi quá nhiều so với những mẫu giày hiện tại.\r\n\r\n- Phần upper được làm bằng da tổng hợp tạo nên sự mềm mại, co giãn tuyệt đối, giúp form giày ôm sát vào chân giúp cầu thủ có cảm giác chạm bóng tự nhiên và chân thật nhất nhưng vẫn cảm thấy thoải mái sau nhiều giờ chơi bóng.\r\n\r\n- Lưỡi gà rời của Tiempo mang lại sự thoải mái vượt bật, cũng như cho người chơi có form chân bè lẫn chân thon dễ dàng khi xỏ giày.', 1, '2023-11-11 03:29:23'),
@@ -959,6 +1148,20 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (39, 8, 'NIKE PHANTOM GX ELITE FG PEAK READY - HYPER TURQUOISE/BLACK/FUCHSIA DREAM/WHITE', 7895000, 5790000, 'Về mặt công nghệ, cũng giống như Phantom GT, mẫu giày đá bóng Nike Phantom GX được tạo ra là để dành cho những cầu thủ mong muốn có một độ chính xác và khả năng kiểm soát bóng tốt như những vị trí tiền vệ hoặc tiền đạo. Các cầu thủ sử dụng Phantom GT II trước đó đều đồng loạt chuyển sang Phantom GX. Bên cạnh đó Nike cũng làm form giày tương đối thoải mái và tích hợp khá nhiều công nghệ trên bản Elite này. \r\n\r\n- Công nghệ cổ thun Dynamic Fit giúp ôm sát cổ chân người chơi nhưng vẫn tạo được sự thoải mái và dễ chịu nhất. \r\n\r\n- Hệ thống dây buộc Nike Ghost kết hợp cùng công nghệ Flyknit giúp ôm vừa vặn mọi kích thước chân, mang lại sự thoải mái và khả năng di chuyển tốt nhất cho người chơi.\r\n\r\n- Công nghệ Nike Gripknit (chất liệu da vải sợi dệt) được dành riêng cho phần upper mang lại sự êm ái và mềm mại hơn so với Flyknit ở mẫu giày Nike Phantom GT đã ra mắt trước đó. ', 1, '2023-11-11 03:29:23'),
 (40, 8, 'PUMA ULTRA ULTIMATE FG/AG GEAR UP - ULTRA BLUE/PUMA WHITE/PRO GREEN', 5500000, 4800000, 'Về công nghệ của phiên bản PUMA Ultra Ultimate FG/AG:\r\n\r\nSản phẩm được các cầu thủ nổi tiếng đại diện gồm có Antoine Griezmann, Sergio Aguero, Antony.....\r\n\r\nUpper dệt từ công nghệ Ultraweave mới Đây là chất liệu được sử dụng trên áo thi đấu của PUMA với đặc trưng mỏng, mềm và dẻo, rất linh hoạt co giãn theo hình dạng của bàn chân.\r\n\r\nĐược trang bị công nghệ PWRTape để tăng cường độ chắc chắn ở phần gót chân không bị lỏng lẻo khi di chuyển cũng như bức tốc. ', 1, '2023-11-11 03:29:23'),
 (41, 8, 'PUMA FUTURE ULTIMATE FG/AG GEAR UP - PERSIAN BLUE/PUMA WHITE/PRO GREEN', 5500000, 4800000, 'Công nghệ của PUMA Future Ultimate FG/AG Gear Up - Persian Blue/PUMA White/Pro Green:\r\n\r\nPhần upper có kết cấu 3D, đặc biệt tại các vùng tiếp xúc bóng thường xuyên đảm bảo tăng cường độ bám và kiểm soát bóng khi rê, chuyền và dứt bóng.\r\n\r\nCấu trúc lưới kép FUZIONFIT360 kết hợp với công nghệ PWRTAPE độc quyền của thương hiệu hỗ trợ tối đa di chuyển của các cầu thủ, tăng tốc dễ dàng nhưng vẫn đảm bảo sự thoải mái và êm ái', 1, '2023-11-11 03:29:23'),
+=======
+(30, 8, 'MIZUNO MONARCIDA NEO SALA PRO AS TF', 2290000, 2190000, 'Về công nghệ của phiên bản Mizuno Monarcida Neo Sala Pro AS TF - Bright Yellow/White:\r\n\r\n Được làm từ da tổng hợp thế hệ mới, giúp các cầu thủ khống chế bóng êm ái và kiểm soát bóng tốt hơn. Bề mặt thân giày được phủ bóng một lớp đặc biệt, giúp dễ dàng vệ sinh giày và mang tới sự ấn tượng trong tổng thể thiết kế.\r\n\r\n Mũi giày thiết kế với miếng da lộn bền bỉ, giúp nâng cao độ bền chung của giày.\r\n\r\n Là mẫu giày thuộc phân khúc cao cấp, Monarcida Neo Sala Pro TF được trang bị lớp đệm giảm chấn U4ic, tạo sự êm ái thoải mái cho các cầu thủ trong suốt trận đấu.\r\n\r\n Lót giày êm, chống trượt hiệu quả.', 1, '2023-11-11 03:17:30'),
+(31, 8, 'NIKE LUNARGATO II IC SMALL SIDED - GREEN GLOW', 3219000, 2250000, 'Về công nghệ của phiên bản LUNAR GATO II:\r\n\r\n Chất liệu da được cấu tạo bằng da thật mềm cao cấp mang lại cảm giác cực êm và bám trong những pha chạm bóng.\r\n\r\n Công nghệ mặt lưới kép DYNAMIT MESH tạo cảm giác thông thoáng cho lòng bàn chân. \r\n\r\n Đế đệm Lunar giúp êm ái khi di chuyển và dễ chịu ngay từ lần đầu tiên xỏ vào.\r\n\r\n Phần mũi giày được đắp 1 lớp da lộn tăng cảm giác bóng cho người chơi.', 1, '2023-11-11 03:29:23'),
+(32, 8, 'NIKE TIEMPO LEGEND 10 ACADEMY TF READY - WHITE', 2349000, 1990000, 'Về công nghệ của phiên bản Nike Tiempo Legend 10 Academy TF Ready - White/Black/Bright Crimson:\r\n\r\nĐể chuyển từ chất liệu da K truyền thống sang một chất liệu khác, Nike sẽ phải cân nhắc và sử dụng những công nghệ thay thế hợp lý hơn nhưng vẫn đảm bảo mang lại hiệu quả tốt nhất cho người chơi.\r\n\r\n- Đặc biệt, các đường gấp khúc ở đầu mũi giày và một phần đục lỗ ở trên logo Swoosh của Tiempo 9 sẽ bị loại bỏ, Tiempo 10 chỉ giữ lại thiết kế logo Swoosh và cấu trúc của lưỡi giày. Chứng tỏ rằng, giao diện của Tiempo 10 sẽ không có sự thay đổi quá nhiều so với những mẫu giày hiện tại.\r\n\r\n- Phần upper được làm bằng da tổng hợp tạo nên sự mềm mại, co giãn tuyệt đối, giúp form giày ôm sát vào chân giúp cầu thủ có cảm giác chạm bóng tự nhiên và chân thật nhất nhưng vẫn cảm thấy thoải mái sau nhiều giờ chơi bóng.\r\n\r\n- Lưỡi gà rời của Tiempo mang lại sự thoải mái vượt bật, cũng như cho người chơi có form chân bè lẫn chân thon dễ dàng khi xỏ giày.', 1, '2023-11-11 03:29:23'),
+(33, 8, 'ADIDAS PREDATOR ACCURACY .1 TF MARINERUSH ', 3500000, 2850000, 'Về công nghệ của phiên bản Adidas Predator Accuracy .1 TF :\r\n\r\nCổ thun Facetfit 2 mảnh không dây với chất liệu PRIMEKNIT chắc chắn.\r\n\r\nChất liệu từ da tổng hợp  mềm mại được làm bằng 50% chất liệu tái chế giúp giảm đáng kể trọng lượng, kết hợp công nghệ vân HybridTouch phủ xuyên suốt 2 phần má trong và má ngoài giúp tăng khả năng kiểm soát và rê bóng. \r\n\r\nBộ đệm Bounce là chất liệu mang đến sự hỗ trợ cao hơn chất liệu đệm EVA truyền thống về cả độ thoải mái, độ êm và độ đàn hồi. \r\n\r\nKhuôn đế có cấu trúc Facetframe với những mãng đinh cải tiến mới tăng độ bám sân giúp người chơi dễ dàng xoay chuyển cũng như bức tốc.', 1, '2023-11-11 03:29:23'),
+(34, 8, 'NIKE AIR ZOOM MERCURIAL SUPERFLY 9 ACADEMY MG READY', 2929000, 2350000, 'Về công nghệ của phiên bản Nike Mercurial Vapor 15 Academy MG:\r\n\r\nĐôi giày vẫn sở hữu thiết kế tối giản với số vật liệu tối thiểu, chỉ bao gồm những chi tiết cần thiết để đảm bảo giảm tối đa trọng lượng của giày. Ngoài ra, Nike Mercurial được những cầu thủ nổi tiếng đại diện như CR7, Rashford, Mbappe...\r\n\r\nChất liệu da tổng hợp Nikeskin tối ưu hóa khả năng kiểm soát bóng, sự ổn định và vừa vặn, chắc chắn khi mang.\r\n\r\nCổ rời thoải mái hỗ trợ những người có form chân bè dễ dàng mang vào.\r\n\r\nBộ đệm Zoom Air tân tiến với các rãnh uốn cong mang lại sự linh hoạt cho các chuyển động tự nhiên của bàn chân để phù hợp hơn với nhu cầu vận động nhanh, mạnh với cường độ cao trong bóng đá. \r\n\r\nKhuôn đế mới được cải tiến và bổ sung đinh Tri-Star ở bề mặt đế giúp các cầu thủ dễ dàng di chuyển linh hoạt để điều khiển bóng nhanh hơn theo mọi hướng.', 1, '2023-11-11 03:29:23'),
+(35, 8, 'NIKE AIR ZOOM MERCURIAL VAPOR 15 ACADEMY TF SHADOW', 2629000, 2090000, 'Công nghệ có trên đôi giày Mercurial Vapor 15 Academy TF: \r\n\r\nChất liệu da tổng hợp NikeSkin mới được xử lý trở nên mềm và tăng tối đa khả năng cảm giác bóng cho người chơi.\r\n\r\nCổ giày rời dễ chịu thoải mái, hỗ trợ người chơi có form chân bè dễ dàng mang vào.\r\n\r\nPhần đế đệm Airzoom êm ái và hạn chế phản lực bề mặt sân nhân tạo cứng tác động lên cổ chân và đầu gối.\r\n\r\nKhuôn đế Nike Grind được tái chế từ rác nhựa nằm trong dự án loại bỏ sự lãng phí, khép lại vòng đời của sản phẩm nike bảo vệ môi trường. ', 1, '2023-11-11 03:29:23'),
+(36, 8, 'NIKE TIEMPO LEGEND 10 ELITE AG-PRO PEAK READY', 6739000, 5350000, 'Công nghệ FlyTouch Plus được coi là Chất liệu da tổng hợp nhẹ nhàng và mềm mại hơn da K, hứa hẹn mang đến khả năng kiểm soát bóng tốt hơn cho các cầu thủ khi thi đấu trên sân. FlyTouch Plus nhờ khả năng chống nước vượt trội, hỗ trợ tối đa khả năng giữ form giày, đồng thời vẫn giữ nguyên được đặc trưng vốn có của dòng Tiempo: siêu nhẹ và hỗ trợ tăng tốc tối đa.\r\n\r\nĐặc biệt, các đường gấp khúc ở đầu mũi giày và một phần đục lỗ ở trên logo Swoosh của Tiempo 9 sẽ bị loại bỏ, Tiempo 10 chỉ giữ lại thiết kế logo Swoosh và cấu trúc của lưỡi giày. Chứng tỏ rằng, giao diện của Tiempo 10 sẽ không có sự thay đổi quá nhiều so với những mẫu giày hiện tại.', 1, '2023-11-11 03:29:23'),
+(37, 8, 'MIZUNO MORELIA SALA MADE IN JAPAN TF RELEASE', 4300000, 3870000, 'Chất liệu da Kangaroo siêu mềm đã được Mizuno sử dụng hiệu quả ở phần Upper giày, hỗ trợ tối đa cho các cầu thủ khi nhận bóng, đi bóng, những pha sút mu uy lực và tạo cảm giác như đi chân trần.\r\n\r\n Phần mũi giày được gia cố bằng lớp da lộn đặc biệt, nâng cao độ bền chung của sản phẩm.\r\n\r\n Form giày đặc biệt phù hợp với bàn chân người Việt, những cầu thủ chân bè hoàn toàn có thể sử dụng mà không gặp chút khó khăn nào.\r\n\r\n Morelia Sala Japan TF được trang bị lớp đệm giảm chấn, tạo sự êm ái thoải mái cho các cầu thủ trong suốt trận đấu.', 1, '2023-11-11 03:29:23'),
+(38, 8, 'ADIDAS PREDATOR ACCURACY .1 LOW FG MARINERUSH', 5800000, 5250000, 'Về công nghệ của phiên bản adidas Predator Accuracy .1 Low FG:\r\n\r\nCổ thun Facetfit 2 mảnh không dây với chất liệu PRIMEKNIT chắc chắn.\r\n\r\nChất liệu từ da tổng hợp  mềm mại được làm bằng 50% chất liệu tái chế giúp giảm đáng kể trọng lượng, kết hợp công nghệ vân HybridTouch phủ xuyên suốt 2 phần má trong và má ngoài giúp tăng khả năng kiểm soát và rê bóng. \r\n\r\nKhuôn đế có cấu trúc Facetframe với những mãng đinh cải tiến mới tăng độ bám sân giúp người chơi dễ dàng xoay chuyển cũng như bức tốc. Phần đinh Power Facet ở bàn chân trước giúp phân bổ lại trọng lượng giày nhằm tối ưu hóa khả năng truyền lực khi chuyền bóng. ', 1, '2023-11-11 03:29:23'),
+(39, 8, 'NIKE PHANTOM GX ELITE FG PEAK READY', 7895000, 5790000, 'Về mặt công nghệ, cũng giống như Phantom GT, mẫu giày đá bóng Nike Phantom GX được tạo ra là để dành cho những cầu thủ mong muốn có một độ chính xác và khả năng kiểm soát bóng tốt như những vị trí tiền vệ hoặc tiền đạo. Các cầu thủ sử dụng Phantom GT II trước đó đều đồng loạt chuyển sang Phantom GX. Bên cạnh đó Nike cũng làm form giày tương đối thoải mái và tích hợp khá nhiều công nghệ trên bản Elite này. \r\n\r\n- Công nghệ cổ thun Dynamic Fit giúp ôm sát cổ chân người chơi nhưng vẫn tạo được sự thoải mái và dễ chịu nhất. \r\n\r\n- Hệ thống dây buộc Nike Ghost kết hợp cùng công nghệ Flyknit giúp ôm vừa vặn mọi kích thước chân, mang lại sự thoải mái và khả năng di chuyển tốt nhất cho người chơi.\r\n\r\n- Công nghệ Nike Gripknit (chất liệu da vải sợi dệt) được dành riêng cho phần upper mang lại sự êm ái và mềm mại hơn so với Flyknit ở mẫu giày Nike Phantom GT đã ra mắt trước đó. ', 1, '2023-11-11 03:29:23'),
+(40, 8, 'PUMA ULTRA ULTIMATE FG/AG GEAR UP - ULTRA', 5500000, 4800000, 'Về công nghệ của phiên bản PUMA Ultra Ultimate FG/AG:\r\n\r\nSản phẩm được các cầu thủ nổi tiếng đại diện gồm có Antoine Griezmann, Sergio Aguero, Antony.....\r\n\r\nUpper dệt từ công nghệ Ultraweave mới Đây là chất liệu được sử dụng trên áo thi đấu của PUMA với đặc trưng mỏng, mềm và dẻo, rất linh hoạt co giãn theo hình dạng của bàn chân.\r\n\r\nĐược trang bị công nghệ PWRTape để tăng cường độ chắc chắn ở phần gót chân không bị lỏng lẻo khi di chuyển cũng như bức tốc. ', 1, '2023-11-11 03:29:23'),
+(41, 8, 'PUMA FUTURE ULTIMATE FG/AG GEAR UP - PERSIAN', 5500000, 4800000, 'Công nghệ của PUMA Future Ultimate FG/AG Gear Up - Persian Blue/PUMA White/Pro Green:\r\n\r\nPhần upper có kết cấu 3D, đặc biệt tại các vùng tiếp xúc bóng thường xuyên đảm bảo tăng cường độ bám và kiểm soát bóng khi rê, chuyền và dứt bóng.\r\n\r\nCấu trúc lưới kép FUZIONFIT360 kết hợp với công nghệ PWRTAPE độc quyền của thương hiệu hỗ trợ tối đa di chuyển của các cầu thủ, tăng tốc dễ dàng nhưng vẫn đảm bảo sự thoải mái và êm ái', 1, '2023-11-11 03:29:23'),
+>>>>>>> main
 (42, 10, 'Găng Tay Thủ Môn GKVN Phá - Special Contact TDD - Xanh Biển', 950000, 850000, ' ĐẶC ĐIỂM NỔI BẬT\r\n\r\n- Đôi găng sử dụng mặt mút Contact cao cấp tới từ Đức với độ dày mút 4mm cho độ dính cao và độ bền rất cao phù hợp cả sân nhân tạo và sân tự nhiên\r\n\r\n- Thiết kế xòe đã được tinh chỉnh nhằm giảm tối đa khả năng xảy ra chấn thương ngón\r\n\r\n- Kiểu ngon Ergocut ôm tay, tạo cảm giác bóng tốt.\r\n\r\n- Form găng ôm tay là một sự lựa chọn không thể phù hợp hơn với những đôi bàn tay thuôn và nhỏ', 1, '2023-11-11 03:36:25'),
 (43, 10, 'Găng Tay Thủ Môn GKVN Phá - Special Contact - Trắng', 950000, 850000, 'ĐẶC ĐIỂM NỔI BẬT\r\n\r\n- Đôi găng sử dụng mặt mút Contact cao cấp tới từ Đức với độ dày mút 4mm cho độ dính cao và độ bền rất cao phù hợp cả sân nhân tạo và sân tự nhiên\r\n\r\n- Thiết kế xòe đã được tinh chỉnh nhằm giảm tối đa khả năng xảy ra chấn thương ngón', 1, '2023-11-11 03:43:30'),
 (44, 10, 'Găng Tay Thủ Môn GKVN Phá - Special Contact - Đen', 950000, 850000, 'ĐẶC ĐIỂM NỔI BẬT\r\n\r\n- Đôi găng sử dụng mặt mút Contact cao cấp tới từ Đức với độ dày mút 4mm cho độ dính cao và độ bền rất cao phù hợp cả sân nhân tạo và sân tự nhiên\r\n\r\n- Thiết kế xòe đã được tinh chỉnh nhằm giảm tối đa khả năng xảy ra chấn thương ngón\r\n\r\n- Kiểu ngon Ergocut ôm tay, tạo cảm giác bóng tốt.\r\n\r\n- Form găng ôm tay là một sự lựa chọn không thể phù hợp hơn với những đôi bàn tay thuôn và nhỏ', 1, '2023-11-11 03:43:30'),
@@ -1011,9 +1214,15 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (91, 3, 'Giày Cầu Lông Lining AYAT005-7 Chính Hãng', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11'),
 (92, 3, 'Giày Cầu Lông Lining Trắng Hồng (Nội Đia Trung))', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11'),
 (93, 3, 'Giày Cầu Lông Lining  Chính Hãng', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11'),
+<<<<<<< HEAD
 (94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11');
 INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luotxem`, `ngaythem`) VALUES
 (95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11'),
+=======
+(94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11'),
+(95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 35000000, 31000000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 125, '2023-11-12 22:21:11');
+INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luotxem`, `ngaythem`) VALUES
+>>>>>>> main
 (96, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 150, '2023-11-12 22:26:31'),
 (97, 4, 'Vợt cầu lông Yonex Arcsaber 73 Light (RBYR) chính hãng ', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 150, '2023-11-12 22:30:36'),
 (98, 4, 'Vợt cầu lông Yonex Arcsaber 73 Light (RBYR) chính hãng ', 1200000, 800000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 150, '2023-11-12 22:30:36'),
@@ -1034,6 +1243,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (113, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 150, '2023-11-12 22:36:28'),
 (114, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 150, '2023-11-12 22:36:28'),
 (115, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 150, '2023-11-12 22:36:28'),
+<<<<<<< HEAD
 (116, 16, 'ÁO THỂ THAO MIZUNO 72MAA002', 150000, 120000, 'Thoáng khí\r\nCo giãn thoải mái\r\nLàn da thân thiện\r\nThấm hút & khô nhanh', 1, '2023-11-13 12:58:56'),
 (117, 16, 'ÁO THỂ THAO MIZUNO 72MAA005', 150000, 120000, 'Thoáng khí\r\nCo giãn thoải mái\r\nLàn da thân thiện\r\nThấm hút & khô nhanh', 103, '2023-11-13 13:17:02'),
 (118, 16, 'Force Shorts', 100000, 90000, 'Thoáng khí\r\nCo giãn thoải mái\r\nLàn da thân thiện\r\nThấm hút & khô nhanh', 93, '2023-11-13 13:17:02'),
@@ -1073,6 +1283,46 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (152, 18, 'WAVE DRIVE NEO 3', 1850000, 15000000, 'Giày êm thoải mái khi chơi bóng bàn', 41, '2023-11-14 00:16:43'),
 (153, 18, 'WAVE KAISERBURG 7', 1250000, 1000000, 'Giày êm thoải mái khi chơi bóng bàn', 91, '2023-11-14 00:16:43'),
 (154, 20, 'Bryce Speed', 2500000, 1500000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 170, '2023-11-14 00:28:00'),
+=======
+(116, 16, 'ÁO THỂ THAO MIZUNO 72MAA002', 150000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 1, '2023-11-13 12:58:56'),
+(117, 16, 'ÁO THỂ THAO MIZUNO 72MAA005', 150000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 103, '2023-11-13 13:17:02'),
+(118, 16, 'Force Shorts', 100000, 90000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 93, '2023-11-13 13:17:02'),
+(119, 16, 'Higo Shirt', 150000, 140000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 41, '2023-11-13 13:17:02'),
+(120, 16, 'Lashly T-Shirt', 150000, 110000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 31, '2023-11-13 13:17:02'),
+(121, 16, 'Meranji T-Shirt', 160000, 130000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 21, '2023-11-13 13:17:02'),
+(122, 16, 'Puren Lady Shirt', 150000, 100000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 21, '2023-11-13 13:17:02'),
+(123, 16, 'QUẦN Áo THỂ THAO MIZUNO 72MBA', 110000, 95000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 111, '2023-11-13 13:17:02'),
+(124, 16, 'Sutairu Lady Shirt Black', 110000, 100000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 19, '2023-11-13 13:17:02'),
+(125, 16, 'Sutairu Lady Shirt Red', 140000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 11, '2023-11-13 13:17:02'),
+(126, 16, 'Sutairu Men Shirt Black', 150000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 17, '2023-11-13 13:17:02'),
+(127, 16, 'Sutairu Men Shirt Blue', 130000, 100000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 16, '2023-11-13 13:17:02'),
+(128, 16, 'USA Team 21-23 Shorts', 160000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 19, '2023-11-13 13:17:02'),
+(129, 17, 'Centrefold 25 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 350, '2023-11-13 13:43:21'),
+(131, 17, 'Club 25 Table', 13500000, 23499000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 50, '2023-11-13 14:13:12'),
+(132, 17, 'Europa 25 Table', 13500000, 28000000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 150, '2023-11-13 14:13:12'),
+(133, 17, 'Garden 7000 Outdoor Table', 13500000, 19500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 50, '2023-11-13 14:13:12'),
+(134, 17, 'Match 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 30, '2023-11-13 14:13:12'),
+(135, 17, 'Nippon 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 20, '2023-11-13 14:13:12'),
+(136, 17, 'Octet 25 Table', 13500000, 10500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 60, '2023-11-13 14:13:12'),
+(137, 17, 'Park Outdoor Table', 13500000, 29900000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 70, '2023-11-13 14:13:12'),
+(138, 17, 'Premium 19 Table', 13500000, 23500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 90, '2023-11-13 14:13:12'),
+(139, 17, 'Space Saver 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 350, '2023-11-13 14:13:12'),
+(140, 17, 'Timo Boll Crossline Outdoor', 3500000, 3500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 450, '2023-11-13 14:13:12'),
+(141, 17, 'Timo Boll Space Saver 22 Table', 8000000, 8000000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 273, '2023-11-13 14:13:12'),
+(142, 18, 'FT IGRE Blue', 1250000, 1000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 111, '2023-11-14 00:11:20'),
+(143, 18, 'FT IGRE Magenta', 1250000, 1000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 91, '2023-11-14 00:16:43'),
+(144, 18, 'FT IGRE White', 1250000, 1000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 151, '2023-11-14 00:16:43'),
+(145, 18, 'Lezoline Mach Shoes Blue White', 1600000, 1300000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 91, '2023-11-14 00:16:43'),
+(146, 18, 'Lezoline Mach Shoes Navy Blue', 1750000, 1500000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 31, '2023-11-14 00:16:43'),
+(147, 18, 'Lezoline Nine Shoes', 2500000, 2000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 91, '2023-11-14 00:16:43'),
+(148, 18, 'Lezoline Rifones Shoes Black', 1350000, 1100000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 191, '2023-11-14 00:16:43'),
+(149, 18, 'Lezoline Rifones Shoes Navy', 1000000, 700000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 91, '2023-11-14 00:16:43'),
+(150, 18, 'Lezoline Rifones Shoes White', 1250000, 1100000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 111, '2023-11-14 00:16:43'),
+(151, 18, 'WAVE DRIVE 0', 3250000, 3000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 61, '2023-11-14 00:16:43'),
+(152, 18, 'WAVE DRIVE NEO 3', 1850000, 15000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 41, '2023-11-14 00:16:43'),
+(153, 18, 'WAVE KAISERBURG 7', 1250000, 1000000, 'Đôi giày thể thao này có kiểu dáng hiện đại và phong cách, được thiết kế để mang lại sự thoải mái và tăng cường hiệu suất trong hoạt động thể thao và hàng ngày.\n\nPhần trên của giày được làm từ vật liệu lưới thoáng khí, giúp đôi giày thông thoáng và thoải mái khi sử dụng. Vật liệu này cũng giúp hút ẩm và tạo sự thông hơi, giữ cho chân khô ráo và thoáng mát trong suốt ngày dài hoạt động.\n\nĐôi giày có một lớp đệm mềm và linh hoạt ở đế giữa, giúp hấp thụ và giảm lực tác động khi di chuyển. Điều này mang lại cảm giác êm ái và giảm căng thẳng cho các khớp và cơ bắp.', 91, '2023-11-14 00:16:43'),
+(154, 20, 'Bryce Speed', 2500000, 1500000, 'Lớp: Tấn công\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\nTrọng lượng: ~85g\nPhản ứng: 11,8\nĐộ rung: 10,3\nKích thước lưỡi dao: 157×150 mm\nĐộ dày lưỡi dao: 5,8 mm\nKích thước tay cầm: 100 × 24 × 34 mm', 170, '2023-11-14 00:28:00'),
+>>>>>>> main
 (155, 20, 'Dignics 05', 2500000, 1900000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 70, '2023-11-14 00:37:53'),
 (156, 20, 'Dignics 09C', 4500000, 3900000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 78, '2023-11-14 00:37:53'),
 (157, 20, 'Dignics 64', 1500000, 1000000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 7, '2023-11-14 00:37:53'),
@@ -1080,13 +1330,19 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (159, 20, 'Spin Art', 3300000, 2500000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 70, '2023-11-14 00:37:53'),
 (161, 20, 'Tenergy 19', 350000, 2500000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 36, '2023-11-14 00:45:00'),
 (162, 20, 'Tenergy 64', 150000, 100000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 31, '2023-11-14 00:49:36'),
+<<<<<<< HEAD
 (163, 20, 'Tenergy 19', 250000, 200000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 39, '2023-11-14 00:49:36'),
 (164, 20, 'Tenergy 64', 300000, 200000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 74, '2023-11-14 00:49:36'),
+=======
+>>>>>>> main
 (165, 20, 'Tenergy 64 FX', 130000, 115000, '\r\nBề mặt: Mụn có độ ma sát cao\r\nTốc độ: 79\r\nQuay: 96\r\nVòng cung: 96\r\nĐộ cứng: 44', 41, '2023-11-14 01:26:54'),
 (166, 20, 'Tenergy 80', 130000, 115000, '\r\nBề mặt: Mụn có độ ma sát cao\r\nTốc độ: 79\r\nQuay: 96\r\nVòng cung: 96\r\nĐộ cứng: 44', 41, '2023-11-14 01:27:27'),
 (167, 20, 'Tenergy 80 FX', 130000, 115000, '\r\nBề mặt: Mụn có độ ma sát cao\r\nTốc độ: 79\r\nQuay: 96\r\nVòng cung: 96\r\nĐộ cứng: 44', 71, '2023-11-14 01:27:27'),
 (168, 19, 'Fan Zhendong CNF', 2500000, 2350000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 36, '2023-11-14 01:32:50'),
+<<<<<<< HEAD
 (169, 19, 'Fan Zhendong CNF', 2500000, 2350000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 36, '2023-11-14 01:38:46'),
+=======
+>>>>>>> main
 (170, 19, 'Fan Zhendong Super ALC', 2500000, 2000000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 76, '2023-11-14 01:38:46'),
 (171, 19, 'Fan Zhendong Super ZLC', 3500000, 2750000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 36, '2023-11-14 01:38:46'),
 (172, 19, 'Franziska Innerforce ZLC Blade', 1500000, 1350000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 36, '2023-11-14 01:38:46'),
@@ -1096,7 +1352,10 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (176, 19, 'Timo Boll ZLC Blade', 2500000, 2350000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 156, '2023-11-14 01:38:46'),
 (177, 19, 'Zhang Jike Super ZLC Blade', 3500000, 2750000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 97, '2023-11-14 01:38:46'),
 (178, 19, 'Zhang Jike T5000 Blade', 700000, 500000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 38, '2023-11-14 01:38:46'),
+<<<<<<< HEAD
 (179, 18, 'FOOTWORK 2', 3500000, 2750000, 'Giày êm thoải mái khi chơi bóng bàn', 136, '2023-11-16 01:01:11'),
+=======
+>>>>>>> main
 (180, 11, 'Áo bóng rổ Boston Celtics', 100000, 70000, 'Với chất liệu vải mè chuyên dùng để trong may mặc quần áo thể thao giúp thầm mồ hôi tốt hơn, thoáng mát và mềm mại phù hợp cho việc tập luyện và thi đấu.\r\nChúng tôi nhận đặt làm đồng phục bóng rổ  cho các đội bóng rổ từ 5 người trở lên, thời gian hoàn thành chỉ từ 3 ngày và miễn phì in tên, số cho các thành viên đội bóng.', 1, '2023-11-16 22:12:13'),
 (181, 11, 'Áo Memphis Grizzlies Ja Moran', 80000, 30000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 1, '2023-11-16 22:14:58'),
 (182, 11, 'Áo Brooklyn Nets', 80000, 25000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 1, '2023-11-16 22:17:40'),
@@ -1141,7 +1400,12 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (221, 14, 'Bóng Da Size 7 Anta Li-Ning', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
 (222, 14, 'Bóng Da Size 7 Anta TKDL', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
 (223, 14, 'Bóng Da Size 7 Anta Lakers', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
+<<<<<<< HEAD
 (224, 14, 'Bóng Da Size 7 Anta Hell', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
+=======
+(224, 14, 'Bóng Da Size 7 Anta Hell', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17');
+INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luotxem`, `ngaythem`) VALUES
+>>>>>>> main
 (225, 14, 'Bóng Da Size 7 Anta J', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
 (226, 14, 'Bóng Da Size 7 Anta K', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
 (227, 14, 'Bóng Da Size 7 Anta Nahh', 500000, 400000, 'Bóng hình cầu thường có 8 miếng ghép theo truyền thống và có đường nối.Bóng được bơm căng sao cho bóng rơi xuống mặt sân từ độ cao 1,80m tính từ phía dưới của bóng và bóng được nẩy lên cao từ 1,20m đến 1,40m tính từ phía trên của bóng.Cách thử độ căng phù hợp : để bóng bằng với đầu sau đó thả rơi, nếu bóng nảy tầm ngang ngực là độ căng đạt yêu cầu. ', 1, '2023-11-17 00:45:17'),
@@ -1156,8 +1420,12 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luot
 (236, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 1, '2023-11-17 00:50:05'),
 (237, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 1, '2023-11-17 00:50:05'),
 (238, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 1, '2023-11-17 00:50:05'),
+<<<<<<< HEAD
 (239, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 1, '2023-11-17 00:50:05');
 INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `luotxem`, `ngaythem`) VALUES
+=======
+(239, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 1, '2023-11-17 00:50:05'),
+>>>>>>> main
 (240, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 120, '2023-11-17 10:30:23'),
 (241, 4, 'Vợt Cầu Lông Yonex Nanoray 73 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 140, '2023-11-17 10:30:59'),
 (242, 1, 'Áo Cầu Lông Yonex 22057 Nam - Trắng Đen', 192000, 16000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 150, '2023-11-17 10:37:06'),
@@ -1285,13 +1553,21 @@ ALTER TABLE `donhang`
 -- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
+<<<<<<< HEAD
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+=======
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+>>>>>>> main
 
 --
 -- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
+<<<<<<< HEAD
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=751;
+=======
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=753;
+>>>>>>> main
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`

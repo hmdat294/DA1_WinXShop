@@ -62,7 +62,21 @@
         </div>
 
         <div class="sp-noibat">
-            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item); ?>
+            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item); 
+            
+            if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                $id_nglike = $_SESSION['accountwinx']['id'];
+                $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
+            } else {
+                $id_nglike = 0;
+                $linkyeuthich = '#';
+            }
+    
+            $checklike = get_like_one($id, $id_nglike);
+            if ($checklike) $icon_heart = '<i class="fa-solid fa-heart" style="color: red;"></i>';
+            else $icon_heart = '<i class="fa-regular fa-heart"></i>';
+            
+            ?>
 
                 <div class="box-sp" id="slidesp">
                     <a href="?mod=page&act=chitiet&iddm=<?= $iddm ?>&id=<?= $id ?>" class="img-sp">
@@ -77,7 +91,7 @@
                     <div class="chucnang-sp">
                         <a href="?mod=cart&act=giohang&idsanpham=<?= $id ?>"><i class="fa-solid fa-cart-shopping"></i></a>
                         <a href="?mod=page&act=chitiet&iddm=<?= $iddm ?>&id=<?= $id ?>"><i class="fa-solid fa-ellipsis"></i></a>
-                        <a href="#"><i class="fa-regular fa-heart"></i></a>
+                        <a href="<?= $linkyeuthich ?>"><?= $icon_heart ?></a>
                     </div>
                 </div>
 

@@ -48,10 +48,6 @@ function update_slgh($id, $slnew)
 
 
 
-
-
-
-
 function add_donhang($idkh, $tongtien, $tenkh, $sdt, $email, $ghichu, $diachi, $phuongthuc)
 {
     $sql = "INSERT INTO donhang(idkh, tongtien, tenkh, sdt, email, ghichu, diachi, phuongthuc) 
@@ -90,5 +86,12 @@ function get_chitietdonhang_sp($id)
 function get_donhang_user_one($id)
 {
     $sql = "SELECT * FROM donhang WHERE id=$id";
+    return pdo_query_one($sql);
+}
+
+
+
+function get_slsp_giohang(){
+    $sql = "SELECT SUM(soluong) as slsp FROM giohang";
     return pdo_query_one($sql);
 }

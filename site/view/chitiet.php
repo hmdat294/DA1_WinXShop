@@ -47,13 +47,13 @@ extract(get_sanpham_chitiet($id));
                             <span>ƯU ĐÃI</span>
                         </div>
 
-                        <p>✔ Tặng 1 đôi vớ cầu lông VNB (vớ <span>VNB dài nhiều màu</span> hoặc vớ <span>VNB
+                        <p>✔ Tặng 1 đôi vớ cầu lông (vớ <span>dài nhiều màu</span> hoặc vớ <span>VNB
                                 Ngắn</span>)</p>
                         <p>✔ Sản phẩm cam kết chính hãng</p>
                         <p>✔ Thanh toán sau khi kiểm tra và nhận hàng</p>
                         <p>✔ Bảo hành chính hãng theo nhà sản xuất (Trừ hàng nội địa, xách tay)</p>
 
-                        <b>🎁 Ưu đãi thêm khi mua sản phẩm tại <span>VNB Premium</span></b>
+                        <b>🎁 Ưu đãi thêm khi mua sản phẩm tại <span>Premium</span></b>
 
                         <p>✅ <span> Sơn logo mặt vợt </span> miễn phí</p>
                         <p>✅ <span> Bảo Hành lưới đan </span> trong 72 giờ</p>
@@ -64,29 +64,35 @@ extract(get_sanpham_chitiet($id));
                     </div>
 
                     <div class="mua">
-                                
+
                         <form action="?mod=cart&act=giohang" method="post" enctype="multipart/form-data" class="soluong">
                             <div id="giamspct">-</div>
-                            <input type="hidden" name="idsanpham" value="<?= $issanpham ?>">
-                            <input class="valuenum" disabled type="text" name="numsp" value="1" class="text-center">
+                            <input type="hidden" name="idsanpham" value="<?= $idsanpham ?>">
+                            <input class="valuenum-hidden" type="hidden" name="numsp" value="1">
+                            <input class="valuenum text-center" disabled type="text" value="1">
                             <div id="tangspct">+</div>
 
                             <input class="addgh" name="addgh" type="submit" value="THÊM VÀO GIỎ HÀNG">
                         </form>
 
                         <script>
+                            var num = 1;
 
-                                var num = 1;
+                            var giam = document.getElementById("giamspct");
+                            var tang = document.getElementById("tangspct");
+                            var valuenum = document.querySelector(".valuenum");
+                            var valuenum_hidden = document.querySelector(".valuenum-hidden");
 
-                                var giam =document.getElementById("giamspct");
-                                var tang =document.getElementById("tangspct");
-                                var valuenum =document.querySelector(".valuenum");
-
-                                tang.onclick = () => {valuenum.value = ++num}
-                                giam.onclick = () => {
-                                    if(num>1) valuenum.value = --num;
-                                }
-
+                            tang.onclick = () => {
+                                ++num;
+                                valuenum.value = num;
+                                valuenum_hidden.value = num;
+                            }
+                            giam.onclick = () => {
+                                --num;
+                                if (num > 1) valuenum.value = num;
+                                if (num > 1) valuenum_hidden.value = num;
+                            }
                         </script>
 
                     </div>
@@ -147,7 +153,7 @@ extract(get_sanpham_chitiet($id));
                     <form class="nguoi-bl" action="" method="post" enctype="multipart/form-data">
                         <div>
                             <i class="fa-regular fa-circle-user"></i>
-                            <span>Minh Dat</span>
+                            <span><?= ucwords($ten_ngbl) ?></span>
                         </div>
                         <section>
                             <input type="text" name="binhluan" placeholder="Bình luận">
@@ -155,40 +161,52 @@ extract(get_sanpham_chitiet($id));
                         </section>
                     </form>
 
-                    <div class="binhluan">
-                        <div class="ten-bl">
-                            <div>
-                                <i class="fa-regular fa-circle-user"></i>
-                                <span>Minh Dat</span>
+                    <?php
+
+                    $stt = 0;
+                    foreach (get_comment_user($idsanpham) as $item) : extract($item);
+                        $stt++;
+                    ?>
+                        <div class="binhluan">
+                            <div class="ten-bl">
+                                <div>
+                                    <i class="fa-regular fa-circle-user"></i>
+                                    <span><?= ucwords($tenkh) ?></span>
+                                </div>
+
+                                <span><?= date("d / m / Y", strtotime($ngaybinhluan)) ?></span>
+                            </div>
+                            <div class="bl">
+
+                                <div class="text-comment text-comment<?= $stt ?>">
+                                    <span>
+                                        <?= $noidung ?>
+                                    </span>
+
+                                    <?php if ($email == $email_ngbl) : ?>
+                                        <div>
+                                            <button onclick='Editcmt(<?= $stt ?>)'>Sửa</button>
+                                            <a href='?mod=page&act=deletecomment&idsp=<?= $idsp ?>&delcmt=<?= $idbl ?>'>Xóa</a>
+                                        </div>
+                                    <?php endif; ?>
+
+                                </div>
+                                <form class="text-comment-hide text-comment-hide<?= $stt ?>" action="" method="post" enctype="multipart/form-data">
+                                    <input type="text" name="editcomment" value="<?= $noidung ?>">
+                                    <input type="hidden" name="idcomment" value="<?= $idbl ?>">
+
+                                    <div>
+                                        <input type="submit" name="submitcomment" value="Đăng">
+                                        <input type="button" onclick="huyEditcmt(<?= $stt ?>)" value="Hủy">
+                                    </div>
+                                </form>
+
                             </div>
 
-                            <span>01/01/2023</span>
-                        </div>
-                        <div class="bl">
-
-                            <div class="text-comment text-comment1">
-                                <span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, maiores.
-                                </span>
-
-                                <div>
-                                    <button onclick='Editcmt(1)'>Sửa</button>
-                                    <a href='?mod=page&act=deletecomment&idsp=#&delcmt=#'>Xóa</a>
-                                </div>
-                            </div>
-                            <form class="text-comment-hide text-comment-hide1" action="" method="post" enctype="multipart/form-data">
-                                <input type="text" name="editcomment" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, maiores.">
-                                <input type="hidden" name="idcomment" value="#">
-
-                                <div>
-                                    <input type="submit" name="submitcomment" value="Sửa">
-                                    <input type="button" onclick="huyEditcmt(1)" value="Hủy">
-                                </div>
-                            </form>
-
                         </div>
 
-                    </div>
+                    <?php endforeach; ?>
+
 
                 </section>
 
@@ -214,19 +232,18 @@ extract(get_sanpham_chitiet($id));
 
             <div class="dangcohangtai">
                 <div>ĐANG CÓ HÀNG TẠI</div>
-                <button>VNB PRIMEUM QUẬN 1</button>
-                <button>VNB QUẬN 1</button>
-                <button>VNB QUẬN 3</button>
-                <button>VNB QUẬN 4</button>
-                <button>VNB QUẬN 7</button>
-                <button>VNB BÌNH THẠNH</button>
-                <button>VNB PHÚ NHUẬN</button>
-                <button>VNB TÂN BÌNH</button>
-                <button>VNB GÒ VẤP</button>
-                <button>VNB TÂY NINH</button>
-                <button>VNB BÀ RỊA</button>
-                <button>VNB LONG AN</button>
-                <button>VNB SÓC TRĂNG</button>
+                <button>QUẬN 1</button>
+                <button>QUẬN 3</button>
+                <button>QUẬN 4</button>
+                <button>QUẬN 7</button>
+                <button>BÌNH THẠNH</button>
+                <button>PHÚ NHUẬN</button>
+                <button>TÂN BÌNH</button>
+                <button>GÒ VẤP</button>
+                <button>TÂY NINH</button>
+                <button>BÀ RỊA</button>
+                <button>LONG AN</button>
+                <button>SÓC TRĂNG</button>
             </div>
 
 

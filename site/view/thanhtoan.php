@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../content/layout/css/giohang.css">
+<link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/thanhtoanp.css">
 
 <?php extract(get_user_test()); ?>

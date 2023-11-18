@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+    $linklogin = 'href="?mod=page&act=user"';
+    $valuelogin =  ucwords($_SESSION['accountwinx']['tenkh']);
+} else {
+    $linklogin = 'href="?mod=page&act=dangnhap"';
+    $valuelogin = 'Đăng nhập';
+}
+
+if(get_slsp_giohang()['slsp']) $slsp_gh = get_slsp_giohang()['slsp'];
+else $slsp_gh = 0;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/371bdbff34.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico" type="favicon">
-    <link rel="stylesheet" href="../content/layout/css/stylep.css">
+    <link rel="stylesheet" href="../content/layout/css/style-p.css">
     <title>WinX Sport Shop</title>
 </head>
 
@@ -41,11 +59,13 @@
             </form>
 
             <div class="information_cart">
-                <a href="?mod=page&act=user" class="">
+                <a <?= $linklogin ?>>
                     <i class="fa-solid fa-user"></i>
+                    <span> <?= $valuelogin ?></span>
                 </a>
                 <a href="?mod=cart&act=giohang" class="">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <div><?=$slsp_gh?></div>
                 </a>
             </div>
 

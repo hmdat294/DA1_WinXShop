@@ -7,6 +7,8 @@ include_once '../model_DAO/category.php';
 include_once '../model_DAO/cart.php';
 include_once '../model_DAO/user.php';
 include_once '../model_DAO/order.php';
+include_once '../model_DAO/comment.php';
+include_once '../model_DAO/like.php';
 
 
 include_once "view/header.php";
@@ -20,18 +22,26 @@ if (isset($act)) {
         case 'giohang':
 
             if (isset($idsanpham) && ($idsanpham > 0)) {
-                
-                if((!$numsp) && ($numsp<1)) $numsp = 1;
+
+                if ((!$numsp) && ($numsp < 1)) $numsp = 1;
 
                 $checkid = get_idgiohang($idsanpham);
 
                 if ($checkid) {
                     $slnew = $checkid['soluong'];
-                    $slnew++;
+                    $slnew += $numsp;
                     update_slsp($idsanpham, $slnew);
                 } else add_cart($idsanpham, $numsp);
 
                 header('location: ?mod=cart&act=giohang');
+            }
+
+            if (isset($buynow) && ($buynow == "thanhtoan")) {
+
+                if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '' && get_giohang() != [])
+                    header('location: ?mod=cart&act=thanhtoan');
+                else
+                    header('location: ?mod=cart&act=giohang');
             }
 
             include_once "view/giohang.php";
@@ -106,6 +116,18 @@ if (isset($act)) {
             break;
 
         case 'donhang':
+
+            if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                $tenkh =  $_SESSION['accountwinx']['tenkh'];
+                $email =  $_SESSION['accountwinx']['email'];
+                $sdt =  $_SESSION['accountwinx']['sdt'];
+                $ngaysinh =  $_SESSION['accountwinx']['ngaysinh'];
+                $gioitinh =  $_SESSION['accountwinx']['gioitinh'];
+                
+                if ($_SESSION['accountwinx']['vaitro'] == 1)
+                    $admin_button = '<a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>';
+                else $admin_button = '';
+            }
 
             include_once "view/donhang.php";
             break;

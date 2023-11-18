@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 
+<script>
+    if ("<?= $thongbao ?>") alert("<?= $thongbao ?>");
+</script>
+
 <main>
 
     <h3 class="text-center p-4">GIỎ HÀNG CỦA BẠN</h3>
@@ -52,7 +56,7 @@
 
     <div class="thanhtoan">
         <div>TỔNG TIỀN: <span><?= doitien($tong) ?>đ</span></div>
-        <a href="?mod=cart&act=thanhtoan">THANH TOÁN</a>
+        <a href="?mod=cart&act=giohang&buynow=thanhtoan">THANH TOÁN</a>
     </div>
 
 </main>

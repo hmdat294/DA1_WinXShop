@@ -1,3 +1,5 @@
+
+
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/userp.css">
 <link rel="stylesheet" href="../content/layout/css/donhang.css">
@@ -6,17 +8,17 @@
     <aside class="">
 
         <div>
-            <img src="../content/layout/avata1.png" alt="">
-            <h5>Minh Dat</h5>
+            <img src="../content/layout/images/avata1.png" alt="">
+            <h5><?= ucwords($tenkh) ?></h5>
         </div>
 
         <div>
             <a href="?mod=page&act=user"><i class="fa-solid fa-user"></i> Thông tin tài khoản</a>
             <a href="?mod=cart&act=donhang" style="color: #e95221;"><i class="fa-solid fa-list"></i> Quản lý đơn hàng</a>
             <a href="#"><i class="fa-solid fa-bell"></i> Quản lý thông báo</a>
-            <a href="#"><i class="fa-solid fa-heart"></i> Sản phẩm yêu thích</a>
-            <a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
+            <a href="?mod=page&act=like"><i class="fa-solid fa-heart"></i> Sản phẩm yêu thích</a>
+            <?= $admin_button ?>
+            <a href="?mod=page&act=dangxuat"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
         </div>
 
     </aside>
@@ -35,15 +37,14 @@
                 <th>THAO TÁC</th>
             </tr>
 
-
             <?php
             foreach (get_donhang1() as $item) : extract($item);
                 $linkct = '?mod=cart&act=chitietdonhang&id=' . $id;
             ?>
                 <tr class="tbbody">
-                    <td><?=$id?></td>
+                    <td><?= $id ?></td>
                     <td>
-                        <span><?=$tenkh?></span>
+                        <span><?= $tenkh ?></span>
                     </td>
                     <td>
                         <span><?= date("H:i:s | d-m-Y", strtotime($ngaydat)) ?></span>
@@ -52,10 +53,10 @@
                         <span><?= doitien($tongtien) ?></span>đ
                     </td>
                     <td>
-                        <span><?=$trangthai?></span>
+                        <span><?= $trangthai ?></span>
                     </td>
                     <td>
-                        <a href="<?=$linkct?>">Xem chi tiết</a>
+                        <a href="<?= $linkct ?>">Xem chi tiết</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -33,10 +33,12 @@
     gap: 10px;
     margin: 10px 0;
 }
-.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>.img-child>img{
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>.img-child>img {
     height: 70px;
 }
-.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>.img-child>img:hover{
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>.img-child>img:hover {
     border: 1px solid #e95221;
     box-shadow: 0 0 5px #e95221;
 
@@ -118,8 +120,8 @@
     border-radius: 5px;
     text-align: center;
     width: 100px;
+    border: 1px solid gray;
 }
-
 
 .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>.addgh,
 .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>div {
@@ -136,7 +138,12 @@
     cursor: pointer;
 }
 
-.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>.addgh{
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>.addgh:hover,
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>div:hover {
+    background-color: #ff4000;
+}
+
+.container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua>form>.addgh {
     border: none;
     outline: none;
     width: 200px;
@@ -238,7 +245,7 @@
 }
 
 
-.container>main>.thongtin-chitiet>.box-right>.danhmucsanpham>a:hover{
+.container>main>.thongtin-chitiet>.box-right>.danhmucsanpham>a:hover {
     color: #e95221;
     text-decoration: underline;
 }
@@ -283,13 +290,14 @@
 
 
 
-.container>main .tatca-binhluan>.nguoi-bl>section{
+.container>main .tatca-binhluan>.nguoi-bl>section {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 20px;
     width: 100%;
 }
+
 .container>main .tatca-binhluan>.nguoi-bl input:nth-child(1) {
     padding: 10px 20px;
     border-radius: 5px;
@@ -310,14 +318,14 @@
     height: 40px;
     transition: 0.3s;
     font-size: 1.05em;
-    color: white;
-    background-color: black;
-    border: none;
+    color: #e95221;
+    background-color: white;
+    border: 2px solid #e95221;
     font-weight: bolder;
 }
 
 .container>main .tatca-binhluan>.nguoi-bl input:nth-child(2):hover {
-    color: black;
+    color: white;
     background-color: #e95221;
 }
 
@@ -368,40 +376,44 @@
     justify-content: space-between;
     gap: 10px;
 }
+
 .container>main .tatca-binhluan>.binhluan>.bl>.text-comment-hide>div,
-.container>main .tatca-binhluan>.binhluan>.bl>.text-comment>div{
+.container>main .tatca-binhluan>.binhluan>.bl>.text-comment>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 }
-.container>main .tatca-binhluan>.binhluan>.bl>.text-comment span{
+
+.container>main .tatca-binhluan>.binhluan>.bl>.text-comment span {
     padding: 5px 10px;
     width: 100%;
 }
 
 .container>main .tatca-binhluan>.binhluan>.bl :is(.text-comment-hide div input:nth-child(1), .text-comment-hide div input:nth-child(2), .text-comment button, .text-comment a) {
-    padding: 5px 15px;
+    padding: 3px 10px;
     border-radius: 5px;
-    border: none;
-    background-color: black;
-    color: white;
+    border: 2px solid #e95221;
+    background-color: white;
+    color: #e95221;
+    font-weight: bold;
     text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.container>main .tatca-binhluan>.binhluan>.bl :is(.text-comment-hide div input:nth-child(1), .text-comment div button):hover {
+.container>main .tatca-binhluan>.binhluan>.bl :is(.text-comment-hide div input:nth-child(1),
+    .text-comment div button,
+    .text-comment-hide div input:nth-child(2),
+    .text-comment div a):hover {
     background-color: #e95221;
     color: white;
 }
-.container>main .tatca-binhluan>.binhluan>.bl :is(.text-comment-hide div input:nth-child(2), .text-comment div a):hover {
-    background-color: #e95221;
-    color: white;
-}
 
-.container>main .tatca-binhluan>.binhluan>.bl>.text-comment-hide{
+.container>main .tatca-binhluan>.binhluan>.bl>.text-comment-hide {
     display: none;
 }
+
 .container>main .tatca-binhluan>.binhluan>.bl>.text-comment-hide>input:nth-child(1) {
     width: 100%;
     padding: 5px 10px;
@@ -447,12 +459,15 @@
         align-items: flex-start;
         gap: 20px;
     }
+
     .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.img-chitiet>img {
         margin-top: 0px;
     }
+
     .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham {
         grid-template-columns: 1fr;
     }
+
     .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua {
         flex-direction: row;
         align-items: flex-start;
@@ -460,7 +475,7 @@
 
 }
 
-@media only screen and (max-width: 576px){
+@media only screen and (max-width: 576px) {
 
     .container>main .tatca-binhluan>.binhluan>.bl>.text-comment-hide,
     .container>main .tatca-binhluan>.binhluan>.bl>.text-comment {
@@ -471,12 +486,13 @@
 }
 
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
     .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>div:nth-child(4) {
         flex-direction: column;
         align-items: flex-start;
         gap: 0px;
     }
+
     .container>main>.thongtin-chitiet>.box-left>.thongtin-sanpham>.tt-chitiet>.mua {
         flex-direction: column;
         align-items: flex-start;

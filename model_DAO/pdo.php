@@ -88,12 +88,20 @@ function showSP($sanpham)
     foreach ($sanpham as $item) {
         extract($item);
 
+        if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+            $id_nglike = $_SESSION['accountwinx']['id'];
+            $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
+        } else {
+            $id_nglike = 0;
+            $linkyeuthich = '#';
+        }
+
+        $checklike = get_like_one($id, $id_nglike);
+        if ($checklike) $icon_heart = '<i class="fa-solid fa-heart" style="color: red;"></i>';
+        else $icon_heart = '<i class="fa-regular fa-heart"></i>';
+
         $linkchitiet = '?mod=page&act=chitiet&iddm=' . $iddm . '&id=' . $id;
         $linkdathang = '?mod=cart&act=giohang&idsanpham=' . $id;
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         $showsp .= '
         <div class="box-sp">
             <a href="' . $linkchitiet . '" class="img-sp">
@@ -108,7 +116,7 @@ function showSP($sanpham)
             <div class="chucnang-sp">
                 <a href="' . $linkdathang . '"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="' . $linkchitiet . '"><i class="fa-solid fa-ellipsis"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                <a href="' . $linkyeuthich . '">' . $icon_heart . '</a>
             </div>
          </div>        
     ';

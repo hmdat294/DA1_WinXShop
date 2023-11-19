@@ -38,7 +38,11 @@
                         <div class="soluong">
                             <a href="<?= $giamsl ?>">-</a>
                             <input disabled type="text" value="<?= $soluong ?>" class="text-center">
-                            <a href="<?= $tangsl ?>">+</a>
+                            <?php if ($soluong >= $soluongkho - 1) : ?>
+                                <a href="#">+</a>
+                            <?php else : ?>
+                                <a href="<?= $tangsl ?>">+</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </td>

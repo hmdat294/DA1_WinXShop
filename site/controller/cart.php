@@ -94,6 +94,11 @@ if (isset($act)) {
                 $last_donhang = get_last_donhang();
                 foreach (get_giohang() as $item) {
                     extract($item);
+
+                    $slkho = get_sanpham_chitiet($idsp)['soluongkho'];
+                    $slkhonew = $slkho - $soluong;
+                    update_slkho($idsp, $slkhonew);
+
                     add_chitietdonhang($last_donhang['id'], $idsp, $soluong, $giasale);
                 }
 

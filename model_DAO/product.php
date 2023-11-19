@@ -28,7 +28,7 @@ function fill_product($iddm,$min_price,$max_price,$filter_order){
 
 function get_sanpham_saleoff()
 {
-    $sql = "SELECT * FROM `sanpham` ORDER BY giagoc-giasale DESC limit 10";
+    $sql = "SELECT * FROM sanpham ORDER BY giagoc-giasale DESC limit 10";
     return pdo_query($sql);
 }
 
@@ -54,3 +54,9 @@ function get_hinhanh2($id){
 //     ON sp.id=ha.idsp WHERE sp.iddm=$id ORDER BY sp.id DESC limit $limit";
 //     return pdo_query($sql);
 // }
+
+function update_slkho($id, $slkhonew)
+{
+    $sql = "UPDATE sanpham SET soluongkho='$slkhonew' WHERE id=$id";
+    return pdo_execute($sql);
+}

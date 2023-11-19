@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/userp.css">
 <main class="">
@@ -44,22 +43,22 @@
                             <div class="">
                                 <div>
                                     <b>Tên:</b>
-                                    <input type="text" value="<?= $tenkh ?>">
+                                    <input type="text" name="tenkhedit" value="<?= $tenkh ?>">
 
                                 </div>
                                 <div>
                                     <b>Email:</b>
-                                    <input type="email" value="<?= $email ?>">
+                                    <input type="email" name="emailedit" value="<?= $email ?>">
 
                                 </div>
                                 <div>
                                     <b>SĐT:</b>
-                                    <input type="text" value="<?= $sdt ?>">
+                                    <input type="text" name="sdtedit" value="<?= $sdt ?>">
 
                                 </div>
                                 <div>
                                     <b>Ngày sinh:</b>
-                                    <input type="date" value="<?= $ngaysinh ?>">
+                                    <input type="date" name="ngaysinhedit" value="<?= $ngaysinh ?>">
 
                                 </div>
 
@@ -77,18 +76,18 @@
                                         <?php if ($gioitinh == "Nam") : ?>
 
                                             <label class="mx-2">
-                                                <input class="nam-dk mx-2" name="gioitinh" type="radio" checked value="Nam">Nam
+                                                <input class="nam-dk mx-2" name="gioitinhedit" type="radio" checked value="Nam">Nam
                                             </label>
                                             <label class="mx-2">
-                                                <input class="nu-dk mx-2" name="gioitinh" type="radio" value="Nữ">Nữ
+                                                <input class="nu-dk mx-2" name="gioitinhedit" type="radio" value="Nữ">Nữ
                                             </label>
 
                                         <?php else : ?>
                                             <label class="mx-2">
-                                                <input class="nam-dk mx-2" name="gioitinh" type="radio" value="Nam">Nam
+                                                <input class="nam-dk mx-2" name="gioitinhedit" type="radio" value="Nam">Nam
                                             </label>
                                             <label class="mx-2">
-                                                <input class="nu-dk mx-2" name="gioitinh" type="radio" checked value="Nữ">Nữ
+                                                <input class="nu-dk mx-2" name="gioitinhedit" type="radio" checked value="Nữ">Nữ
                                             </label>
 
                                         <?php endif; ?>
@@ -98,7 +97,8 @@
                             </div>
                         </section>
                         <div class="text-center">
-                            <input type="button" value="SỬA THÔNG TIN">
+                            <input type="hidden" name="idedit" value="<?= $idkh ?>">
+                            <input type="submit" name="editAccount_submit" value="SỬA THÔNG TIN">
                         </div>
                     </form>
 

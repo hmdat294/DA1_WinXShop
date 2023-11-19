@@ -27,7 +27,7 @@ if (isset($act)) {
                 $sdt =  $_SESSION['accountwinx']['sdt'];
                 $ngaysinh =  $_SESSION['accountwinx']['ngaysinh'];
                 $gioitinh =  $_SESSION['accountwinx']['gioitinh'];
-                
+
                 if ($_SESSION['accountwinx']['vaitro'] == 1)
                     $admin_button = '<a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>';
                 else $admin_button = '';
@@ -35,13 +35,12 @@ if (isset($act)) {
 
             if (isset($idsp_like) && ($idsp_like > 0)) {
 
-                $checklike = get_like_one($idsp_like,$idkhachhang);
+                $checklike = get_like_one($idsp_like, $idkhachhang);
 
-                if ($checklike) delete_like($idsp_like, $idkhachhang); 
-                else add_like($idkhachhang,$idsp_like);
-                
+                if ($checklike) delete_like($idsp_like, $idkhachhang);
+                else add_like($idkhachhang, $idsp_like);
+
                 header('location: ?mod=page&act=like');
-
             }
 
             include_once "view/like.php";
@@ -130,7 +129,7 @@ if (isset($act)) {
 
                 if ($email != '' && $matkhau != '') {
 
-                    $user = getuser($email, $matkhau); 
+                    $user = getuser($email, $matkhau);
 
                     if ($user) {
                         $_SESSION['accountwinx'] = $user;
@@ -161,17 +160,23 @@ if (isset($act)) {
         case 'user':
 
             if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                $idkh =  $_SESSION['accountwinx']['id'];
                 $tenkh =  $_SESSION['accountwinx']['tenkh'];
                 $email =  $_SESSION['accountwinx']['email'];
                 $sdt =  $_SESSION['accountwinx']['sdt'];
                 $ngaysinh =  $_SESSION['accountwinx']['ngaysinh'];
                 $gioitinh =  $_SESSION['accountwinx']['gioitinh'];
-                
+
                 if ($_SESSION['accountwinx']['vaitro'] == 1)
                     $admin_button = '<a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>';
                 else $admin_button = '';
             }
 
+            if (isset($editAccount_submit) && ($editAccount_submit)) {
+                account_edit($idedit, $tenkhedit, $emailedit, $sdtedit, $ngaysinhedit, $gioitinhedit); 
+                unset($_SESSION['accountwinx']);
+                header('location: index.php');
+            }
 
             include_once "view/user.php";
             break;

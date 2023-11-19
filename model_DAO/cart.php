@@ -47,7 +47,6 @@ function update_slgh($id, $slnew)
 }
 
 
-
 function add_donhang($idkh, $tongtien, $tenkh, $sdt, $email, $ghichu, $diachi, $phuongthuc)
 {
     $sql = "INSERT INTO donhang(idkh, tongtien, tenkh, sdt, email, ghichu, diachi, phuongthuc) 

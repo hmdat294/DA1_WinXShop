@@ -27,4 +27,9 @@ function adduser($tenkh, $email, $matkhau, $sdt, $ngaysinh, $gioitinh)
     return pdo_execute($sql);
 }
 
+function account_edit($id, $tenkh, $email, $sdt, $ngaysinh, $gioitinh)
+{
+    $sql = "UPDATE user SET tenkh=?, email=?, sdt=?, ngaysinh=?, gioitinh=? WHERE id=?";
+    return pdo_execute($sql, $tenkh, $email, $sdt, $ngaysinh, $gioitinh, $id);
+}
 

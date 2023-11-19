@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 19, 2023 lúc 07:13 AM
+-- Thời gian đã tạo: Th10 19, 2023 lúc 08:42 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -1207,7 +1207,7 @@ INSERT INTO `user` (`id`, `tenkh`, `email`, `matkhau`, `sdt`, `ngaysinh`, `gioit
 (2, 'thanhphat', 'phatpo@gmail.com', '1111', '0321654987', '2023-11-18', 'Nam', 0),
 (3, 'anhthu', 'nnathu@gmail.com', '000', '0123456789', '2023-12-05', 'Nữ', 0),
 (4, 'dat', 'datminh294@gmail.com', '111', '0357072913', '2023-09-20', 'Nam', 0),
-(5, 'dat', 'md@gmail.com', '333', '0321654987', '2023-11-10', 'Nam', 0);
+(5, 'minh dat', 'md@gmail.com', '333', '0321654987', '2023-11-10', 'Nam', 0);
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1233,8 @@ INSERT INTO `yeuthich` (`id`, `idkh`, `idsp`) VALUES
 (25, 1, 243),
 (26, 1, 66),
 (37, 5, 92),
-(39, 5, 241);
+(39, 5, 241),
+(40, 5, 247);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1359,7 +1360,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `yeuthich`
 --
 ALTER TABLE `yeuthich`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

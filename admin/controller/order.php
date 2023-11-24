@@ -1,5 +1,8 @@
 <?php
-// include_once '../model_DAO/product.php';
+
+ob_start();
+
+include_once 'model_DAO/order.php';
 
 include_once('view/header.php');
 
@@ -11,7 +14,29 @@ if (isset($act)) {
             break;
 
         case 'edit':
+            if (isset($update_donhang)) {
+                update_donhang($id, $trangthai);
+                header('location: ?mod=order&act=list');
+            }
+
             include_once('view/order_edit.php');
+            break;
+
+        case 'done':
+
+            switch ($done) {
+                case 'dagiao':
+                    $title = "Đơn Hàng Đã Giao";
+                    $donhang_done = donhang_dagiao();
+                    break;
+
+                case 'dahuy':
+                    $title = "Đơn Hàng Đã Hủy";
+                    $donhang_done = donhang_dahuy();
+                    break;
+            }
+
+            include_once('view/order_done.php');
             break;
 
         default:

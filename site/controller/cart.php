@@ -37,11 +37,10 @@ if (isset($act)) {
             }
 
             if (isset($buynow) && ($buynow == "thanhtoan")) {
-
                 if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '' && get_giohang() != [])
                     header('location: ?mod=cart&act=thanhtoan');
                 else
-                    header('location: ?mod=cart&act=giohang');
+                    header('location: ?mod=page&act=dangnhap');
             }
 
             include_once "view/giohang.php";
@@ -57,8 +56,7 @@ if (isset($act)) {
         case 'giamsoluong':
 
             if (isset($id) && ($id > 0)) {
-                $chageSL = get_slgiohang($id);
-                $slnew = $chageSL['soluong'];
+                $slnew = get_slgiohang($id)['soluong'];
                 if ($slnew <= 1) {
                     delete_cart($id);
                 } else {
@@ -73,8 +71,7 @@ if (isset($act)) {
         case 'tangsoluong':
 
             if (isset($id) && ($id > 0)) {
-                $chageSL = get_slgiohang($id);
-                $slnew = $chageSL['soluong'];
+                $slnew = get_slgiohang($id)['soluong'];
                 $slnew++;
                 update_slgh($id, $slnew);
                 header('location: ?mod=cart&act=giohang');
@@ -84,7 +81,10 @@ if (isset($act)) {
 
         case 'thanhtoan':
 
+            $idkhachhang = $_SESSION['accountwinx']['id'];
+
             if (isset($dathang) && ($dathang)) {
+
 
                 if ($ghichu == '') $ghichu = "Trống";
                 if ($diachi == '') $diachi = "Trống";
@@ -123,12 +123,13 @@ if (isset($act)) {
         case 'donhang':
 
             if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                $id_ngmua = $_SESSION['accountwinx']['id'];
                 $tenkh =  $_SESSION['accountwinx']['tenkh'];
                 $email =  $_SESSION['accountwinx']['email'];
                 $sdt =  $_SESSION['accountwinx']['sdt'];
                 $ngaysinh =  $_SESSION['accountwinx']['ngaysinh'];
                 $gioitinh =  $_SESSION['accountwinx']['gioitinh'];
-                
+
                 if ($_SESSION['accountwinx']['vaitro'] == 1)
                     $admin_button = '<a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>';
                 else $admin_button = '';

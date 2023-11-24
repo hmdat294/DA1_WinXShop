@@ -1,3 +1,5 @@
+<?php extract($product_edit) ?>
+
 <main>
     <div style="margin: 10px 35px;">
         <h3 class="">Sửa Sản Phẩm</h3>
@@ -7,29 +9,59 @@
         <h4 class="text-center">Sửa Sản Phẩm</h4>
         <hr>
 
-        <form method="" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             <label for="">Nhập Tên Sản Phẩm: </label>
-            <input class="form-control form-text" type="text" placeholder="VD: Bộ đá banh Nike QUATAR">
-            <label for="file">Tải Ảnh Lên:</label>
+            <input name="tensp_edit" class="form-control form-text" type="text" required value="<?= $tensp ?>">
 
-            <input class="form-control btn btn-outline-success" type="file">
-            <label for="number">Giá Tiền:</label>
+            <div class="img-product-edit">
 
-            <input class="form-control " type="number" placeholder="175.000VNĐ">
+                <?php
+                $stt = 0;
+                foreach ($product_img as $item) : extract($item);
+                    $stt++;
+                ?>
 
-            <label for="number">Giá Giảm (*Có thể để trống):</label>
+                    <label class="border rounded p-2">
+                        <img src="../content/layout/images/images_product/<?= $hinhanh ?>" alt="">
 
-            <input class="form-control " type="number" placeholder="120.000VNĐ">
-            <label for="number">Chọn Danh Mục:</label>
+                        <span class="form-control btn btn-outline-success" style="font-size: 0.9em;">
+                            Tải Ảnh Lên
+                        </span>
 
-            <select class="form-select" name="dropdown" id="">
-                <option value="quan" selected>Quần Đá Banh</option>
-                <option value="da">Quần Đá Banh</option>
-                <option value="banh">Quần Đá Banh</option>
+                        <input name="hinhanh_edit_old<?= $stt ?>" type="hidden" value="<?= $hinhanh ?>">
+                        <input name="hinhanh_edit<?= $stt ?>" class="d-none" type="file">
+                    </label>
+
+                <?php endforeach; ?>
+
+            </div>
+
+            <label>Giá Gốc:</label>
+            <input name="giagoc_edit" class="form-control" type="text" value="<?= $giagoc ?>" required>
+
+            <label>Giá Sale:</label>
+            <input name="giasale_edit" class="form-control" type="text" value="<?= $giasale ?>" required>
+
+            <label>Mô tả:</label>
+            <input name="mota_edit" class="form-control" type="text" value="<?= $mota ?>" required>
+
+            <label>Số lượng:</label>
+            <input name="soluong_edit" class="form-control" type="text" value="<?= $soluongkho ?>" required>
+
+            <label>Chọn Danh Mục:</label>
+            <select class="form-select" name="iddm_edit">
+                <option value="<?= $tendanhmuc['id'] ?>"><?= $tendanhmuc['tendm'] ?></option>
+                <?php
+                foreach ($dm_product_edit as $item) {
+                    extract($item);
+                    echo ' <option value="' . $id . '">' . $tendm . '</option> ';
+                }
+                ?>
             </select>
+
             <hr>
             <div class="text-center">
-            <button class="btn btn-danger text-white">Cập Nhật Sản Phẩm</button>
+                <button name="but_edit_sp" class="btn btn-danger text-white">Cập Nhật Sản Phẩm</button>
             </div>
         </form>
     </div>

@@ -9,18 +9,27 @@
             <tr>
                 <th>STT</th>
                 <th>TÊN DANH MỤC</th>
-                <th style="width: 250px;">THAO TÁC</th>
+                <th style="width: 200px;">THAO TÁC</th>
             </tr>
         </thead>
+        <?php 
+        $stt = 0;
+        foreach (category()  as $item) : extract($item);
+        $stt++;
+        ?>
+        
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Áo Đá Banh</td>
+                <td><?= $stt ?></td>
+                <td><?= $tendm ?></td>
                 <td>
-                    <a href="?mod=category&act=edit" class="btn btn-info">Sửa</a>
-                    <a href="" class="btn btn-info">Xóa</a>
+                    <a href="?mod=category&act=edit&id=<?=$id?>" class="btn btn-info">Sửa</a>
+                    <a href="?mod=category&act=del&id=<?=$id?>" class="btn btn-info">Xóa</a>
                 </td>
             </tr>
         </tbody>
+
+        <?php endforeach; ?>
     </table>
+    
 </main>

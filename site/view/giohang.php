@@ -34,7 +34,6 @@
                     <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
                     <div>
                         <b><?= $tensp ?></b>
-                        <p>Size: </p>
                         <div class="soluong">
                             <a href="<?= $giamsl ?>">-</a>
                             <input disabled type="text" value="<?= $soluong ?>" class="text-center">

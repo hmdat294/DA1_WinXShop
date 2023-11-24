@@ -1,5 +1,8 @@
 <?php
-// include_once '../model_DAO/product.php';
+
+ob_start();
+
+include_once 'model_DAO/statistic.php';
 
 include_once('view/header.php');
 
@@ -7,9 +10,7 @@ extract($_REQUEST);
 if (isset($act)) {
     switch ($act) {
         case 'list':
-            
             include_once('view/statistic_list.php');
-            
             break;
 
         default:

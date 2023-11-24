@@ -1,5 +1,8 @@
 <?php
-// include_once '../model_DAO/product.php';
+
+ob_start();
+
+include_once 'model_DAO/category.php';
 
 include_once('view/header.php');
 
@@ -11,13 +14,29 @@ if (isset($act)) {
             break;
 
         case 'add':
+
+            if (isset($add_category_submit)) {
+                category_add($tendanhmuc);
+                header('location: ?mod=category&act=list');
+            }
             include_once('view/category_add.php');
             break;
 
         case 'edit':
+
+            if (isset($edit_category_submit)) {
+                category_edit($id, $editdanhmuc);
+                header('location: ?mod=category&act=list');
+            }
             include_once('view/category_edit.php');
             break;
 
+        case 'del':
+
+            category_delete($id);
+            header('location: ?mod=category&act=list');
+            break;
+            
         default:
             break;
     }

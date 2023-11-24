@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/eee285df14.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="../content/layout/admin/css/styleadmin.css" />
+    <link rel="stylesheet" href="../content/layout/admin/css/styleadm.css" />
     <link rel="stylesheet" href="../content/layout/admin/scss/custom.scss">
     <link rel="stylesheet" href="../content/layout/admin/scss/custom.css">
     <title>Trang Quản Trị WinX</title>
@@ -68,7 +68,7 @@
 
                     <a class="bg-cus text-decoration-none dangxuatadmin" href="../index.php">
                         <div class="mx-2">
-                            <i class="mx-1 fa-solid fa-right-to-bracket"></i> Đăng Xuất
+                            <i class="mx-1 fa-solid fa-right-to-bracket"></i> Thoát
                         </div>
                     </a>
                 </div>
@@ -79,20 +79,6 @@
                 <div class="">
                     <div>
                         <h4>TRANG QUẢN TRỊ WEBSITE</h4>
-                    </div>
-                </div>
-                <div class=""></div>
-                <div class="d-flex justify-content-end">
-                    <div class="tb mx-2">
-                        <div class="dropdown">
-                            <button class=" border-0 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-bell"></i>(3)
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="text-black btn" href="">Đang Cập Nhật....</a></li>
-                                <li><a class="text-black btn" href="">Đang Cập Nhật....</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </header>

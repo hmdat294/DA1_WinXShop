@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
-<link rel="stylesheet" href="../content/layout/css/userp.css">
+<link rel="stylesheet" href="../content/layout/css/userpp.css">
 
 <?php extract(get_donhang_user_one($id))?>
 
@@ -18,7 +18,7 @@
                 </tr>
                 <tr>
                     <th>Thời Gian: </th>
-                    <td><?= date("H:i:s | d-m-Y", strtotime($ngaydat)) ?></td>
+                    <td><?= date("d / m / Y", strtotime($ngaydat)) ?></td>
                 </tr>
                 <tr>
                     <th>Tổng Tiền: </th>
@@ -42,6 +42,10 @@
                 </tr>
             </tbody>
         </table>
+
+        <div class="text-center">
+            <a class="btn" style="background-color: #e95221; color: white" href="#">Hủy đơn</a>
+        </div>
     </aside>
 
     <article class="">
@@ -67,7 +71,6 @@
                         <img style="width: 100px;" class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
                         <div>
                             <p><?= $tensp ?></p>
-                            <p>Size: </p>
                             <p>Số lượng: <?= $soluong ?></p>
                         </div>
                     </td>

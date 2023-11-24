@@ -399,7 +399,6 @@
     font-weight: bold;
     text-decoration: none;
     font-size: 0.9em;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container>main .tatca-binhluan>.binhluan>.bl :is(.text-comment-hide div input:nth-child(1),
@@ -421,7 +420,6 @@
     border: none;
     outline: none;
     background-color: white;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 

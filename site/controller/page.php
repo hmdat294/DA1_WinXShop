@@ -13,6 +13,7 @@ include_once '../model_DAO/like.php';
 
 include_once "view/header.php";
 
+
 extract($_REQUEST);
 
 if (isset($act)) {
@@ -63,8 +64,8 @@ if (isset($act)) {
         case 'chitiet':
 
             if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
-                $ten_ngbl =  $_SESSION['accountwinx']['tenkh'];
-                $email_ngbl =  $_SESSION['accountwinx']['email'];
+                $ten_ngbl   = $_SESSION['accountwinx']['tenkh'];
+                $email_ngbl = $_SESSION['accountwinx']['email'];
             } else {
                 $ten_ngbl = 'User';
                 $email_ngbl = 'User';
@@ -160,12 +161,12 @@ if (isset($act)) {
         case 'user':
 
             if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
-                $idkh =  $_SESSION['accountwinx']['id'];
-                $tenkh =  $_SESSION['accountwinx']['tenkh'];
-                $email =  $_SESSION['accountwinx']['email'];
-                $sdt =  $_SESSION['accountwinx']['sdt'];
-                $ngaysinh =  $_SESSION['accountwinx']['ngaysinh'];
-                $gioitinh =  $_SESSION['accountwinx']['gioitinh'];
+                $idkh     = $_SESSION['accountwinx']['id'];
+                $tenkh    = $_SESSION['accountwinx']['tenkh'];
+                $email    = $_SESSION['accountwinx']['email'];
+                $sdt      = $_SESSION['accountwinx']['sdt'];
+                $ngaysinh = $_SESSION['accountwinx']['ngaysinh'];
+                $gioitinh = $_SESSION['accountwinx']['gioitinh'];
 
                 if ($_SESSION['accountwinx']['vaitro'] == 1)
                     $admin_button = '<a href="?mod=page&act=admin"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a>';

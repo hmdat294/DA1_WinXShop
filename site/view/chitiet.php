@@ -1,8 +1,14 @@
 <?php
 extract(get_sanpham_chitiet($id));
+
+if (get_idgiohang($id))
+    $slgiohang = get_idgiohang($id)['soluong'];
+else
+    $slgiohang = 0;
+
 ?>
 
-<link rel="stylesheet" href="../content/layout/css/chitietpp.css">
+<link rel="stylesheet" href="../content/layout/css/chitietp.css">
 
 <main>
 
@@ -76,7 +82,7 @@ extract(get_sanpham_chitiet($id));
                             <input class="valuenum text-center" disabled type="text" value="1">
                             <div id="tangspct">+</div>
 
-                            <?php if ($soluongkho > 1) : ?>
+                            <?php if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1)) : ?>
                                 <input class="addgh" name="addgh" type="submit" value="THÊM VÀO GIỎ HÀNG">
                             <?php else : ?>
                                 <input class="addgh" disabled type="button" value="ĐÃ HẾT HÀNG">
@@ -92,7 +98,7 @@ extract(get_sanpham_chitiet($id));
                             var valuenum_hidden = document.querySelector(".valuenum-hidden");
 
                             tang.onclick = () => {
-                                if (num < <?= $soluongkho - 1 ?>) {
+                                if (num < <?= $soluongkho - ($slgiohang + 1) ?>) {
                                     ++num;
                                     valuenum.value = num;
                                     valuenum_hidden.value = num;
@@ -174,7 +180,6 @@ extract(get_sanpham_chitiet($id));
                     </form>
 
                     <?php
-
                     $stt = 0;
                     foreach (get_comment_user($idsanpham) as $item) : extract($item);
                         $stt++;

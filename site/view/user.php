@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
-<link rel="stylesheet" href="../content/layout/css/userp.css">
+<link rel="stylesheet" href="../content/layout/css/userpp.css">
 <main class="">
 
     <aside class="">
@@ -12,7 +12,6 @@
         <div>
             <a href="?mod=page&act=user" style="color: #e95221;"><i class="fa-solid fa-user"></i> Thông tin tài khoản</a>
             <a href="?mod=cart&act=donhang"><i class="fa-solid fa-list"></i> Quản lý đơn hàng</a>
-            <a href="#"><i class="fa-solid fa-bell"></i> Quản lý thông báo</a>
             <a href="?mod=page&act=like"><i class="fa-solid fa-heart"></i> Sản phẩm yêu thích</a>
             <?= $admin_button ?>
             <a href="?mod=page&act=dangxuat"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>

@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/thanhtoanp.css">
 
-<?php extract(get_user_test()); ?>
+<?php extract(get_user_test($idkhachhang)); ?>
+
 <main>
 
     <h3 class="text-center">THANH TOÁN</h3>
@@ -33,7 +34,6 @@
                             <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
                             <div>
                                 <p><?= $tensp ?></p>
-                                <p>Size: </p>
                                 <p>Số lượng: <?= $soluong ?></p>
                             </div>
                         </td>

@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="text-center"><b>Bản quyền thuộc về WinX Sport Shop</b></div>
+    <div class="text-center" style="margin-top:50px;" >Bản quyền thuộc về WinX Sport Shop</div>
 
 </div>
 

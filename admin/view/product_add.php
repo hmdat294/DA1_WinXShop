@@ -7,29 +7,52 @@
         <h4 class="text-center">Thêm Sản Phẩm Mới</h4>
         <hr>
 
-        <form method="" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             <label for="">Nhập Tên Sản Phẩm: </label>
-            <input class="form-control form-text" type="text" value="Bộ đá banh Nike QUATAR">
-            <label for="file">Tải Ảnh Lên:</label>
-            
-            <input class="form-control btn btn-outline-success" type="file">
-            <label for="number">Giá Tiền:</label>
-            
-            <input class="form-control " type="number" value="175000">
-            
-            <label for="number">Giá Giảm (*Có thể để trống):</label>
-            
-            <input class="form-control " type="number" value="120000">
-            <label for="number">Chọn Danh Mục:</label>
-            
-            <select class="form-select" name="dropdown" id="">
-                <option value="quan" selected>Quần Đá Banh</option>
-                <option value="da">Quần Đá Banh</option>
-                <option value="banh">Quần Đá Banh</option>
+            <input name="tensp_add" class="form-control form-text" type="text" required placeholder="Nhập tên sản phẩm">
+
+            <div class="img-product-edit">
+
+                <?php for ($i = 1; $i <= 4; $i++) : ?>
+
+                    <label class="border rounded p-2">
+                        <img src="../content/layout/images/images_product/clothes.png" alt="">
+
+                        <span class="form-control btn btn-outline-success" style="font-size: 0.9em;">
+                            Tải Ảnh Lên
+                        </span>
+
+                        <input name="hinhanh_add<?=$i?>" class="d-none" type="file">
+                    </label>
+
+                <?php endfor; ?>
+                
+            </div>
+
+            <label>Giá Gốc:</label>
+            <input name="giagoc_add" class="form-control" type="text" required placeholder="Nhập giá gốc">
+
+            <label>Giá Sale:</label>
+            <input name="giasale_add" class="form-control" type="text" required placeholder="Nhập giá sale">
+
+            <label>Mô tả:</label>
+            <input name="mota_add" class="form-control " type="text" required placeholder="Nhập mô tả">
+
+            <label>Số lượng:</label>
+            <input name="soluong_add" class="form-control " type="text" required placeholder="Nhập số lượng">
+
+            <label>Chọn Danh Mục:</label>
+            <select class="form-select" name="iddm_add">
+                <?php
+                foreach ($dm_product_edit as $item) {
+                    extract($item);
+                    echo ' <option value="' . $id . '">' . $tendm . '</option> ';
+                }
+                ?>
             </select>
             <hr>
             <div class="text-center">
-                <button class="btn btn-danger text-white">Thêm Sản Phẩm</button>
+                <button name="but_add_sp" class="btn btn-danger text-white">Thêm Sản Phẩm</button>
             </div>
         </form>
     </div>

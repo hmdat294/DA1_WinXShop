@@ -2,9 +2,9 @@
 
 include_once 'pdo.php';
 
-function get_user_test()
+function get_user_test($id)
 {
-    $sql = "SELECT * FROM user WHERE id=1";
+    $sql = "SELECT * FROM user WHERE id=$id";
     return pdo_query_one($sql);
 }
 

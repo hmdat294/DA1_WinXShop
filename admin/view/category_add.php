@@ -7,12 +7,12 @@
         <h4 class="text-center">Thêm Danh Mục Mới</h4>
         <hr>
 
-        <form method="" action="">
+        <form method="POST" enctype="multipart/form-data" action="">
             <label>Nhập Tên Danh Mục: </label>
-            <input class="form-control form-text" type="text" value="Áo Sơ Mi">
+            <input name="tendanhmuc" class="form-control form-text" type="text" value="Tên Danh Mục Mới">
             <hr>
             <div class="text-center">
-                <button class="btn btn-danger text-white">Thêm Danh Mục</button>
+                <button name="add_category_submit" class="btn btn-danger text-white">Thêm Danh Mục</button>
             </div>
         </form>
     </div>

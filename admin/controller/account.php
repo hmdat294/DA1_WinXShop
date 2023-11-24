@@ -1,5 +1,8 @@
 <?php
-// include_once '../model_DAO/product.php';
+
+ob_start();
+
+include_once 'model_DAO/account.php';
 
 include_once('view/header.php');
 
@@ -11,6 +14,10 @@ if (isset($act)) {
             break;
 
         case 'edit':
+            if (isset($update_account)){
+                update_account($id, $vaitro);
+                header('location: ?mod=account&act=list');
+            }
             include_once('view/account_edit.php');
             break;
 

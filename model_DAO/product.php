@@ -63,3 +63,5 @@ function update_slkho($id, $slkhonew)
     $sql = "UPDATE sanpham SET soluongkho='$slkhonew' WHERE id=$id";
     return pdo_execute($sql);
 }
+
+

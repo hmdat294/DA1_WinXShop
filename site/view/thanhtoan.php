@@ -68,11 +68,11 @@
                     </label>
 
                     <label>Ghi chú
-                        <input type="text" name="ghichu" value="Trống">
+                        <input type="text" name="ghichu" placeholder="Trống">
                     </label>
 
                     <label>Địa chỉ người nhận
-                        <input type="text" name="diachi" value="Trống">
+                        <input type="text" name="diachi" placeholder="Trống" required>
                     </label>
 
 
@@ -109,6 +109,7 @@
                 </div>
 
 
+                <input type="hidden" name="stt" value="<?= $stt ?>">
                 <input type="hidden" name="idkhachhang" value="1">
                 <input type="hidden" name="tongtien" value="<?= $tong + $ship ?>">
                 <input class="but-dathang" type="submit" name="dathang" value="ĐẶT HÀNG">

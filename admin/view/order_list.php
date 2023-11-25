@@ -1,4 +1,3 @@
-
 <main>
     <div style="margin: 10px 35px;">
         <h3 class="">Đơn Hàng</h3>
@@ -17,7 +16,6 @@
                 <th>GHI CHÚ</th>
                 <th>ĐỊA CHỈ</th>
                 <th>PHƯƠNG THỨC</th>
-
                 <th style="width: 150px;">CHỨC NĂNG</th>
             </tr>
         </thead>
@@ -37,7 +35,14 @@
                 <td><?= $diachi ?></td>
                 <td><?= $phuongthuc ?></td>
                 <td>
-                    <a href="?mod=order&act=edit&id=<?= $id ?>" class="btn btn-info">Sửa</a>
+                    <?php if (($trangthai == 'Đã giao') ||
+                        ($trangthai == 'Đã hủy') ||
+                        ($trangthai == 'Khách hàng không nhận hàng')
+                    ) : ?>
+                        <a class="btn btn-info" style="font-size: 1em;">Không thể sửa</a>
+                    <?php else : ?>
+                        <a href="?mod=order&act=edit&id=<?= $id ?>" class="btn btn-info">Sửa</a>
+                    <?php endif; ?>
                 </td>
             </tr>
         <?php endforeach; ?>

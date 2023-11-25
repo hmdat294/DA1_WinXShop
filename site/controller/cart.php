@@ -83,8 +83,7 @@ if (isset($act)) {
 
             $idkhachhang = $_SESSION['accountwinx']['id'];
 
-            if (isset($dathang) && ($dathang)) {
-
+            if (isset($dathang) && ($dathang) && ($stt > 0)) {
 
                 if ($ghichu == '') $ghichu = "Trống";
                 if ($diachi == '') $diachi = "Trống";
@@ -111,6 +110,19 @@ if (isset($act)) {
             break;
 
         case 'chitietdonhang':
+            
+            if (isset($idhuydon) && ($idhuydon > 0)) {
+                huy_donhang($idhuydon);
+
+                foreach (get_chitietdonhang($idhuydon) as $item) {
+                    extract($item);
+                    $slkho = get_sanpham_chitiet($idsp)['soluongkho'];
+                    $slkhonew = $slkho + $soluong;
+                    update_slkho($idsp, $slkhonew);
+                }
+
+                header('location: ?mod=cart&act=chitietdonhang&id='.$idhuydon);
+            }
 
             include_once "view/chitietdonhang.php";
             break;

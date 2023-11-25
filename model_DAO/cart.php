@@ -76,7 +76,7 @@ function delete_all_cart()
 
 function get_chitietdonhang_sp($id)
 {
-    $sql = "SELECT * FROM chitietdonhang ctdh INNER JOIN sanpham sp
+    $sql = "SELECT *, sp.id AS idsanpham FROM chitietdonhang ctdh INNER JOIN sanpham sp
     ON ctdh.idsp=sp.id WHERE ctdh.iddh=$id ORDER BY ctdh.iddh DESC";
     return pdo_query($sql);
 }

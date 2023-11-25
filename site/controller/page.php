@@ -78,6 +78,7 @@ if (isset($act)) {
                     $noidung = $_POST['binhluan'];
 
                     add_comment($idkh, $id, $noidung);
+                    header('location: ?mod=page&act=chitiet&iddm=' . $iddm . '&id=' . $id);
                 } else $thongbao = "Đăng nhập để bình luận!";
             }
 
@@ -174,7 +175,7 @@ if (isset($act)) {
             }
 
             if (isset($editAccount_submit) && ($editAccount_submit)) {
-                account_edit($idedit, $tenkhedit, $emailedit, $sdtedit, $ngaysinhedit, $gioitinhedit); 
+                account_edit($idedit, $tenkhedit, $emailedit, $sdtedit, $ngaysinhedit, $gioitinhedit);
                 unset($_SESSION['accountwinx']);
                 header('location: index.php');
             }

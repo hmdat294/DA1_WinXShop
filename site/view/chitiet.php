@@ -8,7 +8,7 @@ else
 
 ?>
 
-<link rel="stylesheet" href="../content/layout/css/chitietp.css">
+<link rel="stylesheet" href="../content/layout/css/chitietpp.css">
 
 <main>
 
@@ -189,6 +189,10 @@ else
                                 <div>
                                     <i class="fa-regular fa-circle-user"></i>
                                     <span><?= ucwords($tenkh) ?></span>
+
+                                    <?php if (get_nguoimua($idkh,$idsanpham)) : ?>
+                                        <p>(Đã mua hàng)</p>
+                                    <?php endif; ?>
                                 </div>
 
                                 <span><?= date("d / m / Y", strtotime($ngaybinhluan)) ?></span>

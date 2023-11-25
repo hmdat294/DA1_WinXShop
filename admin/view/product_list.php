@@ -2,7 +2,7 @@
     <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 2fr;">
         <h3 class="">Sản Phẩm</h3>
         <select class="form-select" name="" id="mySelect">
-        <option value="0"><?=$tendanhmuc?></option>
+            <option value="0"><?= $tendanhmuc ?></option>
             <?php
             foreach (category_product() as $item) {
                 extract($item);
@@ -12,19 +12,22 @@
         </select>
     </div>
 
+
     <script>
         var selectElement = document.getElementById("mySelect");
         selectElement.onchange = () => {
             switch (selectElement.value) {
-                case 0: break;
-                
-                <?php foreach (category_product() as $item) : extract($item); ?>
-                    case "<?=$id?>":
-                        window.location.href = "?mod=product&act=list&iddm=<?=$id?>";
+                case 0:
+                    break;
+
+                    <?php foreach (category_product() as $item) : extract($item); ?>
+                    case "<?= $id ?>":
+                        window.location.href = "?mod=product&act=list&iddm=<?= $id ?>";
                         break;
-                <?php endforeach; ?>
-                
-                default: break;
+                    <?php endforeach; ?>
+
+                default:
+                    break;
             }
         }
     </script>
@@ -55,10 +58,57 @@
                 <td><?= doitien($giagoc) ?> đ</td>
                 <td><?= doitien($giasale) ?> đ</td>
                 <td>
-                    <a href="?mod=product&act=edit&id=<?=$id?>" class="btn btn-info">Sửa</a>
-                    <a href="?mod=product&act=delete&id=<?=$id?>" class="btn btn-info">Xóa</a>
+                    <a href="?mod=product&act=edit&id=<?= $id ?>" class="btn btn-info">Sửa</a>
+
+                    <a onclick="xoadm(<?= $id ?>)" class="btn btn-info">Xóa</a>
+
+                    <div class="check-xoadm" id="checkxoa<?= $id ?>">
+
+                        <div class="text-center">
+
+                            <?php if (
+                                check_product_binhluan($id) ||
+                                check_product_giohang($id) ||
+                                check_product_chitietdonhang($id) ||
+                                check_product_yeuthich($id)
+                            ) : ?>
+
+                                <h4>Xin lỗi bạn không thể xóa sản phẩm <br>"<?= $tensp ?>"!</h4>
+                                <img src="../content/layout/images/icon-sorry.png" alt="">
+
+                                <div>
+                                    <a onclick="qlxoadm(<?= $id ?>)" class="btn">Quay lại</a>
+                                </div>
+
+                            <?php else : ?>
+
+                                <h4>Bạn có chắc là muốn xóa sản phẩm <br>"<?= $tensp ?>" không?</h4>
+                                <img src="../content/layout/images/icon-question.png" alt="">
+
+                                <div>
+                                    <a onclick="qlxoadm(<?= $id ?>)" class="btn">Quay lại</a>
+                                    <a class="btn" href="?mod=product&act=delete&id=<?= $id ?>">Xóa sản phẩm</a>
+                                </div>
+
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
+
+    <script>
+        function xoadm(id) {
+            var form_xoadm = document.getElementById('checkxoa' + id);
+            form_xoadm.style.display = "block";
+        }
+
+        function qlxoadm(id) {
+            var form_xoadm = document.getElementById('checkxoa' + id);
+            form_xoadm.style.display = "none";
+        }
+    </script>
+
 </main>

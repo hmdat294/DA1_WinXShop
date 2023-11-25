@@ -347,9 +347,11 @@
 
 .container>main .tatca-binhluan>.binhluan>.ten-bl>div {
     font-size: 1.2em;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+}
+
+.container>main .tatca-binhluan>.binhluan>.ten-bl>div>p {
+    font-size: 0.7em;
+    display: inline;
 }
 
 .container>main .tatca-binhluan>.binhluan>.ten-bl>div>i {

@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th10 23, 2023 lúc 07:10 PM
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 25, 2023 lúc 05:46 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -32,7 +32,7 @@ CREATE TABLE `binhluan` (
   `idkh` int(10) NOT NULL,
   `idsp` int(10) NOT NULL,
   `noidung` text DEFAULT NULL,
-  `ngaybinhluan` date NOT NULL DEFAULT current_timestamp()
+  `ngaybinhluan` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -56,7 +56,16 @@ INSERT INTO `binhluan` (`id`, `idkh`, `idsp`, `noidung`, `ngaybinhluan`) VALUES
 (17, 5, 95, 'Hàng xịn', '2023-11-22'),
 (18, 5, 95, 'Hàng xịn', '2023-11-22'),
 (19, 7, 205, 'Long An còn sản phẩm này không shop ?', '2023-11-23'),
-(20, 7, 137, 'size bàn bao nhiêu vậy shop ?', '2023-11-23');
+(20, 7, 137, 'size bàn bao nhiêu vậy shop ?', '2023-11-23'),
+(21, 8, 95, 'Sản phẩm này giá bao nhiêu', '2023-11-25'),
+(22, 1, 74, 'Hàng xịn', '2023-11-25'),
+(23, 1, 95, 'Ngon bổ rẻ', '2023-11-25'),
+(24, 8, 95, 'Hàng xịn', '2023-11-25'),
+(25, 8, 95, 'Hàng xịn', '2023-11-25'),
+(26, 1, 74, 'Sản phẩm này giá bao nhiêu', '2023-11-25'),
+(27, 1, 69, 'Hàng xin', '2023-11-25'),
+(28, 1, 69, 'Hàng xin', '2023-11-25'),
+(29, 1, 69, 'Sản phẩm này giá bao nhiêu', '2023-11-25');
 
 -- --------------------------------------------------------
 
@@ -70,7 +79,7 @@ CREATE TABLE `chitietdonhang` (
   `idsp` int(10) NOT NULL,
   `soluong` int(10) NOT NULL,
   `giasale` int(10) NOT NULL,
-  `ngaydat` date NOT NULL DEFAULT current_timestamp()
+  `ngaydat` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -89,8 +98,6 @@ INSERT INTO `chitietdonhang` (`id`, `iddh`, `idsp`, `soluong`, `giasale`, `ngayd
 (9, 11, 69, 1, 100000, '2023-11-17'),
 (10, 12, 68, 1, 100000, '2023-11-17'),
 (11, 13, 69, 1, 100000, '2023-11-17'),
-(12, 14, 68, 7, 100000, '2023-11-17'),
-(13, 14, 70, 5, 100000, '2023-11-17'),
 (14, 15, 70, 1, 100000, '2023-11-17'),
 (15, 16, 68, 1, 100000, '2023-11-17'),
 (16, 17, 66, 1, 100000, '2023-11-17'),
@@ -119,7 +126,25 @@ INSERT INTO `chitietdonhang` (`id`, `iddh`, `idsp`, `soluong`, `giasale`, `ngayd
 (39, 34, 92, 1, 3100000, '2023-11-23'),
 (40, 34, 93, 7, 3100000, '2023-11-23'),
 (42, 37, 35, 5, 2090000, '2023-11-23'),
-(43, 38, 248, 3, 599000, '2023-11-23');
+(43, 38, 248, 3, 599000, '2023-11-23'),
+(44, 39, 243, 1, 160000, '2023-11-24'),
+(45, 40, 94, 1, 3100000, '2023-11-25'),
+(46, 41, 95, 1, 3100000, '2023-11-25'),
+(47, 42, 95, 1, 3100000, '2023-11-25'),
+(48, 43, 95, 1, 3100000, '2023-11-25'),
+(49, 43, 66, 1, 100000, '2023-11-25'),
+(50, 44, 74, 1, 160000, '2023-11-25'),
+(51, 45, 69, 1, 100000, '2023-11-25'),
+(52, 46, 69, 1, 100000, '2023-11-25'),
+(53, 47, 69, 12, 100000, '2023-11-25'),
+(54, 48, 154, 4, 1500000, '2023-11-25'),
+(55, 48, 36, 4, 5350000, '2023-11-25'),
+(56, 48, 39, 4, 5790000, '2023-11-25'),
+(57, 48, 136, 4, 10500000, '2023-11-25'),
+(58, 49, 136, 10, 10500000, '2023-11-25'),
+(59, 50, 136, 15, 10500000, '2023-11-25'),
+(60, 51, 136, 9, 10500000, '2023-11-25'),
+(61, 52, 136, 7, 10500000, '2023-11-25');
 
 -- --------------------------------------------------------
 
@@ -157,8 +182,7 @@ INSERT INTO `danhmuc` (`id`, `tendm`, `hinhanh`) VALUES
 (17, 'Bàn bóng bàn', NULL),
 (18, 'Giày bóng bàn', NULL),
 (19, 'Vợt bóng bàn', NULL),
-(20, 'Mặt vợt bóng bàn', NULL),
-(22, 'Bóng cười', NULL);
+(20, 'Mặt vợt bóng bàn', NULL);
 
 -- --------------------------------------------------------
 
@@ -173,8 +197,8 @@ CREATE TABLE `donhang` (
   `sdt` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `tongtien` int(10) DEFAULT NULL,
-  `ngaydat` date DEFAULT current_timestamp(),
-  `trangthai` varchar(20) DEFAULT 'Đang chờ xử lý',
+  `ngaydat` datetime DEFAULT current_timestamp(),
+  `trangthai` varchar(100) DEFAULT 'Đang chờ xử lý',
   `ghichu` text DEFAULT NULL,
   `diachi` text DEFAULT NULL,
   `phuongthuc` varchar(50) NOT NULL
@@ -192,13 +216,12 @@ INSERT INTO `donhang` (`id`, `idkh`, `tenkh`, `sdt`, `email`, `tongtien`, `ngayd
 (11, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 162000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (12, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 182000, '2023-11-17', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (13, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 178000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
-(14, 3, 'anhthu', '0123456789', 'datminh@gmail.com', 1235000, '2023-11-17', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
-(15, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 160000, '2023-11-17', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(15, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 160000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (16, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 167000, '2023-11-17', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (17, 5, 'nam', '0123456789', 'datminh@gmail.com', 62110000, '2023-11-17', 'Đang chờ xử lý', 'Trống', '123 cvpm', 'Thanh toán khi nhận hàng (COD)'),
-(18, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 775074000, '2023-11-18', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(19, 1, 'admin', '0123456789', 'admin@gmail.com', 99000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(20, 1, 'admin', '0123456789', 'admin@gmail.com', 204000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(18, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 775074000, '2023-11-18', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(19, 1, 'admin', '0123456789', 'admin@gmail.com', 99000, '2023-11-19', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(20, 1, 'admin', '0123456789', 'admin@gmail.com', 204000, '2023-11-19', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (21, 1, 'admin', '0123456789', 'admin@gmail.com', 694000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (22, 1, 'admin', '0123456789', 'admin@gmail.com', 5545000, '2023-11-19', 'Đang giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (23, 1, 'admin', '0123456789', 'admin@gmail.com', 6158000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
@@ -212,11 +235,23 @@ INSERT INTO `donhang` (`id`, `idkh`, `tenkh`, `sdt`, `email`, `tongtien`, `ngayd
 (31, 1, 'admin', '0123456789', 'admin@gmail.com', 31029000, '2023-11-22', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (32, 4, 'dat', '0357072913', 'datminh294@gmail.com', 31061000, '2023-11-22', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (33, 4, 'dat', '0357072913', 'datminh294@gmail.com', 112000, '2023-11-22', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(34, 1, 'admin', '0123456789', 'admin@gmail.com', 25632000, '2023-11-23', 'Đang chờ xử lý', 'giao gấp', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(35, 6, 'anhthu', '0937744062', 'nnanhthu2004@gmail.com', 233000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(36, 6, 'anhthu', '0937744062', 'nnanhthu2004@gmail.com', 43000, '2023-11-23', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(34, 1, 'admin', '0123456789', 'admin@gmail.com', 25632000, '2023-11-23', 'Đã hủy', 'giao gấp', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
 (37, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 10468000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(38, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 1809000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán qua ngân hàng');
+(38, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 1809000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
+(39, 1, 'admin', '0123456789', 'admin@gmail.com', 203000, '2023-11-24', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(40, 1, 'admin', '0123456789', 'admin@gmail.com', 3161000, '2023-11-25', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(41, 1, 'admin', '0123456789', 'admin@gmail.com', 3174000, '2023-11-25', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(42, 1, 'admin', '0123456789', 'admin@gmail.com', 3113000, '2023-11-25', 'Đang chờ xử lý', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(43, 8, 'ho minh dat', '0357072913', 'hmd@gmail.com', 3287000, '2023-11-25', 'Đã giao', 'Trống', 'Hà nội', 'Thanh toán khi nhận hàng (COD)'),
+(44, 1, 'admin', '0123456789', 'admin@gmail.com', 181000, '2023-11-25', 'Đã giao', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(45, 1, 'admin', '0123456789', 'admin@gmail.com', 155000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(46, 1, 'admin', '0123456789', 'admin@gmail.com', 127000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(47, 1, 'admin', '0123456789', 'admin@gmail.com', 1267000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(48, 1, 'admin', '0123456789', 'admin@gmail.com', 92605000, '2023-11-25', 'Đã hủy', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(49, 1, 'admin', '0123456789', 'admin@gmail.com', 105049000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(50, 1, 'admin', '0123456789', 'admin@gmail.com', 157515000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(51, 1, 'admin', '0123456789', 'admin@gmail.com', 94596000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(52, 1, 'admin', '0123456789', 'admin@gmail.com', 73529000, '2023-11-25', 'Đã hủy', 'Trống', 'Hà nội', 'Thanh toán qua ngân hàng');
 
 -- --------------------------------------------------------
 
@@ -949,13 +984,7 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 (747, 249, 'BaloCauLong12_2.png '),
 (748, 249, 'BaloCauLong12_3.png '),
 (751, 177, 'votbongban_vot9_1.png'),
-(752, 177, 'votbongban_vot9_2.png'),
-(772, 260, 'myimg.jpg'),
-(773, 260, 'z4480445008521_a5aa0032d93f5148566087de26204a76.jpg'),
-(774, 260, 'clothes.webp'),
-(775, 261, 'nguyenquangha.png'),
-(776, 262, 'clothes.webp'),
-(781, 264, 'minhdat.jpg');
+(752, 177, 'votbongban_vot9_2.png');
 
 -- --------------------------------------------------------
 
@@ -1040,15 +1069,15 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (63, 9, 'BÓNG ĐÁ ADIDAS FOOTBALL', 3700000, 3300000, 'adidas Football Champions League 2024 Pro Match Ball - White/Blue/Silver là quả bóng cao cấp dành cho sân cỏ tự nhiên 11 người. Đây chính là quả bóng được sử dụng trong các trận đấu tại Champion League. Sản phẩm hướng tới địa điểm tổ chức trận chung kết vào tháng 5/2024, đó chính là sân Wembley ở London. Bóng mang màu trắng sáng chủ đạo, điểm các chi tiết màu xanh.', 100, 1, '2023-11-11 03:51:28'),
 (64, 9, 'BÓNG ĐÁ FUTSAL MOLTEN', 739000, 639000, 'MOLTEN là một thương hiệu sản xuất Bóng rất nổi tiếng, được thành lập vào năm 1958 tại Nhật Bản. Trải qua hơn 60 hình thành và phát triển, MOLTEN đã không ngừng lớn mạnh, vượt ra khỏi tầm châu lục và vươn ra thế giới. Hiện nay, tập đoàn Molten đã có 11 văn phòng, 9 nhà máy đóng tại Nhật với 8 văn phòng đại diện, 6 nhà máy đóng ở Đức, Mỹ, Nhật, Trung Quốc, Malaisia. Quả bóng Molten đã lăn ở khắp nơi trên thế giới,  được sử dụng ở những giải đấu mang tầm Châu lục và Quốc tế như ASIAN CUP 2019, EUROPA LEAGUE 2019...', 100, 1, '2023-11-11 03:51:28'),
 (65, 9, 'BÓNG ĐÁ NIKE FOOTBALL FLIGHT ', 4469000, 3500000, 'Sẵn sàng cho giai đoạn cuối cùng của mùa giải Ngoại hạng Anh năm nay, Nike đã nhanh chóng phát hành quả bóng thi đấu thứ ba - Flight Third với những họa tiết sáng tạo và bắt mắt, đây sẽ là quả bóng thi đấu chính thức cho các trận đấu còn lại của mùa giải.', 100, 1, '2023-11-11 03:51:28'),
-(66, 1, ' Áo Cầu Lông Yonex - Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:30:28'),
+(66, 1, ' Áo Cầu Lông Yonex - Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 99, 100, '2023-11-12 21:30:28'),
 (67, 1, ' Áo Cầu Lông Yonex - Xanh - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (68, 1, ' Áo Cầu Lông Yonex - Đen - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
-(69, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
+(69, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 102, 100, '2023-11-12 21:31:15'),
 (70, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (71, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (72, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (73, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
-(74, 1, 'Áo Cầu Lông Lining  Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 100, 500, '2023-11-12 21:32:25'),
+(74, 1, 'Áo Cầu Lông Lining  Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 99, 500, '2023-11-12 21:32:25'),
 (75, 1, 'Áo Cầu Lông Lining Đỏ Trănsg Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 100, 400, '2023-11-12 21:32:54'),
 (76, 2, 'Quần Cầu Lông Yonex  - Đen Chính Hãng', 350000, 300000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 100, 120, '2023-11-12 21:36:25'),
 (77, 2, 'Quần Cầu Lông Kamito TM Legend  - Trắng Chính Hãng', 350000, 300000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 100, 120, '2023-11-12 22:13:50'),
@@ -1068,8 +1097,8 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (91, 3, 'Giày Cầu Lông Lining AYAT005-7 Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
 (92, 3, 'Giày Cầu Lông Lining Trắng Hồng (Nội Đia Trung))', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 99, 125, '2023-11-12 22:21:11'),
 (93, 3, 'Giày Cầu Lông Lining  Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 88, 125, '2023-11-12 22:21:11'),
-(94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 3, 125, '2023-11-12 22:21:11'),
-(95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.Phần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 3, 125, '2023-11-12 22:21:11');
+(94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 2, 125, '2023-11-12 22:21:11'),
+(95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.Phần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 9, 125, '2023-11-12 22:21:11');
 INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `soluongkho`, `luotxem`, `ngaythem`) VALUES
 (96, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 150, '2023-11-12 22:26:31'),
 (97, 4, 'Vợt cầu lông Yonex Arcsaber 73 Light (RBYR) chính hãng ', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 150, '2023-11-12 22:30:36'),
@@ -1110,7 +1139,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (133, 17, 'Garden 7000 Outdoor Table', 13500000, 19500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 50, '2023-11-13 14:13:12'),
 (134, 17, 'Match 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 30, '2023-11-13 14:13:12'),
 (135, 17, 'Nippon 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 20, '2023-11-13 14:13:12'),
-(136, 17, 'Octet 25 Table', 13500000, 10500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 60, '2023-11-13 14:13:12'),
+(136, 17, 'Octet 25 Table', 13500000, 10500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 110, 60, '2023-11-13 14:13:12'),
 (137, 17, 'Park Outdoor Table', 13500000, 29900000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 70, '2023-11-13 14:13:12'),
 (138, 17, 'Premium 19 Table', 13500000, 23500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 90, '2023-11-13 14:13:12'),
 (139, 17, 'Space Saver 22 Table', 13500000, 13500000, 'BẢO HÀNH: Bảo hành 5 năm đối với lỗi do nhà máy. Sản xuất tại Đức', 100, 350, '2023-11-13 14:13:12'),
@@ -1213,17 +1242,13 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (240, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 99, 120, '2023-11-17 10:30:23'),
 (241, 4, 'Vợt Cầu Lông Yonex Nanoray 73 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 5, 140, '2023-11-17 10:30:59'),
 (242, 1, 'Áo Cầu Lông Yonex 22057 Nam - Trắng Đen', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 87, 150, '2023-11-17 10:37:06'),
-(243, 1, 'Áo Cầu Lông Yonex EX Nữ - Xanh Chính Hãng', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 99, 150, '2023-11-17 10:38:23'),
+(243, 1, 'Áo Cầu Lông Yonex EX Nữ - Xanh Chính Hãng', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 98, 150, '2023-11-17 10:38:23'),
 (244, 2, 'Quần Cầu Lông Victor 9658 Đen Phối Xanh', 156000, 130000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 1, 180, '2023-11-17 10:43:57'),
 (245, 2, 'Quần Cầu Lông Victor  Đen', 157000, 130000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 98, 180, '2023-11-17 10:44:16'),
 (246, 3, 'Giày Cầu Lông Yonex Blaze 3 - Crystal Chính Hãng', 1140000, 950000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.\r\n', 100, 160, '2023-11-17 10:48:36'),
 (247, 3, 'Giày Cầu Lông Yonex Blaze 3 - Orange Chính Hãng', 1140000, 950000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.\r\n', 100, 180, '2023-11-17 10:51:14'),
 (248, 5, 'Balo Cầu Lông Yonex BA269CR - Vàng Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 97, 180, '2023-11-17 10:55:45'),
-(249, 5, 'Balo Cầu Lông Yonex BA265CR Hồng - Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 180, '2023-11-17 10:56:16'),
-(260, 22, 'ao jean', 4000000, 1550000, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, sapiente.', 50, 1, '2023-11-23 00:36:51'),
-(261, 22, 'ao so mi', 1000000, 850000, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, sapiente.', 5, 1, '2023-11-23 00:50:32'),
-(262, 22, 'ao the thao', 1000, 800, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, sapiente.', 50, 1, '2023-11-23 01:02:36'),
-(264, 22, 'ao thun', 1000, 800, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, sapiente.', 12, 1, '2023-11-23 01:09:25');
+(249, 5, 'Balo Cầu Lông Yonex BA265CR Hồng - Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 180, '2023-11-17 10:56:16');
 
 -- --------------------------------------------------------
 
@@ -1237,7 +1262,7 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `matkhau` varchar(20) NOT NULL,
   `sdt` varchar(20) NOT NULL,
-  `ngaysinh` date DEFAULT NULL,
+  `ngaysinh` datetime DEFAULT NULL,
   `gioitinh` varchar(20) DEFAULT NULL,
   `vaitro` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1253,7 +1278,8 @@ INSERT INTO `user` (`id`, `tenkh`, `email`, `matkhau`, `sdt`, `ngaysinh`, `gioit
 (4, 'dat', 'datminh294@gmail.com', '111', '0357072913', '2023-09-20', 'Nam', 0),
 (5, 'minh dat', 'md@gmail.com', '333', '0321654987', '2023-11-10', 'Nam', 0),
 (6, 'anhthu', 'nnanhthu2004@gmail.com', '123', '0937744062', '2004-05-12', 'Nữ', 0),
-(7, 'phatnntps29026', 'phatnntps29026@gmail.com', '0859499579Po', '0859499579', '2004-08-03', 'Nam', 0);
+(7, 'phatnntps29026', 'phatnntps29026@gmail.com', '0859499579Po', '0859499579', '2004-08-03', 'Nam', 0),
+(8, 'ho minh dat', 'hmd@gmail.com', '111', '0357072913', '2004-09-20', 'Nam', 0);
 
 -- --------------------------------------------------------
 
@@ -1280,7 +1306,7 @@ INSERT INTO `yeuthich` (`id`, `idkh`, `idsp`) VALUES
 (37, 5, 92),
 (39, 5, 241),
 (40, 5, 247),
-(42, 6, 260);
+(47, 1, 136);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1358,31 +1384,31 @@ ALTER TABLE `yeuthich`
 -- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT cho bảng `hinhanh`
@@ -1400,13 +1426,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `yeuthich`
 --
 ALTER TABLE `yeuthich`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

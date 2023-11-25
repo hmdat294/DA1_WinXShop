@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
-<link rel="stylesheet" href="../content/layout/css/userpp.css">
+<link rel="stylesheet" href="../content/layout/css/userppp.css">
 <link rel="stylesheet" href="../content/layout/css/donhang.css">
 <main class="">
 
@@ -40,7 +40,7 @@
             ?>
                 <?php if ($idkh == $id_ngmua) : ?>
                     <tr class="tbbody">
-                        <td><?= $id ?></td>
+                        <td>WX<?= $id ?></td>
                         <td>
                             <span> <?= $tenkh ?> </span>
                         </td>
@@ -48,7 +48,7 @@
                             <span><?= date("d / m / Y", strtotime($ngaydat)) ?></span>
                         </td>
                         <td>
-                            <span><?= doitien($tongtien) ?></span>đ
+                            <span style="font-size: 0.9em;"><?= doitien($tongtien) ?></span>đ
                         </td>
                         <td>
                             <span><?= $trangthai ?></span>

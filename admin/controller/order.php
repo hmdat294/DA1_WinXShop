@@ -14,8 +14,21 @@ if (isset($act)) {
             break;
 
         case 'edit':
+
             if (isset($update_donhang)) {
                 update_donhang($id, $trangthai);
+
+                if ($trangthai == 'Khách hàng không nhận hàng') {
+
+                    foreach (get_chitietdonhang($id) as $item) {
+                        extract($item);
+                        $slkho = get_sanpham_chitiet($idsp)['soluongkho'];
+                        $slkhonew = $slkho + $soluong;
+                        update_slkho($idsp, $slkhonew);
+                    }
+                    
+                }
+
                 header('location: ?mod=order&act=list');
             }
 

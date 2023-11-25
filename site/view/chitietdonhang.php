@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
-<link rel="stylesheet" href="../content/layout/css/userpp.css">
+<link rel="stylesheet" href="../content/layout/css/userppp.css">
 
-<?php extract(get_donhang_user_one($id))?>
+<?php extract(get_donhang_user_one($id)) ?>
 
 <main class="">
 
@@ -10,11 +10,11 @@
             <tbody>
                 <tr>
                     <th>Mã Đơn: </th>
-                    <td style="width: 250px;"><?=$id?></td>
+                    <td style="width: 250px;">WX<?= $id ?></td>
                 </tr>
                 <tr>
                     <th>Ngày Đặt Hàng: </th>
-                    <td><?=$tenkh?></td>
+                    <td><?= $tenkh ?></td>
                 </tr>
                 <tr>
                     <th>Thời Gian: </th>
@@ -26,27 +26,60 @@
                 </tr>
                 <tr>
                     <th>Trạng Thái: </th>
-                    <td><?=$trangthai?></td>
+                    <td><?= $trangthai ?></td>
                 </tr>
                 <tr>
                     <th>Ghi Chú: </th>
-                    <td><?=$ghichu?></td>
+                    <td><?= $ghichu ?></td>
                 </tr>
                 <tr>
                     <th>Địa Chỉ: </th>
-                    <td><?=$diachi?></td>
+                    <td><?= $diachi ?></td>
                 </tr>
                 <tr>
                     <th>Phương Thức Thanh Toán: </th>
-                    <td><?=$phuongthuc?></td>
+                    <td><?= $phuongthuc ?></td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="text-center">
-            <a class="btn" style="background-color: #e95221; color: white" href="#">Hủy đơn</a>
-        </div>
+        <?php if ($trangthai == 'Đang chờ xử lý') : ?>
+
+            <div class="text-center">
+                <a id="huydon" class="btn">Hủy đơn hàng</a>
+            </div>
+
+        <?php endif; ?>
     </aside>
+
+    <div class="check-huydon">
+
+        <div class="text-center">
+
+            <h4>Bạn có chắc là muốn hủy đơn không?</h4>
+            <img src="../content/layout/images/icon-question.png" alt="">
+
+            <div>
+                <a id="qlhuydon" class="btn">Quay lại</a>
+                <a class="btn" href="?mod=cart&act=chitietdonhang&idhuydon=<?= $id ?>">Hủy đơn</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        var form_huydon = document.querySelector(".check-huydon");
+        var but_huydon = document.getElementById("huydon");
+        var but_qlhuydon = document.getElementById("qlhuydon");
+
+        but_huydon.onclick = () => {
+            form_huydon.style.display = "block";
+        }
+        but_qlhuydon.onclick = () => {
+            form_huydon.style.display = "none";
+        }
+    </script>
 
     <article class="">
 

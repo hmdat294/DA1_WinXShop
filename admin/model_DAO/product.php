@@ -83,3 +83,31 @@ function img_product_edit($id, $hinhanh)
     $sql = "UPDATE hinhanh SET hinhanh=? WHERE id=?";
     return pdo_execute($sql, $hinhanh, $id);
 }
+
+
+
+
+
+function check_product_binhluan($id)
+{
+    $sql = "SELECT * FROM binhluan WHERE idsp=$id";
+    return pdo_query_one($sql);
+}
+
+function check_product_giohang($id)
+{
+    $sql = "SELECT * FROM giohang WHERE idsp=$id";
+    return pdo_query_one($sql);
+}
+
+function check_product_chitietdonhang($id)
+{
+    $sql = "SELECT * FROM chitietdonhang WHERE idsp=$id";
+    return pdo_query_one($sql);
+}
+
+function check_product_yeuthich($id)
+{
+    $sql = "SELECT * FROM yeuthich WHERE idsp=$id";
+    return pdo_query_one($sql);
+}

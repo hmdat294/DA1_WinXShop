@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
 <link rel="stylesheet" href="../content/layout/css/thanhtoanp.css">
 
-<?php extract(get_user_test()); ?>
+<?php extract(get_user_test($idkhachhang)); ?>
+
 <main>
 
     <h3 class="text-center">THANH TOÁN</h3>
@@ -33,7 +34,6 @@
                             <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
                             <div>
                                 <p><?= $tensp ?></p>
-                                <p>Size: </p>
                                 <p>Số lượng: <?= $soluong ?></p>
                             </div>
                         </td>
@@ -68,11 +68,11 @@
                     </label>
 
                     <label>Ghi chú
-                        <input type="text" name="ghichu" value="Trống">
+                        <input type="text" name="ghichu" placeholder="Trống">
                     </label>
 
                     <label>Địa chỉ người nhận
-                        <input type="text" name="diachi" value="Trống">
+                        <input type="text" name="diachi" placeholder="Trống" required>
                     </label>
 
 
@@ -109,6 +109,7 @@
                 </div>
 
 
+                <input type="hidden" name="stt" value="<?= $stt ?>">
                 <input type="hidden" name="idkhachhang" value="1">
                 <input type="hidden" name="tongtien" value="<?= $tong + $ship ?>">
                 <input class="but-dathang" type="submit" name="dathang" value="ĐẶT HÀNG">

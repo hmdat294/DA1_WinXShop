@@ -1,5 +1,11 @@
 <?php
 extract(get_sanpham_chitiet($id));
+
+if (get_idgiohang($id))
+    $slgiohang = get_idgiohang($id)['soluong'];
+else
+    $slgiohang = 0;
+
 ?>
 
 <link rel="stylesheet" href="../content/layout/css/chitietpp.css">
@@ -35,8 +41,12 @@ extract(get_sanpham_chitiet($id));
 
                 <div class="tt-chitiet">
                     <h5><?= $tensp ?></h5>
-                    <div>Mã: <span>VNB016303</span></div>
-                    <div>Thương hiệu: <span>Mizuno</span> | Tình trạng: <span>Còn hàng</span></div>
+                    <div>Mã: <span>WX<?= $idsanpham ?></span></div>
+                    <?php if ($soluongkho > 10) : ?>
+                        <div>Tình trạng: Còn hàng - <span><?= $soluongkho ?></span> sản phẩm</div>
+                    <?php else : ?>
+                        <div>Tình trạng: Kho còn ít - <span><?= $soluongkho ?></span> sản phẩm</div>
+                    <?php endif; ?>
                     <div>
                         <h3><?= doitien($giasale)  ?>₫</h3> <span>Giá niêm yết: <del><?= doitien($giagoc)  ?>₫</del></span>
                     </div>
@@ -72,7 +82,11 @@ extract(get_sanpham_chitiet($id));
                             <input class="valuenum text-center" disabled type="text" value="1">
                             <div id="tangspct">+</div>
 
-                            <input class="addgh" name="addgh" type="submit" value="THÊM VÀO GIỎ HÀNG">
+                            <?php if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1)) : ?>
+                                <input class="addgh" name="addgh" type="submit" value="THÊM VÀO GIỎ HÀNG">
+                            <?php else : ?>
+                                <input class="addgh" disabled type="button" value="ĐÃ HẾT HÀNG">
+                            <?php endif; ?>
                         </form>
 
                         <script>
@@ -84,14 +98,18 @@ extract(get_sanpham_chitiet($id));
                             var valuenum_hidden = document.querySelector(".valuenum-hidden");
 
                             tang.onclick = () => {
-                                ++num;
-                                valuenum.value = num;
-                                valuenum_hidden.value = num;
+                                if (num < <?= $soluongkho - ($slgiohang + 1) ?>) {
+                                    ++num;
+                                    valuenum.value = num;
+                                    valuenum_hidden.value = num;
+                                }
                             }
                             giam.onclick = () => {
-                                --num;
-                                if (num > 1) valuenum.value = num;
-                                if (num > 1) valuenum_hidden.value = num;
+                                if (num > 1) {
+                                    --num;
+                                    valuenum.value = num;
+                                    valuenum_hidden.value = num;
+                                }
                             }
                         </script>
 
@@ -162,7 +180,6 @@ extract(get_sanpham_chitiet($id));
                     </form>
 
                     <?php
-
                     $stt = 0;
                     foreach (get_comment_user($idsanpham) as $item) : extract($item);
                         $stt++;
@@ -172,6 +189,10 @@ extract(get_sanpham_chitiet($id));
                                 <div>
                                     <i class="fa-regular fa-circle-user"></i>
                                     <span><?= ucwords($tenkh) ?></span>
+
+                                    <?php if (get_nguoimua($idkh,$idsanpham)) : ?>
+                                        <p>(Đã mua hàng)</p>
+                                    <?php endif; ?>
                                 </div>
 
                                 <span><?= date("d / m / Y", strtotime($ngaybinhluan)) ?></span>
@@ -226,7 +247,7 @@ extract(get_sanpham_chitiet($id));
                 else $iddm_lienquan = 15;
                 ?>
                 <?php foreach (get_danhmuc1($iddm_lienquan) as $item) : extract($item); ?>
-                    <a href="?mod=page&act=sanpham&iddm=<?= $id ?>"><?= $tendm ?></a>
+                    <a href="?mod=page&act=sanpham&iddm=<?= $id ?>"><i class="fa-solid fa-right-long"></i> <?= $tendm ?></a>
                 <?php endforeach; ?>
             </div>
 

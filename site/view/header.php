@@ -10,7 +10,7 @@ if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
     $valuelogin = 'Đăng nhập';
 }
 
-if(get_slsp_giohang()['slsp']) $slsp_gh = get_slsp_giohang()['slsp'];
+if (get_slsp_giohang()['slsp']) $slsp_gh = get_slsp_giohang()['slsp'];
 else $slsp_gh = 0;
 
 ?>
@@ -27,7 +27,7 @@ else $slsp_gh = 0;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/371bdbff34.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico" type="favicon">
-    <link rel="stylesheet" href="../content/layout/css/style-p.css">
+    <link rel="stylesheet" href="../content/layout/css/styleppp.css">
     <title>WinX Sport Shop</title>
 </head>
 
@@ -65,7 +65,7 @@ else $slsp_gh = 0;
                 </a>
                 <a href="?mod=cart&act=giohang" class="">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <div><?=$slsp_gh?></div>
+                    <div><?= $slsp_gh ?></div>
                 </a>
             </div>
 
@@ -99,12 +99,12 @@ else $slsp_gh = 0;
                     <i class="fa-solid fa-bars iconshow2"></i>
                     <i class="fa-solid fa-xmark iconhide2"></i>
                 </div>
-                <div class="search">
-                    <input type="search" placeholder="Tìm sản phẩm..." name="" id="">
+                <form class="search" method='post' action='?mod=page&act=search' role="search">
+                    <input type="search" name="search" placeholder="Tìm sản phẩm..." id="">
                     <button>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                </div>
+                </form>
             </div>
         </nav>
 

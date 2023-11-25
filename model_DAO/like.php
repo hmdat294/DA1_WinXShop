@@ -25,7 +25,7 @@ function get_like_one($id, $idkh)
 function get_like_product()
 {
     $sql = "SELECT yt.idkh,sp.id,sp.tensp,sp.giagoc,sp.giasale,
-    sp.soluongkho,sp.luotxem,sp.iddm,sp.mota
+    sp.soluongkho,sp.luotxem,sp.iddm,sp.mota,sp.id AS idsanpham
     FROM yeuthich yt INNER JOIN sanpham sp
     ON yt.idsp=sp.id ORDER BY yt.id DESC";
     return pdo_query($sql);

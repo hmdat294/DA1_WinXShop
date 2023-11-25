@@ -1,7 +1,5 @@
-
-
 <link rel="stylesheet" href="../content/layout/css/giohangphp.css">
-<link rel="stylesheet" href="../content/layout/css/userp.css">
+<link rel="stylesheet" href="../content/layout/css/userppp.css">
 <link rel="stylesheet" href="../content/layout/css/donhang.css">
 <main class="">
 
@@ -15,7 +13,6 @@
         <div>
             <a href="?mod=page&act=user"><i class="fa-solid fa-user"></i> Thông tin tài khoản</a>
             <a href="?mod=cart&act=donhang" style="color: #e95221;"><i class="fa-solid fa-list"></i> Quản lý đơn hàng</a>
-            <a href="#"><i class="fa-solid fa-bell"></i> Quản lý thông báo</a>
             <a href="?mod=page&act=like"><i class="fa-solid fa-heart"></i> Sản phẩm yêu thích</a>
             <?= $admin_button ?>
             <a href="?mod=page&act=dangxuat"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
@@ -41,24 +38,27 @@
             foreach (get_donhang1() as $item) : extract($item);
                 $linkct = '?mod=cart&act=chitietdonhang&id=' . $id;
             ?>
-                <tr class="tbbody">
-                    <td><?= $id ?></td>
-                    <td>
-                        <span><?= $tenkh ?></span>
-                    </td>
-                    <td>
-                        <span><?= date("H:i:s | d-m-Y", strtotime($ngaydat)) ?></span>
-                    </td>
-                    <td>
-                        <span><?= doitien($tongtien) ?></span>đ
-                    </td>
-                    <td>
-                        <span><?= $trangthai ?></span>
-                    </td>
-                    <td>
-                        <a href="<?= $linkct ?>">Xem chi tiết</a>
-                    </td>
-                </tr>
+                <?php if ($idkh == $id_ngmua) : ?>
+                    <tr class="tbbody">
+                        <td>WX<?= $id ?></td>
+                        <td>
+                            <span> <?= $tenkh ?> </span>
+                        </td>
+                        <td>
+                            <span><?= date("d / m / Y", strtotime($ngaydat)) ?></span>
+                        </td>
+                        <td>
+                            <span style="font-size: 0.9em;"><?= doitien($tongtien) ?></span>đ
+                        </td>
+                        <td>
+                            <span><?= $trangthai ?></span>
+                        </td>
+                        <td>
+                            <a href="<?= $linkct ?>">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+
             <?php endforeach; ?>
 
         </table>

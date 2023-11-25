@@ -45,12 +45,12 @@
     <hr>
     <div class="sp-danhmuc-noibat text-center">
 
-        <a href="#" class="">Áo bóng đá</a>
-        <a href="#" class="">Giày cầu lông</a>
-        <a href="#" class="">Vợt cầu lông</a>
-        <a href="#" class="">Áo cầu lông</a>
-        <a href="#" class="">Váy cầu lông</a>
-        <a href="#" class="">Quần cầu lông</a>
+        <a href="?mod=page&act=sanpham&iddm=6" class="">Áo bóng đá</a>
+        <a href="?mod=page&act=sanpham&iddm=3" class="">Giày cầu lông</a>
+        <a href="?mod=page&act=sanpham&iddm=4" class="">Vợt cầu lông</a>
+        <a href="?mod=page&act=sanpham&iddm=1" class="">Áo cầu lông</a>
+        <a href="?mod=page&act=sanpham&iddm=2" class="">Quần cầu lông</a>
+        <a href="?mod=page&act=sanpham&iddm=15" class="">Balo bóng rổ</a>
 
     </div>
 
@@ -62,20 +62,28 @@
         </div>
 
         <div class="sp-noibat">
-            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item); 
-            
-            if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
-                $id_nglike = $_SESSION['accountwinx']['id'];
-                $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
-            } else {
-                $id_nglike = 0;
-                $linkyeuthich = '#';
-            }
-    
-            $checklike = get_like_one($id, $id_nglike);
-            if ($checklike) $icon_heart = '<i class="fa-solid fa-heart" style="color: red;"></i>';
-            else $icon_heart = '<i class="fa-regular fa-heart"></i>';
-            
+            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item);
+
+                if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                    $id_nglike = $_SESSION['accountwinx']['id'];
+                    $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
+                } else {
+                    $id_nglike = 0;
+                    $linkyeuthich = '#';
+                }
+
+                $checklike = get_like_one($id, $id_nglike);
+                if ($checklike) $icon_heart = '<i class="fa-solid fa-heart" style="color: red;"></i>';
+                else $icon_heart = '<i class="fa-regular fa-heart"></i>';
+
+                if (get_idgiohang($idsanpham)) $slgiohang = get_idgiohang($idsanpham)['soluong'];
+                else $slgiohang = 0;
+
+                if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1))
+                    $linkdathang = '<a href="?mod=cart&act=giohang&idsanpham=' . $id . '"><i class="fa-solid fa-cart-shopping"></i></a>';
+                else
+                    $linkdathang = '<a href="#"><i class="fa-solid fa-cart-shopping"></i></a>';
+
             ?>
 
                 <div class="box-sp" id="slidesp">
@@ -89,7 +97,7 @@
                     </a>
 
                     <div class="chucnang-sp">
-                        <a href="?mod=cart&act=giohang&idsanpham=<?= $id ?>"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <?= $linkdathang ?>
                         <a href="?mod=page&act=chitiet&iddm=<?= $iddm ?>&id=<?= $id ?>"><i class="fa-solid fa-ellipsis"></i></a>
                         <a href="<?= $linkyeuthich ?>"><?= $icon_heart ?></a>
                     </div>

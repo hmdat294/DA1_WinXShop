@@ -1,3 +1,5 @@
+<?php extract(get_donhangchitiet($id)) ?>
+
 <main>
     <div style="margin: 10px 35px;">
         <h3 class="">Cập Nhật Đơn Hàng</h3>
@@ -7,30 +9,40 @@
         <h4 class="text-center">Cập Nhật Đơn Hàng</h4>
         <hr>
 
-        <form method="" action="">
+        <form method="POST" enctype="multipart/form-data" action="">
             <label for="">Mã Đơn: </label>
-            <input disabled class="form-control form-text" type="text" value="">
+            <input name="id" disabled class="form-control form-text" type="text" value="WX<?= $id ?>">
+
             <label for="">Tên Khách Hàng:</label>
-            <input disabled class="form-control" type="text" value="">
+            <input name="tenkh" disabled class="form-control" type="text" value="<?= $tenkh ?>">
+
             <label for="">Thời Gian Đặt Hàng:</label>
-            <input disabled class="form-control" type="date" value="">
+            <input name="ngaydat" disabled class="form-control" type="date" value="<?= $ngaydat ?>">
+
             <label for="">Tổng Tiền:</label>
-            <input disabled class="form-control" type="number" value="">
+            <input name="tongtien" disabled class="form-control" type="number" value="<?= $tongtien ?>">
+
             <label for="">Ghi Chú:</label>
-            <input disabled class="form-control" type="text" value="">
+            <input name="ghichu" disabled class="form-control" type="text" value="<?= $ghichu ?>">
+
             <label for="">Địa Chỉ:</label>
-            <input disabled class="form-control" type="text" value="">
+            <input name="diachi" disabled class="form-control" type="text" value="<?= $diachi ?>">
+
             <label for="">Trạng Thái:</label>
-            <select class="form-select" name="" id="">
-                <option value="">Đang Chờ Xử Lý</option>
-                <option value="">Đã Duyệt</option>
-                <option value="">Đang Giao</option>
-                <option value="">Đã Giao</option>
-                <option value="">Đã Hủy</option>
+            <select class="form-select" name="trangthai" id="">
+
+                <option value="Đang chờ xử lý">Đang chờ xử lý</option>
+                <option value="Đã duyệt">Đã duyệt</option>
+                <option value="Đang giao">Đang giao</option>
+                <option value="Đã giao">Đã giao</option>
+                <option value="Đã hủy">Đã hủy</option>
+                <option value="Khách hàng không nhận hàng">Khách hàng không nhận hàng</option>
+
             </select>
+
             <hr>
             <div class="text-center">
-                <button class="btn btn-danger text-white">Cập Nhật Tài Khoản</button>
+                <button name="update_donhang" class="btn btn-danger text-white">Cập Nhật Đơn Hàng</button>
             </div>
         </form>
     </div>

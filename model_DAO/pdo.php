@@ -101,7 +101,15 @@ function showSP($sanpham)
         else $icon_heart = '<i class="fa-regular fa-heart"></i>';
 
         $linkchitiet = '?mod=page&act=chitiet&iddm=' . $iddm . '&id=' . $id;
-        $linkdathang = '?mod=cart&act=giohang&idsanpham=' . $id;
+
+        if (get_idgiohang($idsanpham)) $slgiohang = get_idgiohang($idsanpham)['soluong'];
+        else $slgiohang = 0;
+        
+        if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1))
+            $linkdathang = '<a href="?mod=cart&act=giohang&idsanpham=' . $id . '"><i class="fa-solid fa-cart-shopping"></i></a>';
+        else
+            $linkdathang = '<a href="#"><i class="fa-solid fa-cart-shopping"></i></a>';
+        
         $showsp .= '
         <div class="box-sp">
             <a href="' . $linkchitiet . '" class="img-sp">
@@ -114,7 +122,7 @@ function showSP($sanpham)
             </a>
             
             <div class="chucnang-sp">
-                <a href="' . $linkdathang . '"><i class="fa-solid fa-cart-shopping"></i></a>
+                ' . $linkdathang . '
                 <a href="' . $linkchitiet . '"><i class="fa-solid fa-ellipsis"></i></a>
                 <a href="' . $linkyeuthich . '">' . $icon_heart . '</a>
             </div>

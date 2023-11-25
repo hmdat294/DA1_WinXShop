@@ -13,11 +13,11 @@
 
             <div>
                 <b>CHỌN MỨC GIÁ</b>
-                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=0&max_price=500000">Giá dưới 500.000đ</a>
+                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=0&max_price=200000">Giá dưới 200.000đ</a>
+                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=200000&max_price=500000">200.000đ - 500.000đ</a>
                 <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=500000&max_price=1000000">500.000đ - 1 triệu</a>
                 <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=1000000&max_price=2000000">1 triệu - 2 triệu</a>
-                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=2000000&max_price=3000000">2 triệu - 3 triệu</a>
-                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=3000000&max_price=100000000">3 triệu trở lên</a>
+                <a href="<?= $_SERVER['REQUEST_URI'] ?>&min_price=2000000&max_price=100000000">2 triệu trở lên</a>
             </div>
             <div>
                 <b>SẮP XẾP</b>

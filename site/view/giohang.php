@@ -34,11 +34,14 @@
                     <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
                     <div>
                         <b><?= $tensp ?></b>
-                        <p>Size: </p>
                         <div class="soluong">
                             <a href="<?= $giamsl ?>">-</a>
                             <input disabled type="text" value="<?= $soluong ?>" class="text-center">
-                            <a href="<?= $tangsl ?>">+</a>
+                            <?php if ($soluong >= $soluongkho - 1) : ?>
+                                <a href="#">+</a>
+                            <?php else : ?>
+                                <a href="<?= $tangsl ?>">+</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </td>

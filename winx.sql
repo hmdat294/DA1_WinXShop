@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2023 lúc 05:46 PM
+-- Thời gian đã tạo: Th10 26, 2023 lúc 07:41 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -144,7 +144,9 @@ INSERT INTO `chitietdonhang` (`id`, `iddh`, `idsp`, `soluong`, `giasale`, `ngayd
 (58, 49, 136, 10, 10500000, '2023-11-25'),
 (59, 50, 136, 15, 10500000, '2023-11-25'),
 (60, 51, 136, 9, 10500000, '2023-11-25'),
-(61, 52, 136, 7, 10500000, '2023-11-25');
+(61, 52, 136, 7, 10500000, '2023-11-25'),
+(63, 54, 136, 2, 10500000, '2023-11-26'),
+(64, 55, 136, 7, 10500000, '2023-11-26');
 
 -- --------------------------------------------------------
 
@@ -251,7 +253,9 @@ INSERT INTO `donhang` (`id`, `idkh`, `tenkh`, `sdt`, `email`, `tongtien`, `ngayd
 (49, 1, 'admin', '0123456789', 'admin@gmail.com', 105049000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
 (50, 1, 'admin', '0123456789', 'admin@gmail.com', 157515000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
 (51, 1, 'admin', '0123456789', 'admin@gmail.com', 94596000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(52, 1, 'admin', '0123456789', 'admin@gmail.com', 73529000, '2023-11-25', 'Đã hủy', 'Trống', 'Hà nội', 'Thanh toán qua ngân hàng');
+(52, 1, 'admin', '0123456789', 'admin@gmail.com', 73529000, '2023-11-25', 'Đã hủy', 'Trống', 'Hà nội', 'Thanh toán qua ngân hàng'),
+(54, 1, 'admin', '0123456789', 'admin@gmail.com', 21062000, '2023-11-26', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(55, 1, 'admin', '0123456789', 'admin@gmail.com', 73565000, '2023-11-26', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)');
 
 -- --------------------------------------------------------
 
@@ -1390,7 +1394,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
@@ -1402,13 +1406,13 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- AUTO_INCREMENT cho bảng `hinhanh`

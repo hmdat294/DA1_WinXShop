@@ -1,37 +1,28 @@
 <main>
     <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 2fr;">
         <h3 class="">Sản Phẩm</h3>
+
         <select class="form-select" name="" id="mySelect">
             <option value="0"><?= $tendanhmuc ?></option>
             <?php
             foreach (category_product() as $item) {
                 extract($item);
-                echo ' <option value="' . $id . '">' . $tendm . '</option> ';
+                echo ' <option value="?mod=product&act=list&iddm='. $id .'">' . $tendm . '</option> ';
             }
             ?>
         </select>
     </div>
 
-
     <script>
         var selectElement = document.getElementById("mySelect");
         selectElement.onchange = () => {
-            switch (selectElement.value) {
-                case 0:
-                    break;
-
-                    <?php foreach (category_product() as $item) : extract($item); ?>
-                    case "<?= $id ?>":
-                        window.location.href = "?mod=product&act=list&iddm=<?= $id ?>";
-                        break;
-                    <?php endforeach; ?>
-
-                default:
-                    break;
-            }
+            var selectedValue = selectElement.value;
+            window.location.href = selectedValue;
         }
     </script>
+
     <hr>
+
     <a href="?mod=product&act=add" class="btn btn-danger text-white" style="margin: 10px 0;">Thêm Sản Phẩm</a>
     <table class="table text-center table-bordered border rounded-3" style="font-size: 0.8em;">
         <thead class="table-danger border-1 rounded-3">

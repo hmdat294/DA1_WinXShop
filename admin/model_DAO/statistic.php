@@ -25,24 +25,57 @@ function count_account()
 }
 
 
-function trangthaidonhang()
+
+
+
+
+
+function trangthaidonhang_all()
 {
     $sql = "SELECT trangthai, count(id) as soluong from donhang group by trangthai";
     return pdo_query($sql);
 }
-function donhangdaban()
+function donhangdaban_all()
 {
     $sql = "SELECT ngaydat, count(id) as soluongoder from donhang group by ngaydat";
     return pdo_query($sql);
 }
-function sanphamdaban()
+function sanphamdaban_all()
 {
     $sql = "SELECT ngaydat, count(id) as sanphamdaban from chitietdonhang group by ngaydat";
     return pdo_query($sql);
 }
 
 
-function sl_donhang_dagiao()
+
+
+function trangthaidonhang($day)
+{
+    $sql = "SELECT trangthai, count(id) as soluong from donhang
+    WHERE ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE() 
+    group by trangthai";
+    return pdo_query($sql);
+}
+function donhangdaban($day)
+{
+    $sql = "SELECT ngaydat, count(id) as soluongoder from donhang
+    WHERE ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE() 
+    group by ngaydat";
+    return pdo_query($sql);
+}
+function sanphamdaban($day)
+{
+    $sql = "SELECT ngaydat, count(id) as sanphamdaban from chitietdonhang
+    WHERE ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE() 
+    group by ngaydat";
+    return pdo_query($sql);
+}
+
+
+
+
+
+function sl_donhang_dagiao_all()
 {
     $sql = "SELECT 
             COUNT(id) AS sl_donhang_dagiao, 
@@ -51,10 +84,59 @@ function sl_donhang_dagiao()
     return pdo_query_one($sql);
 }
 
-function sl_donhang_dahuy()
+function sl_donhang_dahuy_all()
 {
     $sql = "SELECT 
             COUNT(id) AS sl_donhang_dahuy
             FROM donhang WHERE trangthai LIKE '%Đã hủy%'";
     return pdo_query_one($sql);
+}
+
+function sl_donhang_dagiao($day)
+{
+    $sql = "SELECT 
+            COUNT(id) AS sl_donhang_dagiao, 
+            SUM(tongtien) as tongtien 
+            FROM donhang WHERE trangthai LIKE '%Đã giao%'
+            AND ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE()";
+    return pdo_query_one($sql);
+}
+
+function sl_donhang_dahuy($day)
+{
+    $sql = "SELECT 
+            COUNT(id) AS sl_donhang_dahuy
+            FROM donhang WHERE trangthai LIKE '%Đã hủy%'
+            AND ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE()";
+    return pdo_query_one($sql);
+}
+
+
+function donhang_dagiao_all()
+{
+    $sql = "SELECT * FROM donhang WHERE trangthai LIKE '%Đã giao%' ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
+function donhang_dahuy_all()
+{
+    $sql = "SELECT * FROM donhang WHERE trangthai LIKE '%Đã hủy%' ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
+
+function donhang_dagiao($day)
+{
+    $sql = "SELECT * FROM donhang WHERE trangthai LIKE '%Đã giao%' 
+    AND ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE()
+    ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
+function donhang_dahuy($day)
+{
+    $sql = "SELECT * FROM donhang WHERE trangthai LIKE '%Đã hủy%' 
+    AND ngaydat >= CURDATE() - INTERVAL $day DAY AND ngaydat <= CURDATE()
+    ORDER BY id ASC";
+    return pdo_query($sql);
 }

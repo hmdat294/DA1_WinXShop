@@ -1,6 +1,6 @@
 <style>
-    hr{
-        margin: 20px 0; 
+    hr {
+        margin: 20px 0;
         width: calc(100% - 25px);
     }
 </style>
@@ -36,9 +36,31 @@
 
     <hr>
 
-    <div style="margin: 10px 35px;">
+    <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 1fr;">
         <h3>Thống Kê</h3>
+
+        <select class="form-select" name="" id="myThongke">
+            <?php if (isset($day)) : ?>
+                <option value="?mod=statistic&act=list&day=<?= $day ?>"><?= $day + 1 ?> ngày trước</option>
+            <?php endif; ?>
+            <option value="?mod=statistic&act=list">Tất cả</option>
+            <option value="?mod=statistic&act=list&day=2">3 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=6">7 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=9">10 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=14">15 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=29">30 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=59">60 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=89">90 ngày trước</option>
+        </select>
     </div>
+
+    <script>
+        var selectElement = document.getElementById("myThongke");
+        selectElement.onchange = () => {
+            var selectedValue = selectElement.value;
+            window.location.href = selectedValue;
+        }
+    </script>
 
     <hr>
 
@@ -58,15 +80,23 @@
 
     <div class="row tksl">
         <div class="col-lg m-2 border bg-success rounded">
-            <h2 class="m-3 text-white"><?= sl_donhang_dagiao()['sl_donhang_dagiao'] ?></h2>
-            <h5 class="m-2 text-white">Đơn Hàng Đã Giao (Tổng doanh thu: <?= doitien(sl_donhang_dagiao()['tongtien']) ?>đ)</h5>
-            <a class="btn btn-light form-control my-3" href="?mod=order&act=done&done=dagiao">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <h2 class="m-3 text-white"><?= $sl_donhang_dagiao['sl_donhang_dagiao'] ?></h2>
+            <h5 class="m-2 text-white">Đơn Hàng Đã Giao (Tổng doanh thu: <?= doitien($sl_donhang_dagiao['tongtien']) ?>đ)</h5>
+            <?php if (isset($day)) : ?>
+                <a class="btn btn-light form-control my-3" href="?mod=statistic&act=done&done=dagiao&day=<?= $day ?>">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <?php else : ?>
+                <a class="btn btn-light form-control my-3" href="?mod=statistic&act=done&done=dagiao">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <?php endif; ?>
             <div></div>
         </div>
         <div class="col-lg m-2 border bg-secondary rounded">
-            <h2 class="m-3 text-white"><?= sl_donhang_dahuy()['sl_donhang_dahuy'] ?></h2>
+            <h2 class="m-3 text-white"><?= $sl_donhang_dahuy['sl_donhang_dahuy'] ?></h2>
             <h5 class="m-2 text-white">Đơn Hàng Đã Hủy</h5>
-            <a class="btn btn-light form-control my-3" href="?mod=order&act=done&done=dahuy">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <?php if (isset($day)) : ?>
+                <a class="btn btn-light form-control my-3" href="?mod=statistic&act=done&done=dahuy&day=<?= $day ?>">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <?php else : ?>
+                <a class="btn btn-light form-control my-3" href="?mod=statistic&act=done&done=dahuy">Xem Chi Tiết <i class="fa-solid fa-circle-arrow-right"></i></a>
+            <?php endif; ?>
             <div></div>
         </div>
     </div>
@@ -79,10 +109,10 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        // Set Data 2
+        // Set Data 1
         const data1 = google.visualization.arrayToDataTable([
             ['Trạng Thái', 'Số Lượng'],
-            <?php foreach (trangthaidonhang() as $data) {
+            <?php foreach ($trangthaidonhang as $data) {
                 extract($data);
                 echo "['$trangthai', $soluong],";
             } ?>
@@ -90,7 +120,7 @@
         // Set Data 2
         const data2 = google.visualization.arrayToDataTable([
             ['Thống Kê', 'Số Lượng'],
-            <?php foreach (donhangdaban() as $data) {
+            <?php foreach ($donhangdaban as $data) {
                 extract($data);
                 echo "['$ngaydat', $soluongoder],";
             } ?>
@@ -98,7 +128,7 @@
         // Set Data 3
         const data3 = google.visualization.arrayToDataTable([
             ['Thống Kê', 'Số Lượng'],
-            <?php foreach (sanphamdaban() as $data) {
+            <?php foreach ($sanphamdaban as $data) {
                 extract($data);
                 echo "['$ngaydat', $sanphamdaban],";
             } ?>

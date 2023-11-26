@@ -18,7 +18,7 @@ if (isset($act)) {
             if (isset($update_donhang)) {
                 update_donhang($id, $trangthai);
 
-                if ($trangthai == 'Khách hàng không nhận hàng') {
+                if (($trangthai == 'Khách hàng không nhận hàng') || ($trangthai == 'Đã hủy')) {
 
                     foreach (get_chitietdonhang($id) as $item) {
                         extract($item);
@@ -33,23 +33,6 @@ if (isset($act)) {
             }
 
             include_once('view/order_edit.php');
-            break;
-
-        case 'done':
-
-            switch ($done) {
-                case 'dagiao':
-                    $title = "Đơn Hàng Đã Giao";
-                    $donhang_done = donhang_dagiao();
-                    break;
-
-                case 'dahuy':
-                    $title = "Đơn Hàng Đã Hủy";
-                    $donhang_done = donhang_dahuy();
-                    break;
-            }
-
-            include_once('view/order_done.php');
             break;
 
         default:

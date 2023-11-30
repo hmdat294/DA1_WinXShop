@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../content/layout/css/dangnhap.css">
+<link rel="stylesheet" href="../content/layout/css/dangnhap-php.css">
 
 <script>
     if ("<?= $thongbao ?>") alert("<?= $thongbao ?>");
@@ -9,8 +9,8 @@
     <form action="" method="post" enctype="multipart/form-data" onsubmit="return kiemtraform()">
         <h2>Đăng nhập</h2>
 
-        <input name="email" class="email-dn" type="text" placeholder="Email">
-        <input name="matkhau" class="pass-dn" id="my-pass0" type="password" placeholder="Mật khẩu">
+        <input name="email" class="email-dn" type="text" placeholder="Email" onchange="kiemtraform()">
+        <input name="matkhau" class="pass-dn" id="my-pass0" type="password" placeholder="Mật khẩu" onchange="kiemtraform()">
 
         <div class="show-hide" id="show-hide" onclick="showpass('my-pass0',0)">
             <i id="show0" class="fa-regular fa-eye"></i>

@@ -1,7 +1,7 @@
 <main>
 
     <div class="banner">
-        <img src="../content/layout/images/banner.png" alt="">
+        <img src="../content/layout/images/banner1.jpg" alt="">
     </div>
 
     <div class="quangcao1">
@@ -62,22 +62,26 @@
         </div>
 
         <div class="sp-noibat">
-            <?php foreach (get_sanpham1(3, 9) as $item) : extract($item);
+            <?php foreach (get_sanpham_noibat() as $item) : extract($item);
 
                 if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
                     $id_nglike = $_SESSION['accountwinx']['id'];
                     $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
                 } else {
                     $id_nglike = 0;
-                    $linkyeuthich = '#';
+                    $linkyeuthich = '?mod=page&act=dangnhap';
                 }
 
                 $checklike = get_like_one($id, $id_nglike);
                 if ($checklike) $icon_heart = '<i class="fa-solid fa-heart" style="color: red;"></i>';
                 else $icon_heart = '<i class="fa-regular fa-heart"></i>';
 
-                if (get_idgiohang($idsanpham)) $slgiohang = get_idgiohang($idsanpham)['soluong'];
-                else $slgiohang = 0;
+                if (isset($_SESSION['cartwinx'])) {
+                    foreach ($_SESSION['cartwinx'] as $item) {
+                        if ($item['id'] == $idsanpham) $slgiohang = $item['soluong'];
+                    }
+                }
+                if (!isset($slgiohang)) $slgiohang = 0;
 
                 if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1))
                     $linkdathang = '<a href="?mod=cart&act=giohang&idsanpham=' . $id . '"><i class="fa-solid fa-cart-shopping"></i></a>';
@@ -124,7 +128,7 @@
 
 
     <div class="sp-title p-5">
-        <h4>SẢN PHẨM YÊU THÍCH</h4>
+        <h4>SẢN PHẨM BÁN CHẠY</h4>
         <div class="line">
             <div></div>
         </div>
@@ -133,12 +137,12 @@
     <div class="sp-yeuthich">
         <img src="../content/layout/images/quangcao1.png" alt="">
         <div class="sanpham2">
-            <?= showSP(get_sanpham1(4, 2)) ?>
+            <?= showSP(get_sanpham_banchay('0,2')) ?>
         </div>
     </div>
 
     <div class="sanpham0">
-        <?= showSP(get_sanpham1(5, 4)) ?>
+        <?= showSP(get_sanpham_banchay('2,4')) ?> 
     </div>
 
     <div class="sp-title p-5">

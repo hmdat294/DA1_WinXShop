@@ -20,24 +20,28 @@
         <?php
         $stt = 0;
         $tong = 0;
-        foreach (get_giohang() as $item) : extract($item);
+        if(isset($_SESSION['cartwinx'])) $giohang = $_SESSION['cartwinx'];
+        else $giohang = [];
+        
+        foreach ($giohang as $index => $item) : extract($item);
             $tong += $giasale * $soluong;
             $stt++;
-            $linkdel = '?mod=cart&act=deletegiohang&id=' . $id;
-            $giamsl  = '?mod=cart&act=giamsoluong&id=' . $id;
-            $tangsl  = '?mod=cart&act=tangsoluong&id=' . $id;
+            $linkdel = '?mod=cart&act=deletegiohang&id=' . $index;
+            $giamsl  = '?mod=cart&act=giamsoluong&id=' . $index;
+            $tangsl  = '?mod=cart&act=tangsoluong&id=' . $index;
+            $sp = get_sanpham_chitiet($id);
         ?>
 
             <tr class="tbbody">
                 <th><?= $stt ?></th>
                 <td class="sanpham-gh">
-                    <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
+                    <img class="img-gh" src="../content/layout/images/images_product/<?= $hinhanh ?>" alt="">
                     <div>
                         <b><?= $tensp ?></b>
                         <div class="soluong">
                             <a href="<?= $giamsl ?>">-</a>
                             <input disabled type="text" value="<?= $soluong ?>" class="text-center">
-                            <?php if ($soluong >= $soluongkho - 1) : ?>
+                            <?php if ($soluong >= $sp['soluongkho'] - 1) : ?>
                                 <a href="#">+</a>
                             <?php else : ?>
                                 <a href="<?= $tangsl ?>">+</a>

@@ -8,17 +8,32 @@ function get_sanpham_search($keyword)
     return pdo_query($sql);
 }
 
+
+function get_sanpham_noibat()
+{
+    $sql = "WITH NumberedProducts AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY iddm ORDER BY id) AS row_num
+        FROM sanpham WHERE iddm IN (1, 2, 3, 4, 5, 6, 7, 8, 9))
+        SELECT *, id AS idsanpham FROM NumberedProducts WHERE row_num = 1; ";
+    return pdo_query($sql);
+}
+
+
+
+function get_sanpham_banchay($limit)
+{
+    $sql = "SELECT sp.*, sp.id AS idsanpham , SUM(soluong) AS sldamua FROM chitietdonhang ct INNER JOIN sanpham sp 
+    ON ct.idsp=sp.id GROUP BY idsp ORDER BY sldamua DESC LIMIT $limit";
+    return pdo_query($sql);
+}
+
+
 function get_sanpham1($id, $limit)
 {
     $sql = "SELECT *, id AS idsanpham FROM sanpham WHERE iddm=$id ORDER BY id DESC limit $limit";
     return pdo_query($sql);
 }
 
-// function get_sanpham2($id)
-// {
-//     $sql = "SELECT * FROM sanpham WHERE iddm=$id ORDER BY id DESC limit 12";
-//     return pdo_query($sql);
-// }
+
 
 function fill_product($iddm, $min_price, $max_price, $filter_order)
 {

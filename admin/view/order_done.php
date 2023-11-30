@@ -37,7 +37,14 @@
                 <td><?= $diachi ?></td>
                 <td><?= $phuongthuc ?></td>
                 <td>
-                    <a href="?mod=order&act=edit&id=<?= $id ?>" class="btn btn-info">Sửa</a>
+                    <?php if (($trangthai == 'Đã giao') ||
+                        ($trangthai == 'Đã hủy') ||
+                        ($trangthai == 'Khách hàng không nhận hàng')
+                    ) : ?>
+                        <a class="btn btn-secondary" style="font-size: 0.9em;">Không thể cập nhật</a>
+                    <?php else : ?>
+                        <a href="?mod=order&act=edit&id=<?= $id ?>" class="btn btn-info">Cập nhật</a>
+                    <?php endif; ?>
                 </td>
             </tr>
         <?php endforeach; ?>

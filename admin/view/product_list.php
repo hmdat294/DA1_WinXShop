@@ -1,13 +1,18 @@
 <main>
-    <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 2fr;">
+    <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
         <h3 class="">Sản Phẩm</h3>
+
+        <form class="input-group " method='post' action='?mod=product&act=list' role="search">
+            <input type="search" name="search" class="form-control" placeholder="Tìm sản phẩm..." >
+            <button class="btn btn-outline-secondary z-0" name="submit_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
 
         <select class="form-select" name="" id="mySelect">
             <option value="0"><?= $tendanhmuc ?></option>
             <?php
             foreach (category_product() as $item) {
                 extract($item);
-                echo ' <option value="?mod=product&act=list&iddm='. $id .'">' . $tendm . '</option> ';
+                echo ' <option value="?mod=product&act=list&iddm=' . $id . '">' . $tendm . '</option> ';
             }
             ?>
         </select>
@@ -59,7 +64,6 @@
 
                             <?php if (
                                 check_product_binhluan($id) ||
-                                check_product_giohang($id) ||
                                 check_product_chitietdonhang($id) ||
                                 check_product_yeuthich($id)
                             ) : ?>

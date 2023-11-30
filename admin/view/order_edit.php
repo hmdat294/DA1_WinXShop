@@ -30,7 +30,7 @@
 
             <label for="">Trạng Thái:</label>
             <select class="form-select" name="trangthai" id="">
-
+                <option value="<?= $trangthai ?>"><?= $trangthai ?></option>
                 <option value="Đang chờ xử lý">Đang chờ xử lý</option>
                 <option value="Đã duyệt">Đã duyệt</option>
                 <option value="Đang giao">Đang giao</option>

@@ -29,7 +29,7 @@
             <hr>
             <p><span>Giới thiệu</span></p>
             <p><span>Tin tức - Sự kiện</span></p>
-            <p><span>Kết nối với chúng tôitôi</span></p>
+            <p><span>Kết nối với chúng tôi</span></p>
             <div>
                 <img src="../content/layout/images/facebook1.png" alt="">
                 <img src="../content/layout/images/instagram.png" alt="">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="text-center" style="margin-top:50px;" >Bản quyền thuộc về WinX Sport Shop</div>
+    <div class="text-center" style="margin-top:50px;" >© Bản quyền thuộc về WinX Sport Shop</div>
 
 </div>
 
@@ -56,7 +56,6 @@
 
 </body>
 
-<script src="../content/layout/js/script.js"></script>
-
+<script src="../content/layout/js/j-script.js"></script>
 
 </html>

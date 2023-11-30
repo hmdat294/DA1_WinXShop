@@ -18,6 +18,10 @@ if (isset($act)) {
                 $tendanhmuc = category_slt(1)['tendm'];
             }
 
+            if(isset($submit_search) && ($search)){
+                $get_sanpham = get_sanpham_search_admin($search);
+            }
+
             include_once('view/product_list.php');
             break;
 

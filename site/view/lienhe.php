@@ -3,7 +3,7 @@
 
 <main>
 
-<h4 class="text-center p-3" style="color: #e95221;">SẢN PHẨM SALE ĐẬM</h4>
+<h4 class="text-center p-3" style="color: #e95221;">LIÊN HỆ</h4>
 
 <div>
     <div class="">
@@ -19,7 +19,7 @@
                 <span><img width="25px" src="../content/layout/images/facebook1.png" alt="">WinXStore</span>
                 <span><img width="25px" src="../content/layout/images/instagram.png" alt="">WinX_Sports</span>
                 <span><img width="25px" src="../content/layout/images/youtube.png" alt="">WinXStore Channel</span>
-                <span><img width="25px" src="../content/layout/images/tiktok.png" alt="">WinXStoreTiktok</span>
+                <span><img width="25px" src="../content/layout/images/icon-tt.jpg" alt="">WinXStoreTiktok</span>
             </li>
         </ul>
     </div>

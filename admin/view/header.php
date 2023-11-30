@@ -8,7 +8,8 @@
     <script src="https://kit.fontawesome.com/eee285df14.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="../content/layout/admin/css/style-adm.css" />
+    <link rel="shortcut icon" type="image/png" href="../content/layout/images/wx.png"/>
+    <link rel="stylesheet" href="../content/layout/admin/css/style-ad.css" />
     <link rel="stylesheet" href="../content/layout/admin/scss/custom.scss">
     <link rel="stylesheet" href="../content/layout/admin/scss/custom.css">
     <title>WinX Quản Trị</title>

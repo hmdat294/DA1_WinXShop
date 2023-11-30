@@ -1,10 +1,16 @@
 <?php
 extract(get_sanpham_chitiet($id));
 
-if (get_idgiohang($id))
-    $slgiohang = get_idgiohang($id)['soluong'];
-else
-    $slgiohang = 0;
+if (isset($_SESSION['cartwinx'])) {
+    foreach ($_SESSION['cartwinx'] as $item) {
+        if ($item['id'] == $id) $slgiohang = $item['soluong'];
+    }
+} 
+
+if (!isset($slgiohang)) $slgiohang = 0;
+
+
+
 
 ?>
 
@@ -190,7 +196,7 @@ else
                                     <i class="fa-regular fa-circle-user"></i>
                                     <span><?= ucwords($tenkh) ?></span>
 
-                                    <?php if (get_nguoimua($idkh,$idsanpham)) : ?>
+                                    <?php if (get_nguoimua($idkh, $idsanpham)) : ?>
                                         <p>(Đã mua hàng)</p>
                                     <?php endif; ?>
                                 </div>
@@ -247,7 +253,7 @@ else
                 else $iddm_lienquan = 15;
                 ?>
                 <?php foreach (get_danhmuc1($iddm_lienquan) as $item) : extract($item); ?>
-                    <a href="?mod=page&act=sanpham&iddm=<?= $id ?>"><i class="fa-solid fa-right-long"></i> <?= $tendm ?></a>
+                    <a href="?mod=page&act=sanpham&iddm=<?= $id ?>">- </i> <?= $tendm ?></a>
                 <?php endforeach; ?>
             </div>
 

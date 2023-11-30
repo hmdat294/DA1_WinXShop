@@ -10,7 +10,7 @@ if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
     $valuelogin = 'Đăng nhập';
 }
 
-if (get_slsp_giohang()['slsp']) $slsp_gh = get_slsp_giohang()['slsp'];
+if (isset($_SESSION['cartwinx'])) $slsp_gh = count($_SESSION['cartwinx']);
 else $slsp_gh = 0;
 
 ?>
@@ -26,8 +26,9 @@ else $slsp_gh = 0;
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/371bdbff34.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="favicon.ico" type="favicon">
-    <link rel="stylesheet" href="../content/layout/css/styleppp.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="../content/layout/images/wx.png" />
+    <link rel="stylesheet" href="../content/layout/css/stylep.css">
     <title>WinX Sport Shop</title>
 </head>
 
@@ -41,15 +42,15 @@ else $slsp_gh = 0;
                 </a>
             </div>
 
-            <div class="hotline">
+            <a href="tel:0357072913" class="hotline">
                 <i class="fa-solid fa-phone p-2"></i>
                 <span>HOTLINE: <span>0357072913 | 0984700721</span></span>
-            </div>
+            </a>
 
-            <div class="address">
+            <a href="?mod=page&act=lienhe" class="address">
                 <i class="fa-solid fa-location-dot p-2"></i>
                 <span>HỆ THỐNG CỬA HÀNG</span>
-            </div>
+            </a>
 
             <form class="search" method='post' action='?mod=page&act=search' role="search">
                 <input type="search" name="search" placeholder="Tìm sản phẩm..." id="">
@@ -204,3 +205,18 @@ else $slsp_gh = 0;
                 <?php endforeach; ?>
             </div>
         </div>
+
+        <script>
+            $("#buttonsp").click(() => {
+                $(".menusanpham").slideToggle();
+                $(".menusanpham").css("display", "grid");
+
+                if ($(".iconshow1").css("display") === "block") {
+                    $(".iconshow1").css("display", "none");
+                    $(".iconhide1").css("display", "block");
+                } else {
+                    $(".iconshow1").css("display", "block");
+                    $(".iconhide1").css("display", "none");
+                }
+            });
+        </script>

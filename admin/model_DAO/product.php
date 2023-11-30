@@ -3,6 +3,12 @@
 include_once "../model_DAO/pdo.php";
 
 
+function get_sanpham_search_admin($keyword)
+{
+    $sql = "SELECT * FROM sanpham WHERE tensp LIKE '%$keyword%'";
+    return pdo_query($sql);
+}
+
 function product($iddm)
 {
     $sql = "SELECT * FROM sanpham WHERE iddm=$iddm ORDER BY id DESC";
@@ -91,12 +97,6 @@ function img_product_edit($id, $hinhanh)
 function check_product_binhluan($id)
 {
     $sql = "SELECT * FROM binhluan WHERE idsp=$id";
-    return pdo_query_one($sql);
-}
-
-function check_product_giohang($id)
-{
-    $sql = "SELECT * FROM giohang WHERE idsp=$id";
     return pdo_query_one($sql);
 }
 

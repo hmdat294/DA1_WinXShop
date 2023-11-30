@@ -3,7 +3,7 @@
 
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=winx;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=winxshop;charset=utf8";
     $username = 'root';
     $password = '';
 
@@ -93,7 +93,7 @@ function showSP($sanpham)
             $linkyeuthich = '?mod=page&act=like&idsp_like=' . $id . '&idkhachhang=' . $id_nglike;
         } else {
             $id_nglike = 0;
-            $linkyeuthich = '#';
+            $linkyeuthich = '?mod=page&act=dangnhap';
         }
 
         $checklike = get_like_one($id, $id_nglike);
@@ -102,8 +102,12 @@ function showSP($sanpham)
 
         $linkchitiet = '?mod=page&act=chitiet&iddm=' . $iddm . '&id=' . $id;
 
-        if (get_idgiohang($idsanpham)) $slgiohang = get_idgiohang($idsanpham)['soluong'];
-        else $slgiohang = 0;
+        if (isset($_SESSION['cartwinx'])) {
+            foreach ($_SESSION['cartwinx'] as $item) {
+                if ($item['id'] == $idsanpham) $slgiohang = $item['soluong'];
+            }
+        }
+        if (!isset($slgiohang)) $slgiohang = 0;
         
         if (($slgiohang < $soluongkho - 1) && ($soluongkho > 1))
             $linkdathang = '<a href="?mod=cart&act=giohang&idsanpham=' . $id . '"><i class="fa-solid fa-cart-shopping"></i></a>';

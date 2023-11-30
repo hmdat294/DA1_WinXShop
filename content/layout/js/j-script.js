@@ -1,24 +1,4 @@
 
-var btn_sp = document.getElementById("buttonsp");
-var menu_sp = document.querySelector(".menusanpham");
-var icon_bars1 = document.querySelector(".iconshow1");
-var icon_xmark1 = document.querySelector(".iconhide1");
-
-btn_sp.onclick = () => {
-    if (menu_sp.style.display === "grid") {
-        menu_sp.style.display = "none";
-        icon_bars1.style.display = "block";
-        icon_xmark1.style.display = "none";
-    }
-    else {
-        menu_sp.style.display = "grid";
-        icon_bars1.style.display = "none";
-        icon_xmark1.style.display = "block";
-    }
-}
-
-
-
 
 
 var btn_nav = document.getElementById("buttonnav");

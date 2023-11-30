@@ -2,11 +2,24 @@
 
 include_once "../model_DAO/pdo.php";
 
+function get_donhang_search_admin($keyword)
+{
+    $sql = "SELECT * FROM donhang WHERE tenkh LIKE '%$keyword%' OR id='$keyword'";
+    return pdo_query($sql);
+}
+
 function donhang()
 {
     $sql = "SELECT * FROM donhang ORDER BY id ASC";
     return pdo_query($sql);
 }
+
+function donhang_tthai($tthai)
+{
+    $sql = "SELECT * FROM donhang WHERE trangthai='$tthai' ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
 function get_donhangchitiet($id)
 {
     $sql = "SELECT * FROM donhang WHERE id=$id";

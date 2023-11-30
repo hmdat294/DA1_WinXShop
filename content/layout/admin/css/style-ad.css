@@ -85,13 +85,13 @@ header h4 {
 
 }
 
-form {
+.form-parent form {
     box-shadow: 0 0 5px gray;
     padding: 20px;
     border-radius: 5px;
 }
 
-form input {
+.form-parent form input {
     margin-bottom: 15px;
 }
 

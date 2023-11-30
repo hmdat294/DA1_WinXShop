@@ -4,7 +4,7 @@
 <?php extract(get_user_test($idkhachhang)); ?>
 
 <main>
-
+    
     <h3 class="text-center">THANH TOÁN</h3>
 
     <div class="">
@@ -23,7 +23,10 @@
                 $stt = 0;
                 $tong = 0;
                 $ship = round(rand(10000, 100000), -3);
-                foreach (get_giohang() as $item) : extract($item);
+                if (isset($_SESSION['cartwinx'])) $giohang = $_SESSION['cartwinx'];
+                else $giohang = [];
+                
+                foreach ($giohang as $item) : extract($item);
                     $tong += $giasale * $soluong;
                     $stt++;
                 ?>
@@ -31,7 +34,7 @@
                     <tr class="tbbody">
                         <th><?= $stt ?></th>
                         <td class="sanpham-ctdh">
-                            <img class="img-gh" src="../content/layout/images/images_product/<?= get_hinhanh1($idsp)["hinhanh"] ?>" alt="">
+                            <img class="img-gh" src="../content/layout/images/images_product/<?= $hinhanh ?>" alt="">
                             <div>
                                 <p><?= $tensp ?></p>
                                 <p>Số lượng: <?= $soluong ?></p>
@@ -55,15 +58,15 @@
 
                     <h6>THÔNG TIN NHẬN HÀNG</h6>
 
-                    <label>Họ và tên người nhận hàng
+                    <label>Họ và tên người nhận hàng (*)
                         <input type="text" name="tenkh" value="<?= $tenkh ?>">
                     </label>
 
-                    <label>Số điện thoại
+                    <label>Số điện thoại (*)
                         <input type="text" name="sdt" value="<?= $sdt ?>">
                     </label>
 
-                    <label>Email
+                    <label>Email (*)
                         <input type="email" name="email" value="<?= $email ?>">
                     </label>
 
@@ -71,7 +74,7 @@
                         <input type="text" name="ghichu" placeholder="Trống">
                     </label>
 
-                    <label>Địa chỉ người nhận
+                    <label>Địa chỉ người nhận (*)
                         <input type="text" name="diachi" placeholder="Trống" required>
                     </label>
 
@@ -83,13 +86,19 @@
                     <h6>PHƯƠNG THỨC THANH TOÁN</h6>
 
                     <label>
-                        <input type="radio" checked name="phuongthuc" value="Thanh toán khi nhận hàng (COD)" id="">
+                        <input type="radio" checked name="phuongthuc" value="Thanh toán khi nhận hàng (COD)" id="tructiep">
                         <span><i class="fa-solid fa-wallet"></i> Thanh toán khi nhận hàng (COD)</span>
                     </label>
+
                     <label>
-                        <input type="radio" name="phuongthuc" value="Thanh toán qua ngân hàng" id="">
+                        <input type="radio" name="phuongthuc" value="Thanh toán qua ngân hàng" id="nganhang">
                         <span><i class="fa-solid fa-building-columns"></i> Thanh toán qua ngân hàng</span>
                     </label>
+
+                    <div class="row row-cols-2" id="qr">
+                        <img width="100%" src="../content/layout/images/qrmomo.png" alt="">
+                        <img width="100%" src="../content/layout/images/qrvcb.png" alt="">
+                    </div>
 
                 </div>
 
@@ -108,13 +117,10 @@
                     </div>
                 </div>
 
-
                 <input type="hidden" name="stt" value="<?= $stt ?>">
                 <input type="hidden" name="idkhachhang" value="1">
                 <input type="hidden" name="tongtien" value="<?= $tong + $ship ?>">
                 <input class="but-dathang" type="submit" name="dathang" value="ĐẶT HÀNG">
-
-                <!-- <a href="?mod=page&act=dathangthanhcong" class="but-dathang">ĐẶT HÀNG</a> -->
 
             </form>
 
@@ -123,3 +129,9 @@
 
 
 </main>
+
+<script>
+    $("#qr").css("display", "none");
+    $("#nganhang").click(() => $("#qr").slideDown());
+    $("#tructiep").click(() => $("#qr").slideUp());
+</script>

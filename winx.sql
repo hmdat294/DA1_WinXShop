@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2023 lúc 07:41 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th12 01, 2023 lúc 03:51 AM
+-- Phiên bản máy phục vụ: 8.0.34
+-- Phiên bản PHP: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,44 +28,50 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `binhluan` (
-  `id` int(10) NOT NULL,
-  `idkh` int(10) NOT NULL,
-  `idsp` int(10) NOT NULL,
-  `noidung` text DEFAULT NULL,
-  `ngaybinhluan` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `idkh` int NOT NULL,
+  `idsp` int NOT NULL,
+  `noidung` text COLLATE utf8mb3_unicode_ci,
+  `ngaybinhluan` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `binhluan`
 --
 
 INSERT INTO `binhluan` (`id`, `idkh`, `idsp`, `noidung`, `ngaybinhluan`) VALUES
-(1, 3, 95, 'sp qua tot', '2023-11-18'),
-(2, 3, 95, 'sp qua tot', '2023-11-18'),
-(3, 2, 95, 'sp xin', '2023-11-18'),
-(4, 2, 95, 'sp ngon', '2023-11-18'),
-(8, 1, 95, 'Sản phẩm này giá bao nhiêu', '2023-11-18'),
-(9, 5, 95, 'Sản phẩm tốt', '2023-11-18'),
-(10, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21'),
-(11, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21'),
-(12, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21'),
-(13, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21'),
-(14, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21'),
-(15, 1, 68, 'Hàng xịn quá', '2023-11-21'),
-(16, 5, 95, 'Hàng xịn', '2023-11-22'),
-(17, 5, 95, 'Hàng xịn', '2023-11-22'),
-(18, 5, 95, 'Hàng xịn', '2023-11-22'),
-(19, 7, 205, 'Long An còn sản phẩm này không shop ?', '2023-11-23'),
-(20, 7, 137, 'size bàn bao nhiêu vậy shop ?', '2023-11-23'),
-(21, 8, 95, 'Sản phẩm này giá bao nhiêu', '2023-11-25'),
-(22, 1, 74, 'Hàng xịn', '2023-11-25'),
-(23, 1, 95, 'Ngon bổ rẻ', '2023-11-25'),
-(24, 8, 95, 'Hàng xịn', '2023-11-25'),
-(25, 8, 95, 'Hàng xịn', '2023-11-25'),
-(26, 1, 74, 'Sản phẩm này giá bao nhiêu', '2023-11-25'),
-(27, 1, 69, 'Hàng xin', '2023-11-25'),
-(28, 1, 69, 'Hàng xin', '2023-11-25'),
-(29, 1, 69, 'Sản phẩm này giá bao nhiêu', '2023-11-25');
+(1, 3, 95, 'sp qua tot', '2023-11-18 00:00:00'),
+(2, 3, 95, 'sp qua tot', '2023-11-18 00:00:00'),
+(3, 2, 95, 'sp xin', '2023-11-18 00:00:00'),
+(4, 2, 95, 'sp ngon', '2023-11-18 00:00:00'),
+(8, 1, 95, 'Sản phẩm này giá bao nhiêu', '2023-11-18 00:00:00'),
+(9, 5, 95, 'Sản phẩm tốt', '2023-11-18 00:00:00'),
+(10, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21 00:00:00'),
+(11, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21 00:00:00'),
+(12, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21 00:00:00'),
+(13, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21 00:00:00'),
+(14, 1, 94, 'Sản phẩm này giá bao nhiêu', '2023-11-21 00:00:00'),
+(15, 1, 68, 'Hàng xịn quá', '2023-11-21 00:00:00'),
+(16, 5, 95, 'Hàng xịn', '2023-11-22 00:00:00'),
+(17, 5, 95, 'Hàng xịn', '2023-11-22 00:00:00'),
+(18, 5, 95, 'Hàng xịn', '2023-11-22 00:00:00'),
+(19, 7, 205, 'Long An còn sản phẩm này không shop ?', '2023-11-23 00:00:00'),
+(20, 7, 137, 'size bàn bao nhiêu vậy shop ?', '2023-11-23 00:00:00'),
+(21, 8, 95, 'Sản phẩm này giá bao nhiêu', '2023-11-25 00:00:00'),
+(22, 1, 74, 'Hàng xịn', '2023-11-25 00:00:00'),
+(23, 1, 95, 'Ngon bổ rẻ', '2023-11-25 00:00:00'),
+(24, 8, 95, 'Hàng xịn', '2023-11-25 00:00:00'),
+(25, 8, 95, 'Hàng xịn', '2023-11-25 00:00:00'),
+(26, 1, 74, 'Sản phẩm này giá bao nhiêu', '2023-11-25 00:00:00'),
+(27, 1, 69, 'Hàng xin', '2023-11-25 00:00:00'),
+(28, 1, 69, 'Hàng xin', '2023-11-25 00:00:00'),
+(29, 1, 69, 'Sản phẩm này giá bao nhiêu', '2023-11-25 00:00:00'),
+(30, 7, 242, 'để mua thử coi đẹp k ', '2023-11-26 22:51:47'),
+(31, 7, 242, 'mới đặt để đợi coi sao ', '2023-11-26 22:52:23'),
+(33, 7, 242, 'mới nhận rồi đẹp thiệt', '2023-11-26 22:53:20'),
+(34, 7, 99, 'hàng ship quận 12 lâu không shop ?', '2023-11-26 22:55:36'),
+(35, 6, 241, 'Vợt đánh êm , rất đẹp , đáng mua ', '2023-11-26 22:56:06'),
+(36, 12, 248, 'balo rẻ và đẹp, nhưng shipper hăm doạ khách hàng vì khách k nhận hàng', '2023-11-29 13:20:40');
 
 -- --------------------------------------------------------
 
@@ -74,79 +80,103 @@ INSERT INTO `binhluan` (`id`, `idkh`, `idsp`, `noidung`, `ngaybinhluan`) VALUES
 --
 
 CREATE TABLE `chitietdonhang` (
-  `id` int(10) NOT NULL,
-  `iddh` int(10) NOT NULL,
-  `idsp` int(10) NOT NULL,
-  `soluong` int(10) NOT NULL,
-  `giasale` int(10) NOT NULL,
-  `ngaydat` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `iddh` int NOT NULL,
+  `idsp` int NOT NULL,
+  `soluong` int NOT NULL,
+  `giasale` int NOT NULL,
+  `ngaydat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `chitietdonhang`
 --
 
 INSERT INTO `chitietdonhang` (`id`, `iddh`, `idsp`, `soluong`, `giasale`, `ngaydat`) VALUES
-(1, 7, 87, 1, 31000000, '2023-11-17'),
-(2, 7, 68, 3, 100000, '2023-11-17'),
-(3, 8, 89, 4, 31000000, '2023-11-17'),
-(4, 8, 66, 4, 100000, '2023-11-17'),
-(5, 9, 71, 2, 100000, '2023-11-17'),
-(6, 10, 72, 1, 100000, '2023-11-17'),
-(7, 10, 67, 5, 100000, '2023-11-17'),
-(8, 10, 70, 1, 100000, '2023-11-17'),
-(9, 11, 69, 1, 100000, '2023-11-17'),
-(10, 12, 68, 1, 100000, '2023-11-17'),
-(11, 13, 69, 1, 100000, '2023-11-17'),
-(14, 15, 70, 1, 100000, '2023-11-17'),
-(15, 16, 68, 1, 100000, '2023-11-17'),
-(16, 17, 66, 1, 100000, '2023-11-17'),
-(17, 17, 92, 2, 31000000, '2023-11-17'),
-(18, 18, 95, 25, 31000000, '2023-11-18'),
-(19, 19, 242, 5, 16000, '2023-11-19'),
-(20, 20, 242, 8, 16000, '2023-11-19'),
-(21, 21, 245, 2, 130000, '2023-11-19'),
-(22, 21, 244, 3, 130000, '2023-11-19'),
-(23, 22, 244, 42, 130000, '2023-11-19'),
-(24, 23, 244, 47, 130000, '2023-11-19'),
-(25, 24, 244, 7, 130000, '2023-11-19'),
-(26, 25, 244, 17, 130000, '2023-11-19'),
-(27, 26, 244, 2, 130000, '2023-11-19'),
-(28, 27, 95, 97, 31000000, '2023-11-20'),
-(29, 27, 94, 96, 31000000, '2023-11-20'),
-(30, 27, 16, 4, 750000, '2023-11-20'),
-(31, 28, 240, 1, 750000, '2023-11-20'),
-(32, 28, 241, 95, 750000, '2023-11-20'),
-(33, 29, 100, 1, 700000, '2023-11-21'),
-(34, 30, 93, 5, 31000000, '2023-11-22'),
-(35, 31, 94, 1, 31000000, '2023-11-22'),
-(36, 32, 86, 1, 31000000, '2023-11-22'),
-(37, 33, 243, 1, 16000, '2023-11-22'),
-(38, 34, 114, 1, 800000, '2023-11-23'),
-(39, 34, 92, 1, 3100000, '2023-11-23'),
-(40, 34, 93, 7, 3100000, '2023-11-23'),
-(42, 37, 35, 5, 2090000, '2023-11-23'),
-(43, 38, 248, 3, 599000, '2023-11-23'),
-(44, 39, 243, 1, 160000, '2023-11-24'),
-(45, 40, 94, 1, 3100000, '2023-11-25'),
-(46, 41, 95, 1, 3100000, '2023-11-25'),
-(47, 42, 95, 1, 3100000, '2023-11-25'),
-(48, 43, 95, 1, 3100000, '2023-11-25'),
-(49, 43, 66, 1, 100000, '2023-11-25'),
-(50, 44, 74, 1, 160000, '2023-11-25'),
-(51, 45, 69, 1, 100000, '2023-11-25'),
-(52, 46, 69, 1, 100000, '2023-11-25'),
-(53, 47, 69, 12, 100000, '2023-11-25'),
-(54, 48, 154, 4, 1500000, '2023-11-25'),
-(55, 48, 36, 4, 5350000, '2023-11-25'),
-(56, 48, 39, 4, 5790000, '2023-11-25'),
-(57, 48, 136, 4, 10500000, '2023-11-25'),
-(58, 49, 136, 10, 10500000, '2023-11-25'),
-(59, 50, 136, 15, 10500000, '2023-11-25'),
-(60, 51, 136, 9, 10500000, '2023-11-25'),
-(61, 52, 136, 7, 10500000, '2023-11-25'),
-(63, 54, 136, 2, 10500000, '2023-11-26'),
-(64, 55, 136, 7, 10500000, '2023-11-26');
+(1, 7, 87, 1, 31000000, '2023-11-17 00:00:00'),
+(2, 7, 68, 3, 100000, '2023-11-17 00:00:00'),
+(3, 8, 89, 4, 31000000, '2023-11-17 00:00:00'),
+(4, 8, 66, 4, 100000, '2023-11-17 00:00:00'),
+(5, 9, 71, 2, 100000, '2023-11-17 00:00:00'),
+(6, 10, 72, 1, 100000, '2023-11-17 00:00:00'),
+(7, 10, 67, 5, 100000, '2023-11-17 00:00:00'),
+(8, 10, 70, 1, 100000, '2023-11-17 00:00:00'),
+(9, 11, 69, 1, 100000, '2023-11-17 00:00:00'),
+(10, 12, 68, 1, 100000, '2023-11-17 00:00:00'),
+(11, 13, 69, 1, 100000, '2023-11-17 00:00:00'),
+(14, 15, 70, 1, 100000, '2023-11-17 00:00:00'),
+(15, 16, 68, 1, 100000, '2023-11-17 00:00:00'),
+(16, 17, 66, 1, 100000, '2023-11-17 00:00:00'),
+(17, 17, 92, 2, 31000000, '2023-11-17 00:00:00'),
+(18, 18, 95, 25, 31000000, '2023-11-18 00:00:00'),
+(19, 19, 242, 5, 16000, '2023-11-19 00:00:00'),
+(20, 20, 242, 8, 16000, '2023-11-19 00:00:00'),
+(21, 21, 245, 2, 130000, '2023-11-19 00:00:00'),
+(22, 21, 244, 3, 130000, '2023-11-19 00:00:00'),
+(23, 22, 244, 42, 130000, '2023-11-19 00:00:00'),
+(24, 23, 244, 47, 130000, '2023-11-19 00:00:00'),
+(25, 24, 244, 7, 130000, '2023-11-19 00:00:00'),
+(26, 25, 244, 17, 130000, '2023-11-19 00:00:00'),
+(27, 26, 244, 2, 130000, '2023-11-19 00:00:00'),
+(28, 27, 95, 97, 31000000, '2023-11-20 00:00:00'),
+(29, 27, 94, 96, 31000000, '2023-11-20 00:00:00'),
+(30, 27, 16, 4, 750000, '2023-11-20 00:00:00'),
+(31, 28, 240, 1, 750000, '2023-11-20 00:00:00'),
+(32, 28, 241, 95, 750000, '2023-11-20 00:00:00'),
+(33, 29, 100, 1, 700000, '2023-11-21 00:00:00'),
+(34, 30, 93, 5, 31000000, '2023-11-22 00:00:00'),
+(35, 31, 94, 1, 31000000, '2023-11-22 00:00:00'),
+(36, 32, 86, 1, 31000000, '2023-11-22 00:00:00'),
+(37, 33, 243, 1, 16000, '2023-11-22 00:00:00'),
+(38, 34, 114, 1, 800000, '2023-11-23 00:00:00'),
+(39, 34, 92, 1, 3100000, '2023-11-23 00:00:00'),
+(40, 34, 93, 7, 3100000, '2023-11-23 00:00:00'),
+(42, 37, 35, 5, 2090000, '2023-11-23 00:00:00'),
+(43, 38, 248, 3, 599000, '2023-11-23 00:00:00'),
+(44, 39, 243, 1, 160000, '2023-11-24 00:00:00'),
+(45, 40, 94, 1, 3100000, '2023-11-25 00:00:00'),
+(46, 41, 95, 1, 3100000, '2023-11-25 00:00:00'),
+(47, 42, 95, 1, 3100000, '2023-11-25 00:00:00'),
+(48, 43, 95, 1, 3100000, '2023-11-25 00:00:00'),
+(49, 43, 66, 1, 100000, '2023-11-25 00:00:00'),
+(50, 44, 74, 1, 160000, '2023-11-25 00:00:00'),
+(51, 45, 69, 1, 100000, '2023-11-25 00:00:00'),
+(52, 46, 69, 1, 100000, '2023-11-25 00:00:00'),
+(53, 47, 69, 12, 100000, '2023-11-25 00:00:00'),
+(54, 48, 154, 4, 1500000, '2023-11-25 00:00:00'),
+(55, 48, 36, 4, 5350000, '2023-11-25 00:00:00'),
+(56, 48, 39, 4, 5790000, '2023-11-25 00:00:00'),
+(57, 48, 136, 4, 10500000, '2023-11-25 00:00:00'),
+(58, 49, 136, 10, 10500000, '2023-11-25 00:00:00'),
+(59, 50, 136, 15, 10500000, '2023-11-25 00:00:00'),
+(60, 51, 136, 9, 10500000, '2023-11-25 00:00:00'),
+(61, 52, 136, 7, 10500000, '2023-11-25 00:00:00'),
+(63, 54, 136, 2, 10500000, '2023-11-26 00:00:00'),
+(64, 55, 136, 7, 10500000, '2023-11-26 00:00:00'),
+(65, 56, 90, 4, 3100000, '2023-11-26 13:45:35'),
+(66, 57, 92, 3, 3100000, '2023-11-26 22:45:37'),
+(67, 58, 242, 1, 160000, '2023-11-26 22:52:01'),
+(68, 59, 241, 2, 750000, '2023-11-26 22:56:10'),
+(69, 60, 241, 2, 750000, '2023-11-26 22:56:34'),
+(70, 61, 95, 1, 3100000, '2023-11-26 22:57:07'),
+(71, 62, 241, 1, 750000, '2023-11-26 22:59:58'),
+(72, 63, 240, 1, 750000, '2023-11-26 23:01:31'),
+(73, 64, 154, 5, 1500000, '2023-11-27 12:18:10'),
+(74, 65, 91, 1, 3100000, '2023-11-27 12:43:31'),
+(75, 66, 248, 3, 599000, '2023-11-27 12:53:00'),
+(76, 67, 92, 4, 3100000, '2023-11-27 12:56:27'),
+(77, 68, 94, 1, 3100000, '2023-11-29 12:53:43'),
+(78, 68, 115, 3, 800000, '2023-11-29 12:53:43'),
+(79, 69, 242, 42, 160000, '2023-11-29 12:54:26'),
+(80, 70, 103, 9, 900000, '2023-11-29 12:55:56'),
+(81, 71, 30, 2, 2190000, '2023-11-29 12:56:50'),
+(82, 72, 181, 5, 150000, '2023-11-29 13:01:39'),
+(83, 74, 249, 3, 599000, '2023-11-29 13:12:01'),
+(84, 76, 93, 1, 3100000, '2023-11-29 13:26:14'),
+(85, 77, 96, 1, 900000, '2023-12-01 03:46:53'),
+(86, 78, 106, 5, 800000, '2023-12-01 03:47:01'),
+(87, 78, 74, 1, 160000, '2023-12-01 03:47:01'),
+(88, 78, 248, 5, 599000, '2023-12-01 03:47:01');
 
 -- --------------------------------------------------------
 
@@ -155,10 +185,10 @@ INSERT INTO `chitietdonhang` (`id`, `iddh`, `idsp`, `soluong`, `giasale`, `ngayd
 --
 
 CREATE TABLE `danhmuc` (
-  `id` int(10) NOT NULL,
-  `tendm` varchar(20) NOT NULL,
-  `hinhanh` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `tendm` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `hinhanh` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `danhmuc`
@@ -193,81 +223,92 @@ INSERT INTO `danhmuc` (`id`, `tendm`, `hinhanh`) VALUES
 --
 
 CREATE TABLE `donhang` (
-  `id` int(10) NOT NULL,
-  `idkh` int(10) NOT NULL,
-  `tenkh` varchar(20) NOT NULL,
-  `sdt` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `tongtien` int(10) DEFAULT NULL,
-  `ngaydat` datetime DEFAULT current_timestamp(),
-  `trangthai` varchar(100) DEFAULT 'Đang chờ xử lý',
-  `ghichu` text DEFAULT NULL,
-  `diachi` text DEFAULT NULL,
-  `phuongthuc` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `idkh` int NOT NULL,
+  `tenkh` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `sdt` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tongtien` int DEFAULT NULL,
+  `ngaydat` datetime DEFAULT CURRENT_TIMESTAMP,
+  `trangthai` varchar(100) COLLATE utf8mb3_unicode_ci DEFAULT 'Đang chờ xử lý',
+  `ghichu` text COLLATE utf8mb3_unicode_ci,
+  `diachi` text COLLATE utf8mb3_unicode_ci,
+  `phuongthuc` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `donhang`
 --
 
 INSERT INTO `donhang` (`id`, `idkh`, `tenkh`, `sdt`, `email`, `tongtien`, `ngaydat`, `trangthai`, `ghichu`, `diachi`, `phuongthuc`) VALUES
-(7, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 31392000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(8, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 124428000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(9, 2, 'thanhphat', '0357072913', 'phat@gmail.com', 291000, '2023-11-17', 'Đã hủy', 'Giao nhanh', '100A Tân Thới Nhất', 'Thanh toán qua ngân hàng'),
-(10, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 724000, '2023-11-17', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(11, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 162000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(12, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 182000, '2023-11-17', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(13, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 178000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
-(15, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 160000, '2023-11-17', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(16, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 167000, '2023-11-17', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(17, 5, 'nam', '0123456789', 'datminh@gmail.com', 62110000, '2023-11-17', 'Đang chờ xử lý', 'Trống', '123 cvpm', 'Thanh toán khi nhận hàng (COD)'),
-(18, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 775074000, '2023-11-18', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(19, 1, 'admin', '0123456789', 'admin@gmail.com', 99000, '2023-11-19', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(20, 1, 'admin', '0123456789', 'admin@gmail.com', 204000, '2023-11-19', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(21, 1, 'admin', '0123456789', 'admin@gmail.com', 694000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(22, 1, 'admin', '0123456789', 'admin@gmail.com', 5545000, '2023-11-19', 'Đang giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(23, 1, 'admin', '0123456789', 'admin@gmail.com', 6158000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(24, 1, 'admin', '0123456789', 'admin@gmail.com', 1005000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(25, 1, 'admin', '0123456789', 'admin@gmail.com', 2298000, '2023-11-19', 'Đã duyệt', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(26, 1, 'admin', '0123456789', 'admin@gmail.com', 296000, '2023-11-19', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(27, 1, 'admin', '0123456789', 'admin@gmail.com', 2147483647, '2023-11-20', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(28, 1, 'admin', '0123456789', 'admin@gmail.com', 72053000, '2023-11-20', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(29, 1, 'admin', '0123456789', 'admin@gmail.com', 755000, '2023-11-21', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(30, 1, 'admin', '0123456789', 'admin@gmail.com', 155087000, '2023-11-22', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(31, 1, 'admin', '0123456789', 'admin@gmail.com', 31029000, '2023-11-22', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(32, 4, 'dat', '0357072913', 'datminh294@gmail.com', 31061000, '2023-11-22', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(33, 4, 'dat', '0357072913', 'datminh294@gmail.com', 112000, '2023-11-22', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(34, 1, 'admin', '0123456789', 'admin@gmail.com', 25632000, '2023-11-23', 'Đã hủy', 'giao gấp', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(37, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 10468000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(38, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 1809000, '2023-11-23', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
-(39, 1, 'admin', '0123456789', 'admin@gmail.com', 203000, '2023-11-24', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(40, 1, 'admin', '0123456789', 'admin@gmail.com', 3161000, '2023-11-25', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(41, 1, 'admin', '0123456789', 'admin@gmail.com', 3174000, '2023-11-25', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
-(42, 1, 'admin', '0123456789', 'admin@gmail.com', 3113000, '2023-11-25', 'Đang chờ xử lý', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
-(43, 8, 'ho minh dat', '0357072913', 'hmd@gmail.com', 3287000, '2023-11-25', 'Đã giao', 'Trống', 'Hà nội', 'Thanh toán khi nhận hàng (COD)'),
-(44, 1, 'admin', '0123456789', 'admin@gmail.com', 181000, '2023-11-25', 'Đã giao', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
-(45, 1, 'admin', '0123456789', 'admin@gmail.com', 155000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(46, 1, 'admin', '0123456789', 'admin@gmail.com', 127000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(47, 1, 'admin', '0123456789', 'admin@gmail.com', 1267000, '2023-11-25', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(48, 1, 'admin', '0123456789', 'admin@gmail.com', 92605000, '2023-11-25', 'Đã hủy', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
-(49, 1, 'admin', '0123456789', 'admin@gmail.com', 105049000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
-(50, 1, 'admin', '0123456789', 'admin@gmail.com', 157515000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(51, 1, 'admin', '0123456789', 'admin@gmail.com', 94596000, '2023-11-25', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
-(52, 1, 'admin', '0123456789', 'admin@gmail.com', 73529000, '2023-11-25', 'Đã hủy', 'Trống', 'Hà nội', 'Thanh toán qua ngân hàng'),
-(54, 1, 'admin', '0123456789', 'admin@gmail.com', 21062000, '2023-11-26', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
-(55, 1, 'admin', '0123456789', 'admin@gmail.com', 73565000, '2023-11-26', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `giohang`
---
-
-CREATE TABLE `giohang` (
-  `id` int(10) NOT NULL,
-  `idsp` int(10) NOT NULL,
-  `soluong` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+(7, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 31392000, '2023-11-17 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(8, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 124428000, '2023-11-17 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(9, 2, 'thanhphat', '0357072913', 'phat@gmail.com', 291000, '2023-11-17 00:00:00', 'Đã hủy', 'Giao nhanh', '100A Tân Thới Nhất', 'Thanh toán qua ngân hàng'),
+(10, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 724000, '2023-11-17 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(11, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 162000, '2023-11-17 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(12, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 182000, '2023-11-17 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(13, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 178000, '2023-11-17 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
+(15, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 160000, '2023-11-17 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(16, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 167000, '2023-11-17 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(17, 5, 'nam', '0123456789', 'datminh@gmail.com', 62110000, '2023-11-17 00:00:00', 'Đang chờ xử lý', 'Trống', '123 cvpm', 'Thanh toán khi nhận hàng (COD)'),
+(18, 5, 'minhdat', '0123456789', 'datminh@gmail.com', 775074000, '2023-11-18 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(19, 1, 'admin', '0123456789', 'admin@gmail.com', 99000, '2023-11-19 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(20, 1, 'admin', '0123456789', 'admin@gmail.com', 204000, '2023-11-19 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(21, 1, 'admin', '0123456789', 'admin@gmail.com', 694000, '2023-11-19 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(22, 1, 'admin', '0123456789', 'admin@gmail.com', 5545000, '2023-11-19 00:00:00', 'Đang giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(23, 1, 'admin', '0123456789', 'admin@gmail.com', 6158000, '2023-11-19 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(24, 1, 'admin', '0123456789', 'admin@gmail.com', 1005000, '2023-11-19 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(25, 1, 'admin', '0123456789', 'admin@gmail.com', 2298000, '2023-11-19 00:00:00', 'Đã duyệt', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(26, 1, 'admin', '0123456789', 'admin@gmail.com', 296000, '2023-11-19 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(27, 1, 'admin', '0123456789', 'admin@gmail.com', 2147483647, '2023-11-20 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(28, 1, 'admin', '0123456789', 'admin@gmail.com', 72053000, '2023-11-20 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(29, 1, 'admin', '0123456789', 'admin@gmail.com', 755000, '2023-11-21 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(30, 1, 'admin', '0123456789', 'admin@gmail.com', 155087000, '2023-11-22 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(31, 1, 'admin', '0123456789', 'admin@gmail.com', 31029000, '2023-11-22 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(32, 4, 'dat', '0357072913', 'datminh294@gmail.com', 31061000, '2023-11-22 00:00:00', 'Đã giao', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(33, 4, 'dat', '0357072913', 'datminh294@gmail.com', 112000, '2023-11-22 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(34, 1, 'admin', '0123456789', 'admin@gmail.com', 25632000, '2023-11-23 00:00:00', 'Đã hủy', 'giao gấp', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(37, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 10468000, '2023-11-23 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(38, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 1809000, '2023-11-23 00:00:00', 'Đang chờ xử lý', 'Trống', 'Trống', 'Thanh toán qua ngân hàng'),
+(39, 1, 'admin', '0123456789', 'admin@gmail.com', 203000, '2023-11-24 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(40, 1, 'admin', '0123456789', 'admin@gmail.com', 3161000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(41, 1, 'admin', '0123456789', 'admin@gmail.com', 3174000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', 'Trống', 'Thanh toán khi nhận hàng (COD)'),
+(42, 1, 'admin', '0123456789', 'admin@gmail.com', 3113000, '2023-11-25 00:00:00', 'Đang chờ xử lý', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(43, 8, 'ho minh dat', '0357072913', 'hmd@gmail.com', 3287000, '2023-11-25 00:00:00', 'Đã giao', 'Trống', 'Hà nội', 'Thanh toán khi nhận hàng (COD)'),
+(44, 1, 'admin', '0123456789', 'admin@gmail.com', 181000, '2023-11-25 00:00:00', 'Đã giao', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(45, 1, 'admin', '0123456789', 'admin@gmail.com', 155000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(46, 1, 'admin', '0123456789', 'admin@gmail.com', 127000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(47, 1, 'admin', '0123456789', 'admin@gmail.com', 1267000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(48, 1, 'admin', '0123456789', 'admin@gmail.com', 92605000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(49, 1, 'admin', '0123456789', 'admin@gmail.com', 105049000, '2023-11-25 00:00:00', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(50, 1, 'admin', '0123456789', 'admin@gmail.com', 157515000, '2023-11-25 00:00:00', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(51, 1, 'admin', '0123456789', 'admin@gmail.com', 94596000, '2023-11-25 00:00:00', 'Khách hàng không nhận hàng', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(52, 1, 'admin', '0123456789', 'admin@gmail.com', 73529000, '2023-11-25 00:00:00', 'Đã hủy', 'Trống', 'Hà nội', 'Thanh toán qua ngân hàng'),
+(54, 1, 'admin', '0123456789', 'admin@gmail.com', 21062000, '2023-11-26 00:00:00', 'Khách hàng không nhận hàng', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(55, 1, 'admin', '0123456789', 'admin@gmail.com', 73565000, '2023-11-26 00:00:00', 'Đã hủy', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(56, 1, 'admin', '0123456789', 'admin@gmail.com', 12492000, '2023-11-26 13:45:35', 'Đã giao', 'Trống', '100A Tân Thới Nhất', 'Thanh toán khi nhận hàng (COD)'),
+(57, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 9350000, '2023-11-26 22:45:37', 'Đã hủy', 'giao buổi sáng', 'Ấp 5 xã Nhị Thành huyện Thủ Thừa tỉnh Long An', 'Thanh toán khi nhận hàng (COD)'),
+(58, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 180000, '2023-11-26 22:52:01', 'Đã giao', 'Trống', 'ấp 5', 'Thanh toán khi nhận hàng (COD)'),
+(59, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 1512000, '2023-11-26 22:56:10', 'Khách hàng không nhận hàng', 'Trống', 'ấp 6', 'Thanh toán khi nhận hàng (COD)'),
+(60, 6, 'anhthu', '0937744062', 'nnanhthu2004@gmail.com', 1515000, '2023-11-26 22:56:34', 'Đã hủy', 'Trống', '11 Song Hành', 'Thanh toán khi nhận hàng (COD)'),
+(61, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 3181000, '2023-11-26 22:57:07', 'Đang chờ xử lý', 'Trống', 'opk', 'Thanh toán khi nhận hàng (COD)'),
+(62, 6, 'anhthu', '0937744062', 'nnanhthu2004@gmail.com', 769000, '2023-11-26 22:59:58', 'Đã hủy', 'Trống', '11 Song Hành', 'Thanh toán khi nhận hàng (COD)'),
+(63, 6, 'anhthu', '0937744062', 'nnanhthu2004@gmail.com', 836000, '2023-11-26 23:01:31', 'Đang chờ xử lý', 'Trống', '11 Song Hành', 'Thanh toán khi nhận hàng (COD)'),
+(64, 1, 'admin', '0123456789', 'admin@gmail.com', 7560000, '2023-11-27 12:18:10', 'Đã hủy', 'Trống', 'vxvvc', 'Thanh toán qua ngân hàng'),
+(65, 1, 'admin', '0123456789', 'admin@gmail.com', 3166000, '2023-11-27 12:43:31', 'Đang chờ xử lý', 'Trống', 'Tp.HCM', 'Thanh toán khi nhận hàng (COD)'),
+(66, 12, 'nam', '0123456789', 'namnt@gmail.com', 1815000, '2023-11-27 12:53:00', 'Đã giao', 'Trống', '123 cvpm quang trung', 'Thanh toán khi nhận hàng (COD)'),
+(67, 12, 'nam', '0123456789', 'namnt@gmail.com', 12472000, '2023-11-27 12:56:27', 'Đã hủy', 'Trống', '123 cvpm quang trung', 'Thanh toán khi nhận hàng (COD)'),
+(68, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 5529000, '2023-11-29 12:53:43', 'Đang chờ xử lý', 'Trống', 'ấp 5', 'Thanh toán khi nhận hàng (COD)'),
+(69, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 6811000, '2023-11-29 12:54:26', 'Đang chờ xử lý', 'Trống', 'ấp 6', 'Thanh toán khi nhận hàng (COD)'),
+(70, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 8121000, '2023-11-29 12:55:56', 'Đang chờ xử lý', 'căng sẵn 10kg dùm nha shop :)))', '100A ttn 05 quận12 hcm', 'Thanh toán khi nhận hàng (COD)'),
+(71, 7, 'phatnntps29026', '0859499579', 'phatnntps29026@gmail.com', 4478000, '2023-11-29 12:56:50', 'Đang chờ xử lý', 'giao nhà trắng nha cho tổng thống', 'usa white house', 'Thanh toán khi nhận hàng (COD)'),
+(72, 13, 'khanh', '0984700721', 'khanh@gmail.com', 812000, '2023-11-29 13:01:39', 'Đang chờ xử lý', 'Trống', 'gò vấp', 'Thanh toán khi nhận hàng (COD)'),
+(73, 14, 'abc123', '0994232847', 'hplsolution@gmail.com', 3140000, '2023-11-29 13:08:00', 'Đã hủy', 'abc', '1313131', 'Thanh toán khi nhận hàng (COD)'),
+(74, 12, 'nam', '0123456789', 'namnt@gmail.com', 1215000, '2023-11-29 13:12:01', 'Khách hàng không nhận hàng', 'Trống', '123 CVPM', 'Thanh toán khi nhận hàng (COD)'),
+(75, 15, 'sdfas', '0385323196', 'tanphuoc200803@gmail.com', 1818000, '2023-11-29 13:12:04', 'Đang chờ xử lý', 'Trống', 'Quận 12', 'Thanh toán khi nhận hàng (COD)'),
+(76, 14, 'abc123', '0994232847', 'hplsolution@gmail.com', 3185000, '2023-11-29 13:26:14', 'Đang chờ xử lý', 'abc', '1313131', 'Thanh toán khi nhận hàng (COD)'),
+(77, 17, '', '0123456789', 'vinh111@gmail.com', 936000, '2023-12-01 03:46:53', 'Đã hủy', 'Trống', '123313212', 'Thanh toán khi nhận hàng (COD)'),
+(78, 5, 'minh dat', '0321654987', 'md@gmail.com', 7190000, '2023-12-01 03:47:01', 'Đã giao', 'Trống', '100A Tân Thới Nhất', 'Thanh toán qua ngân hàng');
 
 -- --------------------------------------------------------
 
@@ -276,10 +317,10 @@ CREATE TABLE `giohang` (
 --
 
 CREATE TABLE `hinhanh` (
-  `id` int(10) NOT NULL,
-  `idsp` int(10) NOT NULL,
-  `hinhanh` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `idsp` int NOT NULL,
+  `hinhanh` varchar(100) COLLATE utf8mb3_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `hinhanh`
@@ -997,16 +1038,16 @@ INSERT INTO `hinhanh` (`id`, `idsp`, `hinhanh`) VALUES
 --
 
 CREATE TABLE `sanpham` (
-  `id` int(10) NOT NULL,
-  `iddm` int(10) NOT NULL,
-  `tensp` varchar(100) NOT NULL,
-  `giagoc` int(10) DEFAULT NULL,
-  `giasale` int(10) DEFAULT NULL,
-  `mota` text DEFAULT NULL,
-  `soluongkho` int(10) DEFAULT NULL,
-  `luotxem` int(10) DEFAULT 1,
-  `ngaythem` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `iddm` int NOT NULL,
+  `tensp` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `giagoc` int DEFAULT NULL,
+  `giasale` int DEFAULT NULL,
+  `mota` text COLLATE utf8mb3_unicode_ci,
+  `soluongkho` int DEFAULT NULL,
+  `luotxem` int DEFAULT '1',
+  `ngaythem` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `sanpham`
@@ -1037,7 +1078,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (27, 6, 'Áo đội tuyển Argentina sân nhà hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 100, 1, '2023-11-11 03:02:26'),
 (28, 6, 'Áo đội tuyển Pháp sân nhà hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 100, 1, '2023-11-11 03:02:26'),
 (29, 6, 'Áo đội tuyển Mexico sân khách hàng Thái Lan', 330000, 280000, '– Đây là mẫu quần áo câu lạc bộ đang được bán nhiều nhất trên thị trường, thường được may bằng vải thun lạnh. Đây là hàng phổ thông nhất hiện nay.\r\n– Ưu điểm: Giá rẻ, mặc cũng khá bền.\r\n– Nhược điểm: Mặc nóng và thấm hút mồ hôi không tốt lắm. Chỉ giống khoảng 90% so với hàng chính hãng.', 100, 1, '2023-11-11 03:02:26'),
-(30, 8, 'MIZUNO MONARCIDA NEO SALA PRO AS TF', 2290000, 2190000, 'Về công nghệ của phiên bản Mizuno Monarcida Neo Sala Pro AS TF - Bright Yellow/White:\r\n\r\n Được làm từ da tổng hợp thế hệ mới, giúp các cầu thủ khống chế bóng êm ái và kiểm soát bóng tốt hơn. Bề mặt thân giày được phủ bóng một lớp đặc biệt, giúp dễ dàng vệ sinh giày và mang tới sự ấn tượng trong tổng thể thiết kế.\r\n\r\n Mũi giày thiết kế với miếng da lộn bền bỉ, giúp nâng cao độ bền chung của giày.\r\n\r\n Là mẫu giày thuộc phân khúc cao cấp, Monarcida Neo Sala Pro TF được trang bị lớp đệm giảm chấn U4ic, tạo sự êm ái thoải mái cho các cầu thủ trong suốt trận đấu.\r\n\r\n Lót giày êm, chống trượt hiệu quả.', 100, 1, '2023-11-11 03:17:30'),
+(30, 8, 'MIZUNO MONARCIDA NEO SALA PRO AS TF', 2290000, 2190000, 'Về công nghệ của phiên bản Mizuno Monarcida Neo Sala Pro AS TF - Bright Yellow/White:\r\n\r\n Được làm từ da tổng hợp thế hệ mới, giúp các cầu thủ khống chế bóng êm ái và kiểm soát bóng tốt hơn. Bề mặt thân giày được phủ bóng một lớp đặc biệt, giúp dễ dàng vệ sinh giày và mang tới sự ấn tượng trong tổng thể thiết kế.\r\n\r\n Mũi giày thiết kế với miếng da lộn bền bỉ, giúp nâng cao độ bền chung của giày.\r\n\r\n Là mẫu giày thuộc phân khúc cao cấp, Monarcida Neo Sala Pro TF được trang bị lớp đệm giảm chấn U4ic, tạo sự êm ái thoải mái cho các cầu thủ trong suốt trận đấu.\r\n\r\n Lót giày êm, chống trượt hiệu quả.', 98, 1, '2023-11-11 03:17:30'),
 (31, 8, 'NIKE LUNARGATO II IC SMALL SIDED', 3219000, 2250000, 'Về công nghệ của phiên bản LUNAR GATO II:\r\n\r\n Chất liệu da được cấu tạo bằng da thật mềm cao cấp mang lại cảm giác cực êm và bám trong những pha chạm bóng.\r\n\r\n Công nghệ mặt lưới kép DYNAMIT MESH tạo cảm giác thông thoáng cho lòng bàn chân. \r\n\r\n Đế đệm Lunar giúp êm ái khi di chuyển và dễ chịu ngay từ lần đầu tiên xỏ vào.\r\n\r\n Phần mũi giày được đắp 1 lớp da lộn tăng cảm giác bóng cho người chơi.', 100, 1, '2023-11-11 03:29:23'),
 (32, 8, 'NIKE TIEMPO LEGEND 10 ACADEMY TF READY', 2349000, 1990000, 'Về công nghệ của phiên bản Nike Tiempo Legend 10 Academy TF Ready - White/Black/Bright Crimson:\r\n\r\nĐể chuyển từ chất liệu da K truyền thống sang một chất liệu khác, Nike sẽ phải cân nhắc và sử dụng những công nghệ thay thế hợp lý hơn nhưng vẫn đảm bảo mang lại hiệu quả tốt nhất cho người chơi.\r\n\r\n- Đặc biệt, các đường gấp khúc ở đầu mũi giày và một phần đục lỗ ở trên logo Swoosh của Tiempo 9 sẽ bị loại bỏ, Tiempo 10 chỉ giữ lại thiết kế logo Swoosh và cấu trúc của lưỡi giày. Chứng tỏ rằng, giao diện của Tiempo 10 sẽ không có sự thay đổi quá nhiều so với những mẫu giày hiện tại.\r\n\r\n- Phần upper được làm bằng da tổng hợp tạo nên sự mềm mại, co giãn tuyệt đối, giúp form giày ôm sát vào chân giúp cầu thủ có cảm giác chạm bóng tự nhiên và chân thật nhất nhưng vẫn cảm thấy thoải mái sau nhiều giờ chơi bóng.\r\n\r\n- Lưỡi gà rời của Tiempo mang lại sự thoải mái vượt bật, cũng như cho người chơi có form chân bè lẫn chân thon dễ dàng khi xỏ giày.', 100, 1, '2023-11-11 03:29:23'),
 (33, 8, 'ADIDAS PREDATOR ACCURACY .1 TF ', 3500000, 2850000, 'Về công nghệ của phiên bản Adidas Predator Accuracy .1 TF :\r\n\r\nCổ thun Facetfit 2 mảnh không dây với chất liệu PRIMEKNIT chắc chắn.\r\n\r\nChất liệu từ da tổng hợp  mềm mại được làm bằng 50% chất liệu tái chế giúp giảm đáng kể trọng lượng, kết hợp công nghệ vân HybridTouch phủ xuyên suốt 2 phần má trong và má ngoài giúp tăng khả năng kiểm soát và rê bóng. \r\n\r\nBộ đệm Bounce là chất liệu mang đến sự hỗ trợ cao hơn chất liệu đệm EVA truyền thống về cả độ thoải mái, độ êm và độ đàn hồi. \r\n\r\nKhuôn đế có cấu trúc Facetframe với những mãng đinh cải tiến mới tăng độ bám sân giúp người chơi dễ dàng xoay chuyển cũng như bức tốc.', 100, 1, '2023-11-11 03:29:23'),
@@ -1081,7 +1122,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (71, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (72, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
 (73, 1, ' Áo Cầu Lông Yonex -Đỏ Trắng - Chuyển nhiệt', 150000, 100000, ' Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo Cầu Lông Yonex AC103 Nam - Xanh là một sự lựa chọn vô cùng hoàn hảo.', 100, 100, '2023-11-12 21:31:15'),
-(74, 1, 'Áo Cầu Lông Lining  Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 99, 500, '2023-11-12 21:32:25'),
+(74, 1, 'Áo Cầu Lông Lining  Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 98, 500, '2023-11-12 21:32:25'),
 (75, 1, 'Áo Cầu Lông Lining Đỏ Trănsg Chính Hãng', 190000, 160000, 'Áo cầu lông in chuyển nhiệt thường được sản xuất tại Trung Quốc và có 2 form áo một cho Nam, một cho Nữ. Ngoài ra, các mẫu áo thể thao cầu lông này còn được phát hành với 4 size: M, L, XL, 2XL phù hợp cho những bạn từ 50kg đến 90kg.\r\n- Chính vì vậy, nếu bạn đang tìm kiếm cho mình một mẫu áo cầu lông giá rẻ nổi bật với thiết kế cùng mẫu mã như các vận động viên thì đảm bảo mẫu Áo cầu lông Yonex 8005 nam - Đen là một sự lựa chọn vô cùng hoàn hảo.', 100, 400, '2023-11-12 21:32:54'),
 (76, 2, 'Quần Cầu Lông Yonex  - Đen Chính Hãng', 350000, 300000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 100, 120, '2023-11-12 21:36:25'),
 (77, 2, 'Quần Cầu Lông Kamito TM Legend  - Trắng Chính Hãng', 350000, 300000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 100, 120, '2023-11-12 22:13:50'),
@@ -1097,12 +1138,12 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (87, 3, 'Giày Cầu Lông Lining Đen (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
 (88, 3, 'Giày Cầu Lông Lining Trắng Tím (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
 (89, 3, 'Giày Cầu Lông Lining  Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
-(90, 3, 'Giày Cầu Lông Lining Đen Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
-(91, 3, 'Giày Cầu Lông Lining AYAT005-7 Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 100, 125, '2023-11-12 22:21:11'),
+(90, 3, 'Giày Cầu Lông Lining Đen Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 96, 125, '2023-11-12 22:21:11'),
+(91, 3, 'Giày Cầu Lông Lining AYAT005-7 Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 99, 125, '2023-11-12 22:21:11'),
 (92, 3, 'Giày Cầu Lông Lining Trắng Hồng (Nội Đia Trung))', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 99, 125, '2023-11-12 22:21:11'),
-(93, 3, 'Giày Cầu Lông Lining  Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 88, 125, '2023-11-12 22:21:11'),
-(94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 2, 125, '2023-11-12 22:21:11'),
-(95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.Phần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 9, 125, '2023-11-12 22:21:11');
+(93, 3, 'Giày Cầu Lông Lining  Chính Hãng', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 87, 125, '2023-11-12 22:21:11'),
+(94, 3, 'Giày Cầu Lông Lining Trắng Đen (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 1, 125, '2023-11-12 22:21:11'),
+(95, 3, 'Giày Cầu Lông Lining Hồng (Nội Địa Trung)', 3500000, 3100000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.Phần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.', 8, 125, '2023-11-12 22:21:11');
 INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `soluongkho`, `luotxem`, `ngaythem`) VALUES
 (96, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 150, '2023-11-12 22:26:31'),
 (97, 4, 'Vợt cầu lông Yonex Arcsaber 73 Light (RBYR) chính hãng ', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 150, '2023-11-12 22:30:36'),
@@ -1111,10 +1152,10 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (100, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1000000, 700000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 99, 180, '2023-11-12 22:30:36'),
 (101, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (GO) Chính Hãng', 1200000, 800000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 155, '2023-11-12 22:30:36'),
 (102, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (BO) Chính Hãng', 900000, 700000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 140, '2023-11-12 22:30:36'),
-(103, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 150, '2023-11-12 22:30:36'),
+(103, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (PDBL) Chính Hãng', 1100000, 900000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 91, 150, '2023-11-12 22:30:36'),
 (104, 4, 'Vợt Cầu Lông Yonex Nanoflare X8 (Mã KR)', 1200000, 1100000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 190, '2023-11-12 22:30:36'),
 (105, 4, 'Vợt Cầu Lông Mizuno Zephyr DS79 - Đen Cam Vàng Chính Hãng', 900000, 500000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 100, 200, '2023-11-12 22:30:36'),
-(106, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 150, '2023-11-12 22:31:38'),
+(106, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 95, 150, '2023-11-12 22:31:38'),
 (107, 5, 'Balo Cầu Lông Yonex BP006 Trắng Xanh - Gia Côngg', 800000, 700000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 190, '2023-11-12 22:36:28'),
 (108, 5, 'Balo Cầu Lông Yonex BP006 Trắng Xanh - Gia Công\r\n', 1100000, 900000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 120, '2023-11-12 22:36:28'),
 (109, 5, 'Balo Cầu Lông Yonex BP006 Đen Xanh Lục - Gia Công', 900000, 750000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 200, '2023-11-12 22:36:28'),
@@ -1123,7 +1164,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (112, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 150, '2023-11-12 22:36:28'),
 (113, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 150, '2023-11-12 22:36:28'),
 (114, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 99, 150, '2023-11-12 22:36:28'),
-(115, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 150, '2023-11-12 22:36:28'),
+(115, 5, 'Balo Cầu Lông Yonex B1408 Xanh Than - Gia Công', 900000, 800000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 97, 150, '2023-11-12 22:36:28'),
 (116, 16, 'ÁO THỂ THAO MIZUNO 72MAA002', 150000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 100, 1, '2023-11-13 12:58:56'),
 (117, 16, 'ÁO THỂ THAO MIZUNO 72MAA005', 150000, 120000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 100, 103, '2023-11-13 13:17:02'),
 (118, 16, 'Force Shorts', 100000, 90000, 'Áo có kiểu dáng cơ bản với cổ tròn và tay ngắn, tạo cảm giác thoải mái và dễ dàng di chuyển. Đường cắt may chắc chắn và tỉ mỉ, giúp áo có độ bền cao.Với thiết kế đơn giản nhưng không kém phần ấn tượng, chiếc áo này sẽ là một bổ sung hoàn hảo cho tủ đồ của bạn, mang đến sự thoải mái và phong cách cho mọi dịp.', 100, 93, '2023-11-13 13:17:02'),
@@ -1183,7 +1224,7 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (177, 19, 'Zhang Jike Super ZLC Blade', 3500000, 2750000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 100, 97, '2023-11-14 01:38:46'),
 (178, 19, 'Zhang Jike T5000 Blade', 700000, 500000, 'Lớp: Tấn công\r\nLớp lưỡi: 5-Gỗ + 2 Arylate/Carbon\r\nTrọng lượng: ~85g\r\nPhản ứng: 11,8\r\nĐộ rung: 10,3\r\nKích thước lưỡi dao: 157×150 mm\r\nĐộ dày lưỡi dao: 5,8 mm\r\nKích thước tay cầm: 100 × 24 × 34 mm', 100, 38, '2023-11-14 01:38:46'),
 (180, 11, 'Áo bóng rổ Boston Celtics', 350000, 200000, 'Với chất liệu vải mè chuyên dùng để trong may mặc quần áo thể thao giúp thầm mồ hôi tốt hơn, thoáng mát và mềm mại phù hợp cho việc tập luyện và thi đấu.\r\nChúng tôi nhận đặt làm đồng phục bóng rổ  cho các đội bóng rổ từ 5 người trở lên, thời gian hoàn thành chỉ từ 3 ngày và miễn phì in tên, số cho các thành viên đội bóng.', 100, 1, '2023-11-16 22:12:13'),
-(181, 11, 'Áo Memphis Grizzlies Ja Moran', 250000, 150000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 100, 1, '2023-11-16 22:14:58'),
+(181, 11, 'Áo Memphis Grizzlies Ja Moran', 250000, 150000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 95, 1, '2023-11-16 22:14:58'),
 (182, 11, 'Áo Brooklyn Nets', 450000, 250000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 100, 1, '2023-11-16 22:17:40'),
 (183, 11, 'Áo Lakers', 800000, 400000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 100, 1, '2023-11-16 22:17:40'),
 (184, 11, 'Áo Broo', 450000, 390000, 'Dòng sản phẩm Made in Vietnam - Designed by Giaybongro.vn, được chúng tôi thiết kế và sản xuất tại Việt Nam, với chất liệu vải thể thao cao cấp, mềm mại, thoáng mát, sử dụng công nghệ in chìm 3D lên từng sợi vải mang đến độ hoàn thiện sắc nét, bền bỉ.', 100, 1, '2023-11-16 22:17:40'),
@@ -1243,15 +1284,15 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 (237, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 100, 1, '2023-11-17 00:50:05'),
 (238, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 100, 1, '2023-11-17 00:50:05'),
 (239, 15, 'Balo bóng rổ Jordan', 300000, 250000, 'Balo bóng rổ thường có ngăn để bóng riêng biệt (ngăn dưới đáy,hoặc bên ngoài), có kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch... Do kích thước tương đối lớn để có thể để thêm giày , quần áo, phụ kiện bóng rổ đi kèm... với màu sắc trẻ trung nên được người chơi bóng rổ sử dụng trong sinh hoạt hàng ngày như đi học, đi du lịch...', 100, 1, '2023-11-17 00:50:05'),
-(240, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 99, 120, '2023-11-17 10:30:23'),
+(240, 4, 'Vợt Cầu Lông Yonex Nanoray 72 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 98, 120, '2023-11-17 10:30:23'),
 (241, 4, 'Vợt Cầu Lông Yonex Nanoray 73 Light (DR) Chính Hãng', 900000, 750000, 'Vợt cầu lông Yonex Nanoray 72 Light (PDBL) chính hãng thuộc phân khúc giá rẻ được Yonex cho ra mắt trong thời gian gần đây với nhiều mẫu mã màu sắc khác nhau, đem đến cho người chơi nhiều sự lựa chọn theo sở thích cá nhân.\r\n\r\nCông nghệ Isometric trên khung vợt giúp tăng khả năng đánh cầu chính xác và mở rộng vùng điểm ngọt - nơi tiếp xúc giữa cầu và mặt vợt mang lại cho bạn cảm giác cầu tốt nhất sau mỗi cú đánh. Bên cạnh đó, công nghệ Nanomesh giúp đũa vợt nhanh chóng trở về trạng thái ban đầu để chuẩn bị cho các cú đánh', 5, 140, '2023-11-17 10:30:59'),
-(242, 1, 'Áo Cầu Lông Yonex 22057 Nam - Trắng Đen', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 87, 150, '2023-11-17 10:37:06'),
+(242, 1, 'Áo Cầu Lông Yonex 22057 Nam - Trắng Đen', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 44, 150, '2023-11-17 10:37:06'),
 (243, 1, 'Áo Cầu Lông Yonex EX Nữ - Xanh Chính Hãng', 192000, 160000, 'Đa số các mẫu áo cầu lông đẹp thường được người chơi biết đến thông qua việc các vận động viên thế giới sử dụng và đó chính là áo cầu lông chính hãng có giá thành rất cao thậm chí lên đến hơn triệu. Chính vì vậy, các mẫu áo chuyển nhiệt được tạo ra với cùng một thiết kế nhưng sử dụng chất liệu vải kém hơn đôi chút. Thường các mẫu áo cầu lông chuyển nhiệt được rất nhiều các người chơi phong trào lựa chọn vì xét về tổng thể mẫu áo này không những đảm nhận tốt vai trò thâm hút mồ hôi tốt mà còn có giá bán siêu rẻ trên thị trường.', 98, 150, '2023-11-17 10:38:23'),
 (244, 2, 'Quần Cầu Lông Victor 9658 Đen Phối Xanh', 156000, 130000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 1, 180, '2023-11-17 10:43:57'),
 (245, 2, 'Quần Cầu Lông Victor  Đen', 157000, 130000, 'Mẫu Quần cầu lông Yonex 15157EX - Đen chính hãng xịn là một sản phẩm thích hợp cho các bạn yêu mến bộ môn cầu lông có thể sử dụng để chơi cầu lông, đi chơi và đi du lịch.\r\n\r\n- Chất liệu vải sử dụng để may nên chiếc Quần cầu lông Yonex 15157EX - Đen chính hãng là vải thun cao cấp 4 chiều có đặc tính thấm hút cực nhanh, thoáng mát, hạn chế mồ hôi dính vào người khi tham gia chơi cầu lông. Ngoài các đặc tính trên thì loại vải này cũng không ra màu, không chảy sệ, co giãn rất tốt.', 98, 180, '2023-11-17 10:44:16'),
 (246, 3, 'Giày Cầu Lông Yonex Blaze 3 - Crystal Chính Hãng', 1140000, 950000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.\r\n', 100, 160, '2023-11-17 10:48:36'),
 (247, 3, 'Giày Cầu Lông Yonex Blaze 3 - Orange Chính Hãng', 1140000, 950000, 'Giày cầu lông Lining  sở hữu độ đàn hồi cao và trọng lượng nhẹ, mang lại trải nghiệm vượt trội cho người sử dụng. Thiết kế của giày đơn giản, với phối màu đen tối giản, tạo điểm nhấn bằng logo thương hiệu Li-Ning được chế tác tỉ mỉ.\r\n\r\nPhần trên của giày cầu lông Lining AYAT005-7 Đen được làm từ chất liệu thoải mái, dễ chịu, và mềm mại, giúp mang lại cảm giác ổn định cho chân. Thiết kế chống va chạm ở mũi giày giúp giảm nguy cơ trầy xước hoặc va chạm ngón chân, bảo vệ chân từng bước chân.\r\n', 100, 180, '2023-11-17 10:51:14'),
-(248, 5, 'Balo Cầu Lông Yonex BA269CR - Vàng Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 97, 180, '2023-11-17 10:55:45'),
+(248, 5, 'Balo Cầu Lông Yonex BA269CR - Vàng Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 89, 180, '2023-11-17 10:55:45'),
 (249, 5, 'Balo Cầu Lông Yonex BA265CR Hồng - Gia Công', 718000, 599000, 'Ngoài vợt, trang phục cầu lông, có thể bạn sẽ cần đến những vật dụng cần thiết khi đến phòng tập. Để có thể đựng được nhiều đồ nhưng vẫn đảm bảo hợp thời trang, balo cầu lông sẽ đáp ứng những nhu cầu của bạn. Bài viết này sẽ giới thiệu cho bạn một mẫu balo gia công với chất lượng và thiết kế không khác gì của hãng. Balo Cầu Lông Yonex B1408 – Trắng Xanh là mẫu balo nhỏ gọn và thời trang, chất liệu sử dụng của balo là sợi polyester cao cấp, có khả năng chống bám bụi bẩn cao và không bị xù xì.', 100, 180, '2023-11-17 10:56:16');
 
 -- --------------------------------------------------------
@@ -1261,29 +1302,38 @@ INSERT INTO `sanpham` (`id`, `iddm`, `tensp`, `giagoc`, `giasale`, `mota`, `solu
 --
 
 CREATE TABLE `user` (
-  `id` int(10) NOT NULL,
-  `tenkh` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `matkhau` varchar(20) NOT NULL,
-  `sdt` varchar(20) NOT NULL,
+  `id` int NOT NULL,
+  `tenkh` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `matkhau` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `sdt` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
   `ngaysinh` datetime DEFAULT NULL,
-  `gioitinh` varchar(20) DEFAULT NULL,
-  `vaitro` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `gioitinh` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `vaitro` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `tenkh`, `email`, `matkhau`, `sdt`, `ngaysinh`, `gioitinh`, `vaitro`) VALUES
-(1, 'admin', 'admin@gmail.com', '0123', '0123456789', '2023-11-01', 'Nam', 1),
-(2, 'thanhphat', 'phatpo@gmail.com', '1111', '0321654987', '2023-11-18', 'Nam', 0),
-(3, 'anhthu', 'nnathu@gmail.com', '000', '0123456789', '2023-12-05', 'Nữ', 0),
-(4, 'dat', 'datminh294@gmail.com', '111', '0357072913', '2023-09-20', 'Nam', 0),
-(5, 'minh dat', 'md@gmail.com', '333', '0321654987', '2023-11-10', 'Nam', 0),
-(6, 'anhthu', 'nnanhthu2004@gmail.com', '123', '0937744062', '2004-05-12', 'Nữ', 0),
-(7, 'phatnntps29026', 'phatnntps29026@gmail.com', '0859499579Po', '0859499579', '2004-08-03', 'Nam', 0),
-(8, 'ho minh dat', 'hmd@gmail.com', '111', '0357072913', '2004-09-20', 'Nam', 0);
+(1, 'admin', 'admin@gmail.com', '1010101001010101', '0123456789', '2004-05-05 00:00:00', 'Nam', 1),
+(2, 'thanhphat', 'phatpo@gmail.com', '1111', '0321654987', '2023-11-18 00:00:00', 'Nam', 0),
+(3, 'anhthu', 'nnathu@gmail.com', '000', '0123456789', '2023-12-05 00:00:00', 'Nữ', 0),
+(4, 'dat', 'datminh294@gmail.com', '111', '0357072913', '2023-09-20 00:00:00', 'Nam', 0),
+(5, 'minh dat', 'md@gmail.com', '333', '0321654987', '2023-11-10 00:00:00', 'Nam', 0),
+(6, 'anhthu', 'nnanhthu2004@gmail.com', '123', '0937744062', '2004-05-12 00:00:00', 'Nữ', 0),
+(7, 'phatnntps29026', 'phatnntps29026@gmail.com', '0859499579Po', '0859499579', '2004-08-03 00:00:00', 'Nam', 0),
+(8, 'ho minh dat', 'hmd@gmail.com', '111', '0357072913', '2004-09-20 00:00:00', 'Nam', 0),
+(9, 'hoangthienofficial', 'thienlegaming1994@gmail.com', '1234', '0399375104', '2004-05-05 00:00:00', 'Nam', 0),
+(10, 'thien', 'thienladafasda@g.com', '1234', '0399375104', '2004-05-05 00:00:00', 'Nam', 0),
+(11, 'testthoima1312', 'thienlegaming@gmail.com', '1234', '0327546020', '2004-05-05 00:00:00', 'Nam', 0),
+(12, 'nam', 'namnt@gmail.com', '123', '0123456789', '1981-12-27 00:00:00', 'Nữ', 0),
+(13, 'khanh', 'khanh@gmail.com', '123', '0984700721', '2023-11-02 00:00:00', 'Nam', 0),
+(14, 'abc123', 'hplsolution@gmail.com', '1234Vinh', '0994232847', '1111-11-11 00:00:00', 'Nam', 0),
+(15, 'sdfas', 'tanphuoc200803@gmail.com', '12345', '0385323196', '2002-02-12 00:00:00', 'Nam', 0),
+(16, 'tanvinh', 'hplsolution1@gmail.com', '12341234', '0123456789', '2003-10-15 00:00:00', 'Nam', 0),
+(17, 'tanvinh123', 'vinh111@gmail.com', '12344321', '0123456789', '2001-11-11 00:00:00', 'Nam', 0);
 
 -- --------------------------------------------------------
 
@@ -1292,10 +1342,10 @@ INSERT INTO `user` (`id`, `tenkh`, `email`, `matkhau`, `sdt`, `ngaysinh`, `gioit
 --
 
 CREATE TABLE `yeuthich` (
-  `id` int(10) NOT NULL,
-  `idkh` int(10) NOT NULL,
-  `idsp` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `idkh` int NOT NULL,
+  `idsp` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `yeuthich`
@@ -1310,7 +1360,8 @@ INSERT INTO `yeuthich` (`id`, `idkh`, `idsp`) VALUES
 (37, 5, 92),
 (39, 5, 241),
 (40, 5, 247),
-(47, 1, 136);
+(47, 1, 136),
+(50, 14, 94);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1344,13 +1395,6 @@ ALTER TABLE `danhmuc`
 ALTER TABLE `donhang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_donhang_user` (`idkh`);
-
---
--- Chỉ mục cho bảng `giohang`
---
-ALTER TABLE `giohang`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_giohang_sanpham` (`idsp`);
 
 --
 -- Chỉ mục cho bảng `hinhanh`
@@ -1388,55 +1432,49 @@ ALTER TABLE `yeuthich`
 -- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
-
---
--- AUTO_INCREMENT cho bảng `giohang`
---
-ALTER TABLE `giohang`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=785;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=785;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `yeuthich`
 --
 ALTER TABLE `yeuthich`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -1461,12 +1499,6 @@ ALTER TABLE `chitietdonhang`
 --
 ALTER TABLE `donhang`
   ADD CONSTRAINT `fk_donhang_user` FOREIGN KEY (`idkh`) REFERENCES `user` (`id`);
-
---
--- Các ràng buộc cho bảng `giohang`
---
-ALTER TABLE `giohang`
-  ADD CONSTRAINT `fk_giohang_sanpham` FOREIGN KEY (`idsp`) REFERENCES `sanpham` (`id`);
 
 --
 -- Các ràng buộc cho bảng `hinhanh`

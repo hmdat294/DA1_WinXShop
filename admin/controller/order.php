@@ -10,6 +10,16 @@ extract($_REQUEST);
 if (isset($act)) {
     switch ($act) {
         case 'list':
+
+            if (isset($tthai)) $get_donhang = donhang_tthai($tthai);
+            else $get_donhang = donhang();
+
+
+            if (isset($submit_search) && ($search)) {
+                if (substr(strtolower($search), 0, 2) === "wx") $search = substr($search, 2);
+                $get_donhang = get_donhang_search_admin($search);
+            }
+
             include_once('view/order_list.php');
             break;
 
@@ -26,7 +36,6 @@ if (isset($act)) {
                         $slkhonew = $slkho + $soluong;
                         update_slkho($idsp, $slkhonew);
                     }
-                    
                 }
 
                 header('location: ?mod=order&act=list');

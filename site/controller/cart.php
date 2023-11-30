@@ -25,21 +25,43 @@ if (isset($act)) {
 
                 if ((!$numsp) && ($numsp < 1)) $numsp = 1;
 
-                $checkid = get_idgiohang($idsanpham);
+                $sp = get_sanpham_chitiet($idsanpham);
 
-                if ($checkid) {
-                    $slnew = $checkid['soluong'];
-                    $slnew += $numsp;
-                    update_slsp($idsanpham, $slnew);
-                } else add_cart($idsanpham, $numsp);
+                $hinhanh = get_hinhanh1($idsanpham)["hinhanh"];
+
+                $arr_Cart = array(
+                    'id' => $sp['id'],
+                    'tensp' => $sp['tensp'],
+                    'giasale' => $sp['giasale'],
+                    'soluong' => $numsp,
+                    'hinhanh' => $hinhanh
+                );
+
+                if (isset($_SESSION['cartwinx'])) {
+
+                    $productExists = false;
+
+                    foreach ($_SESSION['cartwinx'] as $index => $item) {
+
+                        if ($item['id'] == $sp['id']) {
+                            $_SESSION['cartwinx'][$index]['soluong'] += $numsp;
+                            $productExists = true;
+                        }
+                    }
+
+                    if (!$productExists) $_SESSION['cartwinx'][] = $arr_Cart;
+                } else $_SESSION['cartwinx'][] = $arr_Cart;
 
                 header('location: ?mod=cart&act=giohang');
             }
 
             if (isset($buynow) && ($buynow == "thanhtoan")) {
-                if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '' && get_giohang() != [])
-                    header('location: ?mod=cart&act=thanhtoan');
-                else
+                if (isset($_SESSION['accountwinx']) && ($_SESSION['accountwinx']) != '') {
+                    if (isset($_SESSION['cartwinx']) && count($_SESSION['cartwinx']) >= 1)
+                        header('location: ?mod=cart&act=thanhtoan');
+                    else
+                        header('location: ?mod=cart&act=giohang');
+                } else
                     header('location: ?mod=page&act=dangnhap');
             }
 
@@ -48,21 +70,18 @@ if (isset($act)) {
 
         case 'deletegiohang':
 
-            if (isset($id) && ($id > 0)) delete_cart($id);
+            if (isset($id)) unset($_SESSION['cartwinx'][$id]);
             header('location: ?mod=cart&act=giohang');
 
             break;
 
         case 'giamsoluong':
 
-            if (isset($id) && ($id > 0)) {
-                $slnew = get_slgiohang($id)['soluong'];
-                if ($slnew <= 1) {
-                    delete_cart($id);
-                } else {
-                    $slnew--;
-                    update_slgh($id, $slnew);
-                }
+            if (isset($id)) {
+                if ($_SESSION['cartwinx'][$id]['soluong'] <= 1)
+                    unset($_SESSION['cartwinx'][$id]);
+                else $_SESSION['cartwinx'][$id]['soluong']--;
+
                 header('location: ?mod=cart&act=giohang');
             };
 
@@ -70,10 +89,8 @@ if (isset($act)) {
 
         case 'tangsoluong':
 
-            if (isset($id) && ($id > 0)) {
-                $slnew = get_slgiohang($id)['soluong'];
-                $slnew++;
-                update_slgh($id, $slnew);
+            if (isset($id)) {
+                $_SESSION['cartwinx'][$id]['soluong']++;
                 header('location: ?mod=cart&act=giohang');
             };
 
@@ -91,17 +108,18 @@ if (isset($act)) {
                 add_donhang($idkhachhang, $tongtien, $tenkh, $sdt, $email, $ghichu, $diachi, $phuongthuc);
 
                 $last_donhang = get_last_donhang();
-                foreach (get_giohang() as $item) {
+                
+                foreach ($_SESSION['cartwinx'] as $item) {
                     extract($item);
 
-                    $slkho = get_sanpham_chitiet($idsp)['soluongkho'];
+                    $slkho = get_sanpham_chitiet($id)['soluongkho'];
                     $slkhonew = $slkho - $soluong;
-                    update_slkho($idsp, $slkhonew);
+                    update_slkho($id, $slkhonew);
 
-                    add_chitietdonhang($last_donhang['id'], $idsp, $soluong, $giasale);
+                    add_chitietdonhang($last_donhang['id'], $id, $soluong, $giasale);
                 }
 
-                delete_all_cart();
+                unset($_SESSION['cartwinx']);
 
                 header('location: ?mod=cart&act=dathangthanhcong');
             }
@@ -110,7 +128,7 @@ if (isset($act)) {
             break;
 
         case 'chitietdonhang':
-            
+
             if (isset($idhuydon) && ($idhuydon > 0)) {
                 huy_donhang($idhuydon);
 
@@ -121,7 +139,7 @@ if (isset($act)) {
                     update_slkho($idsp, $slkhonew);
                 }
 
-                header('location: ?mod=cart&act=chitietdonhang&id='.$idhuydon);
+                header('location: ?mod=cart&act=chitietdonhang&id=' . $idhuydon);
             }
 
             include_once "view/chitietdonhang.php";

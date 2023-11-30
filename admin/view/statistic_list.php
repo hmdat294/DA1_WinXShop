@@ -41,16 +41,16 @@
 
         <select class="form-select" name="" id="myThongke">
             <?php if (isset($day)) : ?>
-                <option value="?mod=statistic&act=list&day=<?= $day ?>"><?= $day + 1 ?> ngày trước</option>
+                <option value="?mod=statistic&act=list&day=<?= $day ?>"><?= $day ?> ngày trước</option>
             <?php endif; ?>
             <option value="?mod=statistic&act=list">Tất cả</option>
-            <option value="?mod=statistic&act=list&day=2">3 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=6">7 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=9">10 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=14">15 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=29">30 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=59">60 ngày trước</option>
-            <option value="?mod=statistic&act=list&day=89">90 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=3">3 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=7">7 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=10">10 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=15">15 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=30">30 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=60">60 ngày trước</option>
+            <option value="?mod=statistic&act=list&day=90">90 ngày trước</option>
         </select>
     </div>
 

@@ -22,11 +22,15 @@
                             Tải Ảnh Lên
                         </span>
 
-                        <input name="hinhanh_add<?=$i?>" class="d-none" type="file">
+                        <?php if ($i == 1) : ?>
+                            <input name="hinhanh_add<?= $i ?>" class="d-none" type="file" required>
+                        <?php else : ?>
+                            <input name="hinhanh_add<?= $i ?>" class="d-none" type="file">
+                        <?php endif; ?>
                     </label>
 
                 <?php endfor; ?>
-                
+
             </div>
 
             <label>Giá Gốc:</label>
@@ -39,7 +43,7 @@
             <input name="mota_add" class="form-control " type="text" required placeholder="Nhập mô tả">
 
             <label>Số lượng:</label>
-            <input name="soluong_add" class="form-control " type="text" required placeholder="Nhập số lượng">
+            <input name="soluong_add" class="form-control " type="number" min="1" required placeholder="Nhập số lượng">
 
             <label>Chọn Danh Mục:</label>
             <select class="form-select" name="iddm_add">

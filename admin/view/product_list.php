@@ -1,9 +1,9 @@
 <main>
-    <div style="margin: 10px 35px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+    <div style="margin: 10px 35px; display: grid; grid-template-columns: 2fr 2.5fr 1.5fr; gap: 20px;">
         <h3 class="">Sản Phẩm</h3>
 
         <form class="input-group " method='post' action='?mod=product&act=list' role="search">
-            <input type="search" name="search" class="form-control" placeholder="Tìm sản phẩm..." >
+            <input type="search" name="search" class="form-control" placeholder="Tìm sản phẩm (Theo tên sản phẩm)" >
             <button class="btn btn-outline-secondary z-0" name="submit_search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 

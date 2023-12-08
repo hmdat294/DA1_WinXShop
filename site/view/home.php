@@ -159,7 +159,7 @@
 
 
     <div class="sp-title p-5">
-        <h4>GIẢM NGAY 20%-70%</h4>
+        <h4>SALE ĐẬM GIÁ HỜI</h4>
         <div class="line">
             <div></div>
         </div>

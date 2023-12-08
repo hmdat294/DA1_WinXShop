@@ -16,10 +16,10 @@
                 <span>Chiều từ 1 giờ -> 5 giờ</span>
             </li>
             <li>Mạng xã hội:
-                <span><img width="25px" src="../content/layout/images/facebook1.png" alt="">WinXStore</span>
-                <span><img width="25px" src="../content/layout/images/instagram.png" alt="">WinX_Sports</span>
-                <span><img width="25px" src="../content/layout/images/youtube.png" alt="">WinXStore Channel</span>
-                <span><img width="25px" src="../content/layout/images/icon-tt.jpg" alt="">WinXStoreTiktok</span>
+                <span><img width="25px" style="margin-right: 5px;" src="../content/layout/images/facebook1.png" alt=""> WinXStore</span>
+                <span><img width="25px" style="margin-right: 5px;" src="../content/layout/images/instagram.png" alt=""> WinX_Sports</span>
+                <span><img width="25px" style="margin-right: 5px;" src="../content/layout/images/youtube.png" alt=""> WinXStore Channel</span>
+                <span><img width="25px" style="margin-right: 5px;" src="../content/layout/images/icon-tt.jpg" alt=""> WinXStoreTiktok</span>
             </li>
         </ul>
     </div>

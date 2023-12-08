@@ -5,7 +5,7 @@ if (isset($_SESSION['cartwinx'])) {
     foreach ($_SESSION['cartwinx'] as $item) {
         if ($item['id'] == $id) $slgiohang = $item['soluong'];
     }
-} 
+}
 
 if (!isset($slgiohang)) $slgiohang = 0;
 
@@ -128,7 +128,7 @@ if (!isset($slgiohang)) $slgiohang = 0;
             <div class="mota-sanpham">
                 <div>
                     <h5 id="sc1">MÔ TẢ SẢN PHẨM</h5>
-                    <h5 id="sc2">THÔNG SỐ KỸ THUẬT</h5>
+                    <h5 id="sc2">THÔNG TIN KHÁC</h5>
                 </div>
                 <hr>
                 <section class="section1">
@@ -143,24 +143,25 @@ if (!isset($slgiohang)) $slgiohang = 0;
                     <table class="table table-bordered">
                         <tbody class="">
                             <tr>
-                                <th class="col-4">Phân Khúc:</th>
-                                <td>Trung Cấp</td>
+                                <th class="col-4">Tên sản phẩm:</th>
+                                <td><?= $tensp ?></td>
+                            </tr>
+                            <tr>
+                                <th>Thuộc danh mục:</th>
+                                <td><?= get_danhmuc_one($iddm)['tendm'] ?></td>
                             </tr>
                             <tr>
                                 <th>Phân Khúc:</th>
-                                <td>Trung Cấp</td>
+                                <td>
+                                    Từ
+                                    <?= round(($giasale - ($giasale / 5)), -4) ?>
+                                    đến
+                                    <?= round(($giasale + ($giasale / 5)), -4) ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Phân Khúc:</th>
-                                <td>Trung Cấp</td>
-                            </tr>
-                            <tr>
-                                <th>Phân Khúc:</th>
-                                <td>Trung Cấp</td>
-                            </tr>
-                            <tr>
-                                <th>Phân Khúc:</th>
-                                <td>Trung Cấp</td>
+                                <th>Đối tượng:</th>
+                                <td>Mọi lứa tuổi, người chơi thể thao</td>
                             </tr>
                         </tbody>
                     </table>

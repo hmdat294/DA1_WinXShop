@@ -3,7 +3,7 @@
 
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=winxshop;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=winx;charset=utf8";
     $username = 'root';
     $password = '';
 
